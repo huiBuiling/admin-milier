@@ -1,0 +1,93 @@
+.leave input[type=checkbox]{
+	border: none;
+	-webkit-appearance: none;
+	vertical-align: text-bottom;
+	width: 20px;
+	height: 20px;
+	background-image: url(../../assert/images/check.png);
+	background-size: 100% 100%;
+}
+
+.leave input[type=checkbox]:checked:before{
+	content: " ";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-image: url(../../assert/images/checked.png);
+	background-size: 100% 100%;
+}
+
+.leave-header{
+	background: #fff;
+	padding: 10px;
+}
+.leave-header input{
+	width: 80%;
+	float: left;
+	margin-bottom: 15px;
+	border:none;
+}
+.leave-header .sendBtn{
+	width: 70px;
+	text-align: right;
+}
+.leave-main{
+	text-align: left;
+	background: #fff;
+	padding: 15px;
+	margin-top: 30px;
+}
+.leave-main .ant-timeline-item-content div{
+	display: inline-block;
+}
+.leave-main .ant-timeline-item-content span{
+	margin-left: 10px;
+}
+.leave-main .ant-timeline-item-content .title{
+	font-size: 15px;
+	font-weight: bold;
+}
+.leave-main .ant-timeline-item-content .date{
+	margin-left: 30px;
+	color:#000;
+}
+.leave-main .ant-timeline-item-content img{
+	position: absolute;
+	right: 0;
+	top: -10px;
+}
+.leave-main .ant-timeline-item-content .ant-btn{
+	background: #f77e1c;
+	border-color: #f77e1c;
+	position: absolute;
+	right: 45px;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+}
+.leave-main .ant-timeline-item-content p{
+	margin-left: 20px;
+	margin-top: 10px;
+	min-height: 60px;
+	padding: 5px 10px;
+	background: rgba(236,246,253,.5);
+}
+.leave-footer{
+	background: #fff;
+	text-align: left;
+	    padding: 10px 10px 20px 10px;
+	position: relative;
+}
+.leave-footer span{
+	margin:0 10px;
+}
+.leave-footer .ant-btn {
+	color: #108ee9;
+	background-color: #fff;
+	border-color: #108ee9;
+	padding: 0 5px;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
