@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route , Switch} from 'react-router-dom'
 import './App.css'
 //组件
 import BottomBar from '../Bar/Bottom'
@@ -31,11 +32,12 @@ class App extends Component {
 			'app2': this.state.toggle
 		});
 		return(
-			// <div className=cs('app',{this.state.toggle , app})>
-			<div className={btnClass}>
-                <Router changeMode={this.changeMode.bind(this)} mode={this.state.mode} />
-                {/*<BottomBar />*/}
-			</div>
+            <BrowserRouter>
+				<div className={btnClass}>
+					<Router changeMode={this.changeMode.bind(this)} mode={this.state.mode} />
+					{/*<BottomBar />*/}
+				</div>
+			</BrowserRouter>
 			)
 	}
 }
