@@ -1,0 +1,82 @@
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*top bar user bg*/
+/*li active*/
+/*start*/
+.lee-card {
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.lee-card .lee-card-title {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  background: #5868d9;
+  color: #fff;
+  font-size: 14px;
+}
+.lee-card .lee-card-title span {
+  font-size: 14px;
+}
+.lee-card .lee-card-title .lee-card-title-text {
+  font-size: 12px;
+  margin-left: 10px;
+}
+.lee-card .lee-card-title .lee-card-op-r {
+  float: right;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.lee-card .lee-card-title .lee-card-op-r i {
+  padding-left: 7px;
+  font-size: 12px;
+}
+.lee-card .lee-card-con {
+  background: #fff;
+  color: #616161;
+  font-size: 14px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title {
+  background: #5868d9;
+  background: -webkit-linear-gradient(left, rgba(88, 104, 217, 0.3), #5868d9);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, rgba(88, 104, 217, 0.3), #5868d9);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, rgba(88, 104, 217, 0.3), #5868d9);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, rgba(88, 104, 217, 0.3), #5868d9);
+  /* 标准的语法 */
+  color: #fff;
+  padding: 20px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title > span {
+  width: 30px;
+  font-size: 18px;
+  display: inline-block;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title > div {
+  display: inline-block;
+  width: calc(100% - 30px);
+  vertical-align: text-top;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title > div p {
+  margin-bottom: 3px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-li {
+  padding: 10px 20px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-li .anticon {
+  margin-right: 15px;
+}

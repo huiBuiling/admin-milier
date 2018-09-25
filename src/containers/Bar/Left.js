@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
-import '../../assert/index.css';
+import {Route,Link} from 'react-router-dom'
 import { Menu, Icon } from 'antd';
 import admin from '../../assert/images/admin.jpg'
 
@@ -23,7 +22,7 @@ export default class LeftBar extends Component {
                     icon:'appstore',
                     title:'组件',
                     children:[
-                        {path:'/echat',text:'Echat'},
+                        {path:'/components/echat',text:'Echat'},
                         {path:'/',text:'Table'},
                         {path:'/',text:'Tree'}
                     ]
@@ -31,7 +30,7 @@ export default class LeftBar extends Component {
                 {
                     icon:'edit',
                     title:'笔记',
-                    path:'/note'
+                    path:'/Leave'
                 }
             ]
         }

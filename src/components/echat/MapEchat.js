@@ -327,8 +327,11 @@ export default class MapEchat extends Component {
     render() {
     return (
       <div className="">
-          <h3>折线图</h3>
-          <ReactEcharts option={this.mapEchat} notMerge={true} lazyUpdate={true} />
+          <ReactEcharts
+              style={{height: '600px', width: '100%'}}
+              option={this.mapEchat}
+              notMerge={true}
+              lazyUpdate={true} />
       </div>
     );
   }

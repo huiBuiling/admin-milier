@@ -144,12 +144,11 @@ export default class BubbleEchat extends Component {
   }
 
   render() {
-    return (
-      <div className="">
-          <h3>气泡图</h3>
-          <ReactEcharts option={this.bubbleEchat} notMerge={true} lazyUpdate={true} />
-      </div>
-    );
+        return (
+              <div>
+                  <ReactEcharts option={this.bubbleEchat} notMerge={true} lazyUpdate={true} />
+              </div>
+        );
   }
 }
 

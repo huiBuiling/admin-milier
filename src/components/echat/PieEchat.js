@@ -3,8 +3,8 @@ import ReactEcharts from 'echarts-for-react'
 
 export default class PieEchat extends Component {
 
-    //饼状图
-    pieEchat = {
+     //饼状图
+     pieEchat = {
         title : {
             // text: '南丁格尔玫瑰图',
             subtext: '纯属虚构',
@@ -87,13 +87,12 @@ export default class PieEchat extends Component {
         ]
     };
 
-  render() {
-    return (
-      <div className="">
-          <h3>饼状图</h3>
-          <ReactEcharts option={this.pieEchat} notMerge={true} lazyUpdate={true} />
-      </div>
-    );
-  }
+      render() {
+            return (
+                  <div className="">
+                      <ReactEcharts option={this.pieEchat} notMerge={true} lazyUpdate={true} />
+                  </div>
+            );
+      }
 }
 

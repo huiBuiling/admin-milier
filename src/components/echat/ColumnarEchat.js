@@ -107,7 +107,6 @@ export default class ColumnarEchat extends Component {
   render() {
     return (
       <div className="">
-          <h3>柱状图</h3>
           <ReactEcharts option={this.columnarEchat} notMerge={true} lazyUpdate={true} />
       </div>
     );

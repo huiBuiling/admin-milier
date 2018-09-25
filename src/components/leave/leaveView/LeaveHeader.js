@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
-import {Input,Button } from 'antd';
-const { TextArea } = Input;
+import { Input } from 'antd';
+const { TextArea,Search } = Input;
 
 class LeaveHeader extends Component {
 	constructor(props){
@@ -12,8 +12,8 @@ class LeaveHeader extends Component {
 	}
 
 	// 键盘事件
-	sendText = ()=>{
-		let title = this.state.title;   //input输入的值
+	sendText = (value)=>{
+		let title = value;   //input输入的值
 		let content = this.state.content; //textarea 输入的值
 		if(!title && !content){
 			return false;
@@ -27,23 +27,20 @@ class LeaveHeader extends Component {
 	}
 
     onChange = (e)=>{
-		if(e.target.nodeName == 'INPUT'){
-            this.setState({
-                title:e.target.value
-            })
-		}else{
-            this.setState({
-                content:e.target.value
-            })
-		}
-
+		this.setState({
+			content:e.target.value
+		})
 	}
 
 	render() {
 		return (
 			<div className="leave-header">
-				<Input placeholder="请输入您的可爱昵称" onChange={this.onChange} />
-				<Button type="primary" className="sendBtn" onClick={this.sendText}>提交</Button>
+                <Search
+                    placeholder="请输入您的可爱昵称"
+                    enterButton="提交"
+                    onSearch={this.sendText}
+					style={{marginBottom:'10px'}}
+                />
 				<TextArea rows={4} placeholder="请输入您想说的话" onChange={this.onChange} />
 			</div>
 			)

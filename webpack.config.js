@@ -6,8 +6,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: './src/index.js',  //入口
     output: {   //输出
-        path: path.resolve(__dirname, 'dist'),
-        // publicPath: "assert/",  //解决路径，引用从根路径开始
+        path: path.resolve(__dirname, '/dist'),
+        publicPath:'/',
         filename: 'js/bundle.js'
     },
     module: {
@@ -18,7 +18,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env', 'react','es2015','stage-0']
+                        presets: ['env', 'react','es2015','stage-0'],
+                        plugins: ["transform-decorators-legacy"]
                     }
                 }
             },{
@@ -75,6 +76,7 @@ module.exports = {
     ],
     devServer: {
         port:'5201',
-        contentBase: './dist'
+        // contentBase: path.resolve(__dirname, 'dist'),
+        historyApiFallback: true
     },
 };

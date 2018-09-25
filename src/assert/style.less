@@ -1,27 +1,20 @@
-@color_1: rgba(0, 0, 0, 0.3);
-//@borderColor: @themeColor;
-@font_family_1: 微软雅黑;
+@bgColor:#fafafa;
+@themsColor:rgb(88,104,217);
+@thems2Color:rgb(70,212,186);
 
-@themeColor:#1890ff;
-@redColor:#F5424C;
-@blackColor:#000;
-@whiteColor:#fff;
-@barColor:#00162A;
-
-@bgColor:#f0f2f5;
-@borderColor:#E9E9E9;
-@borderColor2:#D9D9D9;
-@fontColor2:#9a9a9a;
-@fontColor4:#C3C3C3;
+@fontColor:@color;
+@fontColor2:#616161;
+//@fontColor2:rgb(83,83,83);
 
 @fontSize:14px;
 @fontSize2:12px;
-@fontSize4:16px;
 @fontSize6:16px;
 @fontSize20:20px;
 
-.red{color: @redColor !important;}
-.thems{color: @themeColor !important;}
+@borderColor:#E9E9E9;
+@borderColor2:#D9D9D9;
+
+@color:#fff;
 
 //圆角
 .border-radius(@radius:2px){
@@ -57,15 +50,7 @@
   white-space: nowrap;
 }
 
-/*top*/
-/*left*/
-/*bottom*/
-/* .hide
-.hide
-.hide */
-
-
-.app{
+/*.app{
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -205,7 +190,7 @@
       .ant-menu.ant-menu-dark {
         .ant-menu-item-selected {
           background: #304047 !important;
-          border-right: 4px solid @themeColor;
+          border-right: 4px solid @themsColor;
         }
       }
     }
@@ -217,12 +202,12 @@
       background: #f0f2f5;
       overflow: hidden;
       .crumb{
-        /*background: #fff;
+        !*background: #fff;
         text-align: left;
         line-height: 40px;
         font-size: 16px;
         padding-left: 15px;
-        z-index: 999;*/
+        z-index: 999;*!
 
         background: #fff;
         position: fixed;
@@ -234,6 +219,11 @@
         font-size: 16px;
         padding-left: 15px;
         z-index: 999;
+        .ant-breadcrumb-link{
+          .anticon{
+            font-size: 14px;
+          }
+        }
       }
       .content{
         width: 100%;
@@ -246,126 +236,7 @@
       }
     }
   }
-  .bottom {
-    /*width: calc(~"100% - 200px");
-    margin-left: 200px;
-    height: 50px;
-    line-height: 50px;
-    background: #eceff1;
-    border-top: 1px solid @borderColor;
-    color: @borderColor;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    p {
-      text-align: center;
-    }*/
-  }
-}
-
-/* 收缩后样式 */
-.app2 {
-  .app-all{
-    .top {
-      .logo {
-        width: 60px;
-        margin-left: 0;
-        text-align: center;
-        img {
-          display: none;
-        }
-        i {
-          text-align: center;
-          float: none;
-        }
-      }
-
-    }
-    .leftbar {
-      width: 60px;
-      z-index: 999;
-      .introduce {
-        display: none;
-      }
-      .ant-menu.ant-menu-dark {
-        width: 60px!important;
-        height: 100%;
-        .intro{
-          span{
-            i{
-              overflow: hidden;
-            }
-          }
-        }
-        li{
-          width: 100%;
-          height: 60px;
-          line-height: 60px;
-          font-size: 20px;
-          padding: 0;
-          span{
-            i{
-              font-size: 20px;
-              margin-right: 20px;
-              display: inline-block;
-              width: 100%;
-            }
-            span{
-              display: none;
-            }
-          }
-          li{
-            font-size: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-left: 15px;
-            height: 40px;
-            line-height: 40px;
-          }
-        }
-        .ant-menu-item-selected{
-          background: #bda29a!important;
-          border-right: none;
-        }
-        .ant-menu-submenu-vertical>.ant-menu-submenu-title:after{
-          content: '';
-        }
-        .ant-menu-submenu-title{
-          padding: 0;
-          width: 60px;
-          height: 60px;
-          span{
-            width: 60px;
-            height: 60px;
-            display: inline-block;
-            i{
-              width: 100%;
-              height: 100%;
-              line-height: 60px;
-            }
-            span{
-              display: none;
-            }
-          }
-        }
-        .ant-menu-vertical{
-          li{
-            background: @barColor;
-            z-index: 999;
-          }
-        }
-      }
-    }
-    .right {
-      width: calc(~"100% - 60px");
-      height: calc(~"100% - 75px");
-      margin-left: 60px;
-    }
-  }
-  .bottom {
-    width: calc(~"100% - 60px");
-    margin-left: 60px;
-  }
-}
+}*/
 
 /* 模块样式 */
 .common{
@@ -373,7 +244,8 @@
   background: #fff;
   padding: 5px 20px 0;
 }
-//home
+
+/*home*/
 .home{
   .common;
   table{
@@ -442,45 +314,46 @@
   }
 }
 
-//echat
+/*echat*/
 .echat{
   width: 100%;
   ul{
     li{
-      //width: calc(50% - 20px);
-      width: calc(100% - 16px);
-      margin: 0 10px;
-      margin-bottom: 16px;
+      width: calc(50% - 8px);
       float: left;
-      background: #fff;
-      border: 3px solid #fff;
-      h3{
-        text-align: left;
-        font-weight: normal;
-        padding:5px 10px;
-        line-height: 35px;
-        background: #ECEFF1;
-        border-bottom: 2px solid #a0c101;
+      margin-right: 8px;
+      &:nth-child(2n){
+        margin-left: 8px;
+        margin-right: 0;
+      }
+      .lee-card{
+        h3{
+          margin-bottom: 0;
+          border-bottom: 2px solid #a0c101;
+        }
+        .lee-card-con{
+          padding: 20px;
+        }
       }
     }
   }
 }
 
-//note
-.note{
+/*Leave*/
+.leave{
   width: 100%;
-  height: calc(100% - 110px);
-  // margin-top: 70px;
+  height: 100%;
   background: #fff;
-  .note-l{
-    padding: 10px;
-    float: left;
-    width: 300px;
+  overflow: hidden;
+  .border-radius(2px);
+  .leave-l{
+    width: 250px;
     height: 100%;
+    display: inline-block;
+    padding: 10px;
     border-right: 1px solid #ECEFF1;
     input{
-      width: 260px;
-      margin-bottom: 20px;
+      width: 230px;
     }
     ul{
       li{
@@ -492,110 +365,103 @@
         }
         p{
           font-size: 12px;
-          color: @themeColor;
+          color: @themsColor;
         }
       }
     }
   }
-  .note-r{
+  .leave-r{
+    width: calc(100% - 250px);
+    display: inline-block;
     padding: 10px;
-    float: left;
-    width: calc(100% - 200px);
+    vertical-align: top;
+
+    /*leave*/
+    .leave-edit{
+      input[type=checkbox]{
+        border: none;
+        -webkit-appearance: none;
+        vertical-align: text-bottom;
+        width: 20px;
+        height: 20px;
+        background-image: url(./images/check.png);
+        background-size: 100% 100%;
+        &:checked:before{
+          content: " ";
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-image: url(./images/checked.png);
+          background-size: 100% 100%;
+        }
+      }
+      .leave-header{
+        background: #fff;
+        padding: 10px 10px 20px;
+      }
+      .leave-main{
+        text-align: left;
+        background: #fff;
+        padding: 15px;
+        .ant-timeline-item-content{
+          div{
+            display: inline-block;
+          }
+          span{
+            margin-left: 10px;
+          }
+          .title{
+            font-size: 15px;
+            font-weight: bold;
+          }
+          .date{
+            margin-left: 30px;
+            color:#000;
+          }
+          img{
+            position: absolute;
+            right: 0;
+            top: -10px;
+          }
+          .ant-btn{
+            background: #f77e1c;
+            border-color: #f77e1c;
+            position: absolute;
+            right: 45px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+          }
+          p{
+            margin-left: 20px;
+            margin-top: 10px;
+            min-height: 60px;
+            padding: 5px 10px;
+            background: rgba(236,246,253,.5);
+          }
+        }
+      }
+      .leave-footer{
+        background: #fff;
+        text-align: left;
+        padding: 10px 10px 20px 10px;
+        position: relative;
+        &>span{
+          margin:0 10px;
+          color: #000;
+        }
+        .ant-btn {
+          color: #108ee9;
+          background-color: #fff;
+          border-color: #108ee9;
+          padding: 0 5px;
+          position: absolute;
+          right: 10px;
+          top: 5px;
+        }
+      }
+    }
   }
 }
 
-//leave
-.leave{
-  input[type=checkbox]{
-    border: none;
-    -webkit-appearance: none;
-    vertical-align: text-bottom;
-    width: 20px;
-    height: 20px;
-    background-image: url(images/check.png);
-    background-size: 100% 100%;
-  }
-  input[type=checkbox]:checked:before{
-    content: " ";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-image: url(images/checked.png);
-    background-size: 100% 100%;
-  }
-  .leave-header{
-    background: #fff;
-    padding: 10px 10px 20px;
-    input{
-      width: 80%;
-      float: left;
-      margin-bottom: 15px;
-      border:none;
-    }
-    .sendBtn{
-      width: 70px;
-      text-align: right;
-    }
-  }
-  .leave-main{
-    text-align: left;
-    background: #fff;
-    padding: 15px;
-    padding-top: 20px;
-    border-top: 1px dashed #f77e1d;
-    .ant-timeline-item-content{
-      div{
-        display: inline-block;
-      }
-      span{
-        margin-left: 10px;
-      }
-      .title{
-        font-size: 13px;
-        font-weight: bold;
-      }
-      .date{
-        margin-left: 30px;
-        color:#000;
-      }
-      img{
-        position: absolute;
-        right: 0;
-        top: -10px;
-      }
-      .ant-btn{
-        background: #f77e1c;
-        border-color: #f77e1c;
-        position: absolute;
-        right: 45px;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-      }
-      p{
-        margin-left: 20px;
-        margin-top: 10px;
-        min-height: 60px;
-        padding: 5px 10px;
-        background: rgba(236,246,253,.5);
-      }
-    }
-    .leave-footer{
-      background: #fff;
-      text-align: left;
-      padding: 10px 10px 20px 10px;
-      position: relative;
-      span{
-        margin:0 10px;
-      }
-      .ant-btn {
-        background-color: #fff;
-        padding: 0 5px;
-        position: absolute;
-        right: 10px;
-        top: 5px;
-      }
-    }
-  }
-}

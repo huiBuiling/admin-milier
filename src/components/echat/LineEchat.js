@@ -91,7 +91,6 @@ export default class LineEchat extends Component {
   render() {
     return (
       <div className="">
-          <h3>折线图</h3>
           <ReactEcharts option={this.lineEchat} notMerge={true} lazyUpdate={true} />
       </div>
     );

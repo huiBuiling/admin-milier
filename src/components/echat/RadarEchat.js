@@ -43,7 +43,6 @@ export default class RadarEchat extends Component {
   render() {
     return (
       <div className="">
-          <h3>雷达图</h3>
           <ReactEcharts option={this.radarEchat} notMerge={true} lazyUpdate={true} />
       </div>
     );

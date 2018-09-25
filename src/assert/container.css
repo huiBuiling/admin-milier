@@ -1,0 +1,1188 @@
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*top bar user bg*/
+/*li active*/
+/*start*/
+.lee-card {
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.lee-card .lee-card-title {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  background: #5868d9;
+  color: #fff;
+  font-size: 14px;
+}
+.lee-card .lee-card-title span {
+  font-size: 14px;
+}
+.lee-card .lee-card-title .lee-card-title-text {
+  font-size: 12px;
+  margin-left: 10px;
+}
+.lee-card .lee-card-title .lee-card-op-r {
+  float: right;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.lee-card .lee-card-title .lee-card-op-r i {
+  padding-left: 7px;
+  font-size: 12px;
+}
+.lee-card .lee-card-con {
+  background: #fff;
+  color: #616161;
+  font-size: 14px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title {
+  background: #5868d9;
+  background: -webkit-linear-gradient(left, rgba(88, 104, 217, 0.3), #5868d9);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, rgba(88, 104, 217, 0.3), #5868d9);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, rgba(88, 104, 217, 0.3), #5868d9);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, rgba(88, 104, 217, 0.3), #5868d9);
+  /* 标准的语法 */
+  color: #fff;
+  padding: 20px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title > span {
+  width: 30px;
+  font-size: 18px;
+  display: inline-block;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title > div {
+  display: inline-block;
+  width: calc(100% - 30px);
+  vertical-align: text-top;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-title > div p {
+  margin-bottom: 3px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-li {
+  padding: 10px 20px;
+}
+.lee-card .lee-card-con .lee-card-con-text .lee-card-con-text-li .anticon {
+  margin-right: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 14px;
+  font-family: "微软雅黑";
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  transition: background 0.5s linear;
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  cursor: pointer;
+}
+a:hover {
+  transition: background 0.5s linear;
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  cursor: pointer;
+}
+em {
+  font-style: normal;
+}
+i {
+  font-style: normal;
+}
+ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+ol {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none;
+  vertical-align: middle;
+}
+input {
+  outline: none;
+  border: none;
+  background: none;
+}
+select {
+  outline: none;
+  border: none;
+  background: none;
+}
+textarea {
+  outline: none;
+  border: none;
+  background: none;
+  resize: none;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear {
+  clear: both;
+  height: 0px;
+  width: 100%;
+  overflow: hidden;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+/*ghost*/
+/*thems*/
+/*themsPurpleGhost*/
+/*themsGreen , themsGreenGhost*/
+/*themsPink*/
+/*themsBlack*/
+/*thems*/
+.lee-admin {
+  width: 100%;
+  height: 100%;
+}
+.lee-admin .thems {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+}
+.lee-admin .themsPurple {
+  /*
+      logo, leftBar,
+      topBar, topBarFont,
+      thems, thems2,
+      font, rightBg
+
+      userColor: ghost
+        when (@topBarColor = rgb(239,243,246)
+        background: @themsColor;
+        color: #fff;
+
+      liCurrentColor: ghost
+        when (@logoColor = @topBarColor){
+        background: rgba(230,231,234);
+}
+    */
+}
+.lee-admin .themsPurple .lee-leftBar {
+  width: 150px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-top {
+  width: 150px;
+  background: #2a3259;
+  color: #fff;
+  height: 50px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot {
+  width: 150px;
+  height: calc(100% - 50px);
+  background: #1f2438;
+  color: #fff;
+  font-size: 14px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
+  padding-top: 25px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  color: #fff;
+  font-size: 14px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
+  margin-right: 9px;
+}
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
+  border-right: 4px solid #5868d9;
+  background: rgba(42, 50, 89, 0.5);
+}
+.lee-admin .themsPurple .lee-rightBar {
+  width: calc(100% - 150px);
+  height: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top {
+  width: 100%;
+  height: 50px;
+  background: #5868d9;
+  color: #fff;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
+  width: 240px;
+  padding: 0 20px;
+  float: left;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
+  line-height: 50px;
+  font-size: 14px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
+  float: right;
+  line-height: 50px;
+  padding-right: 25px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #5868d9;
+  background: #fff;
+  color: #5868d9;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot {
+  width: 100%;
+  height: calc(100% - 50px);
+  background: #E9EEF1;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
+  width: 100%;
+  height: 100%;
+  margin-top: -1px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
+  width: 150px;
+  height: 170px;
+  line-height: 25px;
+  background: rgba(70, 212, 186, 0.6);
+  position: absolute;
+  top: -1px;
+  right: 150px;
+  padding: 60px 0;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
+  font-size: 20px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
+  right: 0;
+  background: rgba(88, 104, 217, 0.6);
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  padding: 20px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 20px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar {
+  width: 150px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-top {
+  width: 150px;
+  background: #2a3259;
+  color: #fff;
+  height: 50px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot {
+  width: 150px;
+  height: calc(100% - 50px);
+  background: #1f2438;
+  color: #E9EEF1;
+  font-size: 14px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
+  padding-top: 25px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  color: #E9EEF1;
+  font-size: 14px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
+  margin-right: 9px;
+}
+.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
+  border-right: 4px solid #5868d9;
+  background: rgba(42, 50, 89, 0.5);
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar {
+  width: calc(100% - 150px);
+  height: 100%;
+  color: #E9EEF1;
+  overflow: hidden;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top {
+  width: 100%;
+  height: 50px;
+  background: #eff3f6;
+  color: #535353;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
+  width: 240px;
+  padding: 0 20px;
+  float: left;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
+  line-height: 50px;
+  font-size: 14px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
+  float: right;
+  line-height: 50px;
+  padding-right: 25px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #5868d9;
+  background: #fff;
+  color: #5868d9;
+  background: #5868d9;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot {
+  width: 100%;
+  height: calc(100% - 50px);
+  background: #fff;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
+  width: 100%;
+  height: 100%;
+  margin-top: -1px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  font-size: 14px;
+  color: #E9EEF1;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
+  width: 150px;
+  height: 170px;
+  line-height: 25px;
+  background: rgba(70, 212, 186, 0.6);
+  position: absolute;
+  top: -1px;
+  right: 150px;
+  padding: 60px 0;
+  color: #E9EEF1;
+  font-size: 16px;
+  text-align: center;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
+  font-size: 20px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
+  right: 0;
+  background: rgba(88, 104, 217, 0.6);
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  padding: 20px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 20px;
+}
+.lee-admin .themsGreen .lee-leftBar {
+  width: 150px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-top {
+  width: 150px;
+  background: #306174;
+  color: #fff;
+  height: 50px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot {
+  width: 150px;
+  height: calc(100% - 50px);
+  background: #36908f;
+  color: #E9EEF1;
+  font-size: 14px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
+  padding-top: 25px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  color: #E9EEF1;
+  font-size: 14px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
+  margin-right: 9px;
+}
+.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
+  border-right: 4px solid #46d4ba;
+  background: rgba(42, 50, 89, 0.5);
+}
+.lee-admin .themsGreen .lee-rightBar {
+  width: calc(100% - 150px);
+  height: 100%;
+  color: #E9EEF1;
+  overflow: hidden;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top {
+  width: 100%;
+  height: 50px;
+  background: #46d4ba;
+  color: #fff;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
+  width: 240px;
+  padding: 0 20px;
+  float: left;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
+  line-height: 50px;
+  font-size: 14px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
+  float: right;
+  line-height: 50px;
+  padding-right: 25px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #46d4ba;
+  background: #fff;
+  color: #46d4ba;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot {
+  width: 100%;
+  height: calc(100% - 50px);
+  background: rgba(31, 36, 56, 0.95);
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
+  width: 100%;
+  height: 100%;
+  margin-top: -1px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  font-size: 14px;
+  color: #E9EEF1;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
+  width: 150px;
+  height: 170px;
+  line-height: 25px;
+  background: rgba(86, 185, 197, 0.6);
+  position: absolute;
+  top: -1px;
+  right: 150px;
+  padding: 60px 0;
+  color: #E9EEF1;
+  font-size: 16px;
+  text-align: center;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
+  font-size: 20px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
+  right: 0;
+  background: rgba(70, 212, 186, 0.6);
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  padding: 20px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 20px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar {
+  width: 150px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-top {
+  width: 150px;
+  background: #306174;
+  color: #fff;
+  height: 50px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot {
+  width: 150px;
+  height: calc(100% - 50px);
+  background: #36908f;
+  color: #E9EEF1;
+  font-size: 14px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
+  padding-top: 25px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  color: #E9EEF1;
+  font-size: 14px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
+  margin-right: 9px;
+}
+.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
+  border-right: 4px solid #66c8d4;
+  background: rgba(42, 50, 89, 0.5);
+}
+.lee-admin .themsGreenGHOST .lee-rightBar {
+  width: calc(100% - 150px);
+  height: 100%;
+  color: #E9EEF1;
+  overflow: hidden;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top {
+  width: 100%;
+  height: 50px;
+  background: #eff3f6;
+  color: #535353;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
+  width: 240px;
+  padding: 0 20px;
+  float: left;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
+  line-height: 50px;
+  font-size: 14px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
+  float: right;
+  line-height: 50px;
+  padding-right: 25px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #66c8d4;
+  background: #fff;
+  color: #66c8d4;
+  background: #66c8d4;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot {
+  width: 100%;
+  height: calc(100% - 50px);
+  background: rgba(31, 36, 56, 0.95);
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
+  width: 100%;
+  height: 100%;
+  margin-top: -1px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  font-size: 14px;
+  color: #E9EEF1;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
+  width: 150px;
+  height: 170px;
+  line-height: 25px;
+  background: rgba(70, 212, 186, 0.6);
+  position: absolute;
+  top: -1px;
+  right: 150px;
+  padding: 60px 0;
+  color: #E9EEF1;
+  font-size: 16px;
+  text-align: center;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
+  font-size: 20px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
+  right: 0;
+  background: rgba(102, 200, 212, 0.6);
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  padding: 20px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 20px;
+}
+.lee-admin .themsPink .lee-leftBar {
+  width: 150px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-top {
+  width: 150px;
+  background: #fa9bc1;
+  color: #fff;
+  height: 50px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot {
+  width: 150px;
+  height: calc(100% - 50px);
+  background: #f5f5f7;
+  color: #535353;
+  font-size: 14px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
+  padding-top: 25px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  color: #535353;
+  font-size: 14px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
+  margin-right: 9px;
+}
+.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
+  border-right: 4px solid #fa9bc1;
+  background: rgba(42, 50, 89, 0.5);
+  background: rgba(230, 231, 234);
+}
+.lee-admin .themsPink .lee-rightBar {
+  width: calc(100% - 150px);
+  height: 100%;
+  color: #535353;
+  overflow: hidden;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top {
+  width: 100%;
+  height: 50px;
+  background: #fa9bc1;
+  color: #fff;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
+  width: 240px;
+  padding: 0 20px;
+  float: left;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
+  line-height: 50px;
+  font-size: 14px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
+  float: right;
+  line-height: 50px;
+  padding-right: 25px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #fa9bc1;
+  background: #fff;
+  color: #fa9bc1;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot {
+  width: 100%;
+  height: calc(100% - 50px);
+  background: #e5eaed;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
+  width: 100%;
+  height: 100%;
+  margin-top: -1px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  font-size: 14px;
+  color: #535353;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
+  width: 150px;
+  height: 170px;
+  line-height: 25px;
+  background: rgba(70, 212, 186, 0.6);
+  position: absolute;
+  top: -1px;
+  right: 150px;
+  padding: 60px 0;
+  color: #535353;
+  font-size: 16px;
+  text-align: center;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
+  font-size: 20px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
+  right: 0;
+  background: rgba(250, 155, 193, 0.6);
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  padding: 20px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 20px;
+}
+.lee-admin .themsBlack .lee-leftBar {
+  width: 150px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-top {
+  width: 150px;
+  background: #2a3259;
+  color: #fff;
+  height: 50px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot {
+  width: 150px;
+  height: calc(100% - 50px);
+  background: #1f2438;
+  color: #fff;
+  font-size: 14px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
+  padding-top: 25px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  color: #fff;
+  font-size: 14px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
+  margin-right: 9px;
+}
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
+  border-right: 4px solid #5868d9;
+  background: rgba(42, 50, 89, 0.5);
+}
+.lee-admin .themsBlack .lee-rightBar {
+  width: calc(100% - 150px);
+  height: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top {
+  width: 100%;
+  height: 50px;
+  background: #1f2438;
+  color: #fff;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
+  width: 240px;
+  padding: 0 20px;
+  float: left;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
+  line-height: 50px;
+  font-size: 14px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
+  float: right;
+  line-height: 50px;
+  padding-right: 25px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #5868d9;
+  background: #fff;
+  color: #5868d9;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot {
+  width: 100%;
+  height: calc(100% - 50px);
+  background: rgba(31, 36, 56, 0.95);
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
+  width: 100%;
+  height: 100%;
+  margin-top: -1px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
+  width: 150px;
+  height: 170px;
+  line-height: 25px;
+  background: rgba(70, 212, 186, 0.6);
+  position: absolute;
+  top: -1px;
+  right: 150px;
+  padding: 60px 0;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
+  font-size: 20px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
+  right: 0;
+  background: rgba(88, 104, 217, 0.6);
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  padding: 20px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all .lee-rbb-all-item:nth-child(2n) {
+  padding-right: 0;
+  padding-left: 20px;
+}
+/*lee-skin*/
+.lee-skin {
+  width: 350px;
+  background: #fff;
+  padding: 8px 0 8px 10px;
+  text-align: right;
+}
+.lee-skin li {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+}
+.lee-skin li span {
+  font-size: 14px;
+}
+/* scroll */
+::-webkit-scrollbar-track-piece {
+  background-color: #f8f8f8;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #dddddd;
+  background-clip: padding-box;
+  min-height: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
