@@ -240,22 +240,12 @@
   }
 }*/
 
-/* 模块样式 */
-.common{
-  width: 100%;
-  background: #fff;
-  padding: 5px 20px 0;
-}
+.fl{float: left;}
 
-.fl{
-  float: left;
-}
+.fr{float: right;}
 
-.fr{
-  float: right;
-}
-
-.lee-cards{
+/* 模块公共样式 */
+.lee-hy-item-cards{
   background: @color;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(26,26,26,.1);
@@ -266,70 +256,76 @@
   .border-radius(4px);
 }
 
+/* 模块样式 */
 /*home*/
-.home{
-  .common;
-  table{
-    width: 100%;
-    border-collapse:collapse;
-    background: #fff;
-    tr{
-      th{
-        background: @bgColor;
-        height: 50px;
-        line-height: 50px;
-        padding-left: 10px;
-      }
-      td{
-        height: 50px;
-        line-height: 50px;
-        border-bottom: 1px solid @bgColor;
-        padding-left: 10px;
-        .progress{
-          width: 75%;
-          //margin: 0 auto;
-        }
-        img{
-          width: 40px;
-          height: 40px;
-          border: 1px solid @borderColor;
-          .border-radius(50%);
-        }
-      }
-    }
-  }
-  h4{
-    text-align: left;
-    border-left: 4px solid #F86C6B;
-    padding-left: 5px;
-    margin: 20px 0 ;
-  }
-  .step{
-    .ant-steps{
-      background: #fff;
-    }
-  }
-  .times{
-    background: #fff;
-    .ant-timeline-item-content{
+.lee-home{
+  width: 100%;
+  color: @fontColor5;
+  .lee-home-card {
+    .lee-hy-item-cards;
+    h4 {
       text-align: left;
+      border-left: 4px solid #F86C6B;
+      padding-left: 5px;
+      margin: 20px 0;
     }
-  }
-  .tabs{
-    background: #fff;
-    text-align: left;
-    font-size: 14px;
-    .tab-title{
-      color: #87d068;
-      font-weight: bold;
-      margin-right: 5px;
-      width: 50px;
-      display: inline-block;
+    .step {
+      .ant-steps {
+        background: #fff;
+      }
     }
-    .tab-r {
-      display: inline-block;
-      .ant-tag-purple{
-        margin: 10px 5px;
+    .lee-home-times {
+      background: #fff;
+      .ant-timeline-item-content {
+        text-align: left;
+      }
+    }
+    .lee-home-tabs {
+      background: #fff;
+      text-align: left;
+      font-size: 14px;
+      .lee-home-tab-title {
+        color: #87d068;
+        font-weight: bold;
+        margin-right: 5px;
+        width: 50px;
+        display: inline-block;
+      }
+      .lee-home-tab-r {
+        display: inline-block;
+        .ant-tag-purple {
+          margin: 10px 5px;
+        }
+      }
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      tr {
+        th {
+          background: @themsColor;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 10px;
+          color: @color;
+        }
+        td {
+          height: 50px;
+          line-height: 50px;
+          border-bottom: 1px solid @borderColor2;
+          padding-left: 10px;
+          .progress {
+            width: 75%;
+            //margin: 0 auto;
+          }
+          img {
+            width: 40px;
+            height: 40px;
+            border: 1px solid @borderColor;
+            .border-radius(50%);
+          }
+        }
       }
     }
   }
@@ -347,12 +343,12 @@
         margin-left: 8px;
         margin-right: 0;
       }
-      .lee-card{
+      .lee-hy-item-card{
         h3{
           margin-bottom: 0;
           border-bottom: 2px solid #a0c101;
         }
-        .lee-card-con{
+        .lee-hy-item-card-con{
           padding: 20px;
         }
       }
@@ -495,7 +491,7 @@
     .wy-color3{color: #FEB50C;}
     .wy-color4{color: #FF0203;}
     .lee-wy-top-item{
-      .lee-cards;
+      .lee-hy-item-cards;
       width: 24%;
       float: left;
       margin-right: 1.33333%;
@@ -533,13 +529,13 @@
       width: 74.5%;
       display: inline-block;
       margin-right: 1.5%;
-      .lee-cards;
+      .lee-hy-item-cards;
     }
     .lee-wy-con-r{
       width: 24%;
       display: inline-block;
       vertical-align: top;
-      .lee-cards;
+      .lee-hy-item-cards;
       height: 380px;
       h4{
         color: @fontColor3;
@@ -586,7 +582,7 @@
       width: 49%;
       margin-right: 2%;
       float: left;
-      .lee-cards;
+      .lee-hy-item-cards;
       &:last-child{
         margin-right: 0;
       }
@@ -627,4 +623,114 @@
       }
     }
   }
+}
+
+.lee-hy{
+  -moz-column-count:2;
+  -webkit-column-count:2;
+  column-count:2;
+
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+  column-gap: 1em;
+
+  .lee-hy-item {
+    width: 100%;
+    float: left;
+
+    -moz-page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+
+    img{
+      width: 100%;
+      margin-bottom:10px;
+    }
+
+    .lee-hy-item-card{
+      width: 100%;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(26,26,26,.1);
+      //box-sizing: border-box;
+      font-size: @fontSize;
+      .border-radius(4px);
+      .lee-hy-item-card-title{
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        background: @themsColor;
+        color: @fontColor;
+        font-size: 14px;
+        span{
+          font-size: @fontSize;
+        }
+        .lee-hy-item-card-title-text{
+          font-size: 12px;
+          margin-left: 10px;
+        }
+        .lee-hy-item-card-op-r{
+          float: right;
+          color: @color;
+          font-size: 14px;
+          cursor: pointer;
+          i{
+            padding-left: 7px;
+            font-size: 12px;
+          }
+        }
+      }
+      .lee-hy-item-card-con{
+        background: @color;
+        color: @fontColor2;
+        font-size: 14px;
+        .lee-hy-item-card-con-text{
+          .lee-hy-item-card-con-text-title{
+            background: @themsColor;
+            background: -webkit-linear-gradient(left,rgba(@themsColor,.3), rgba(@themsColor,1)); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right,rgba(@themsColor,.3), rgba(@themsColor,1)); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, rgba(@themsColor,.3), rgba(@themsColor,1)); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, rgba(@themsColor,.3), rgba(@themsColor,1)); /* 标准的语法 */
+            color: @color;
+            padding: 20px;
+            &>span{
+              width: 30px;
+              font-size: 18px;
+              display: inline-block;
+            }
+            &>div{
+              display: inline-block;
+              width: calc(100% - 30px);
+              vertical-align: text-top;
+              p{
+                margin-bottom: 3px;
+                .anticon{
+                  margin-right: 10px;
+                }
+                span{
+                  margin-left: 20px;
+                }
+              }
+            }
+          }
+          .lee-hy-item-card-con-text-li{
+            padding: 10px 20px;
+            .anticon{
+              margin-right: 15px;
+            }
+          }
+        }
+
+        .lee-hy-item-input{
+          padding-bottom: 20px;
+          .lee-hy-form{
+            .ant-form-item{
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }

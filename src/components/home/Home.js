@@ -91,68 +91,76 @@ class Home extends Component {
 		//tabs
 		const { tags, inputVisible, inputValue } = this.state;
 		return (
-			<div className="content">
-				<div className="home">	
-					<h4>当前学习知识点进度</h4>
-					<div className="times">
-						<Timeline pending={<a href="#">See more</a>}>
-						  <Timeline.Item>react-router+react-router-dom 路由操作</Timeline.Item>
-						  <Timeline.Item>react+antd 页面布局</Timeline.Item>
-						  <Timeline.Item>react基础知识</Timeline.Item>
-						</Timeline>
-					</div>
-					<h4>当前学习知识点tabs</h4>
-					<div className="tabs">
-						<span className="tab-title">tabs：</span>
-						<div className="tab-r">
-							{tags.map((tag, index) => {
-								const isLongTag = tag.length > 20;
-								const tagElem = (
-									<Tag key={tag} closable={index !== 0} afterClose={() => this.handleClose(tag)} color="purple">
-									{isLongTag ? `${tag.slice(0, 20)}...` : tag}
-									</Tag>
-									);
-								return isLongTag ? <Tooltip title={tag}>{tagElem}</Tooltip> : tagElem;
-							})}
-							{inputVisible && (
-								<Input
-								ref={this.saveInputRef}
-								type="text"
-								size="small"
-								style={{ width: 78 }}
-								value={inputValue}
-								onChange={this.handleInputChange}
-								onBlur={this.handleInputConfirm}
-								onPressEnter={this.handleInputConfirm}
-								/>
-								)}
-							{!inputVisible && <Button size="small" type="dashed" onClick={this.showInput}>+ New Tag</Button>}
+			<div className="lee-rbb-all">
+				<div className="lee-home">
+					<div className="lee-home-card">
+						<h4>当前学习知识点进度</h4>
+						<div className="lee-home-times">
+							<Timeline pending={<a href="#">See more</a>}>
+							  <Timeline.Item>react-router+react-router-dom 路由操作</Timeline.Item>
+							  <Timeline.Item>react+antd 页面布局</Timeline.Item>
+							  <Timeline.Item>react基础知识</Timeline.Item>
+							</Timeline>
+						</div>
+                    </div>
+
+                    <div className="lee-home-card">
+						<h4>当前学习知识点tabs</h4>
+						<div className="lee-home-tabs">
+							<span className="lee-home-tab-title">tabs：</span>
+							<div className="lee-home-tab-r">
+								{tags.map((tag, index) => {
+									const isLongTag = tag.length > 20;
+									const tagElem = (
+										<Tag key={tag} closable={index !== 0} afterClose={() => this.handleClose(tag)} color="purple">
+										{isLongTag ? `${tag.slice(0, 20)}...` : tag}
+										</Tag>
+										);
+									return isLongTag ? <Tooltip title={tag}>{tagElem}</Tooltip> : tagElem;
+								})}
+								{inputVisible && (
+									<Input
+									ref={this.saveInputRef}
+									type="text"
+									size="small"
+									style={{ width: 78 }}
+									value={inputValue}
+									onChange={this.handleInputChange}
+									onBlur={this.handleInputConfirm}
+									onPressEnter={this.handleInputConfirm}
+									/>
+									)}
+								{!inputVisible && <Button size="small" type="dashed" onClick={this.showInput}>+ New Tag</Button>}
+							</div>
 						</div>
 					</div>
-					<h4>技术概览</h4>
-					<table>
-						<thead>
-							<tr>
-								<th style={{width:'20%'}}>图片</th>
-								<th style={{width:'10%'}}>技术</th>
-								<th style={{width:'20%'}}>熟练度</th>
-								<th style={{width:'60%'}}>知识点</th>
-							</tr>
-						</thead>
-						<tbody>					
-							{
-								scienceList.map((e,index) => {
-									return <tr key={index}>
-												<td style={{width:'20%'}}>{e.imgs}</td>
-												<td style={{width:'10%'}}>{e.science}</td>
-												<td style={{width:'20%'}}>{e.deep}</td>
-												<td style={{width:'60%'}}>{e.ability}</td>
-											</tr>
-																		
-								})
-							}
-						</tbody>
-					</table>
+
+                    <div className="lee-home-card">
+						<h4>技术概览</h4>
+						<table>
+							<thead>
+								<tr>
+									<th style={{width:'20%'}}>图片</th>
+									<th style={{width:'10%'}}>技术</th>
+									<th style={{width:'20%'}}>熟练度</th>
+									<th style={{width:'60%'}}>知识点</th>
+								</tr>
+							</thead>
+							<tbody>
+								{
+									scienceList.map((e,index) => {
+										return <tr key={index}>
+													<td style={{width:'10%'}}>{e.imgs}</td>
+													<td style={{width:'20%'}}>{e.science}</td>
+													<td style={{width:'30%'}}>{e.deep}</td>
+													<td style={{width:'50%'}}>{e.ability}</td>
+												</tr>
+
+									})
+								}
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 			)

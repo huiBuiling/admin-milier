@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { Icon } from 'antd';
 import BarImg from '../../containers/Bar/RightTopBar';
+import ConferenceFroms from './ConferenceFrom'
 
 /**
  * 会议
@@ -15,48 +16,72 @@ export default class Conference extends Component {
 	}
 
 	render() {
-		const { iconX } = this.state;
 		return (
 		    <div>
                 <BarImg />
-                <div className="lee-rbb-all">
-                    <div className="lee-rbb-all-item">
-                        <div className="lee-card">
-                            <div className="lee-card-title">
-                                <span>会议纪要</span>
-                            </div>
-                            <div className="lee-card-con">
-                                <div className="lee-card-con-text">
-                                    <div className="lee-card-con-text-title">
-                                        <span><Icon type="notification" /></span>
-                                        <div>
-                                            <p>OA原型评审</p>
-                                            <p>1号会议室，研发部全体成员</p>
-                                            <p>请各位成员准时参与！</p>
+                <div className="lee-rbb-all" style={{width:'100%',margin: '0 auto'}}>
+                    <div className="lee-hy">
+                        <div className="lee-hy-item">
+                            <div className="lee-hy-item-card">
+                                <div className="lee-hy-item-card-title">
+                                    <span>会议室申请记录</span>
+                                </div>
+                                <div className="lee-hy-item-card-con">
+                                    <div className="lee-hy-item-card-con-text">
+                                        <div className="lee-hy-item-card-con-text-title">
+                                            <span><Icon type="reconciliation" theme="outlined" /></span>
+                                            <div>
+                                                <p>空闲会议室</p>
+                                                <p><Icon type="environment" theme="outlined" />1号会议室-506室<span>申请人数：<em style={{color:'red'}}>0</em></span></p>
+                                                <p><Icon type="environment" theme="outlined" />2号会议室-403室<span>申请人数：3</span></p>
+                                                <p><Icon type="environment" theme="outlined" />5号会议室-302室<span>申请人数：5</span></p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="lee-card-con-text-li">
-                                        <p><Icon type="calendar" />会议时间：2017年4月12日 14：00：16：00</p>
-                                        <p><Icon type="environment" />会议地点：1号会议室</p>
-                                        <p><Icon type="paper-clip" />会议主题：OA原型评审</p>
-                                        <p><Icon type="user" />会议主持：阿牛</p>
+                                        <div className="lee-hy-item-card-con-text-li">
+                                            <p><Icon type="calendar" />申请时间：2018-09-26</p>
+                                            <p><Icon type="environment" />申请地点：3号会议室</p>
+                                            <p><Icon type="user" />申请人：阿牛</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="lee-rbb-all-item">
-                        <div className="lee-card">
-                            <div className="lee-card-title">
-                                <span>你的titlexxxxxxxxxxxx</span>
-                                <span className="red lee-card-title-text">温馨提示：xxxxxxxxxxxxx</span>
-                                <span className="lee-card-op-r" onClick={()=>{this.setState({iconX:!iconX})}}>
-                                        {iconX ? '收缩':'展开'}<Icon type={iconX ? 'down':'up'}/>
-                                </span>
+
+                        <div className="lee-hy-item">
+                            <div className="lee-hy-item-card">
+                                <div className="lee-hy-item-card-title">
+                                    <span>会议纪要</span>
+                                </div>
+                                <div className="lee-hy-item-card-con">
+                                    <div className="lee-hy-item-card-con-text">
+                                        <div className="lee-hy-item-card-con-text-title">
+                                            <span><Icon type="notification" /></span>
+                                            <div>
+                                                <p>OA 数据模型评审</p>
+                                                <p>3号会议室，研发部全体成员</p>
+                                                <p>请各位成员准时于6：00参与！</p>
+                                            </div>
+                                        </div>
+                                        <div className="lee-hy-item-card-con-text-li">
+                                            <p><Icon type="calendar" />会议时间：2018-09-27 14：00 - 16：00</p>
+                                            <p><Icon type="environment" />会议地点：3号会议室</p>
+                                            <p><Icon type="paper-clip" />会议主题：数据模型评审</p>
+                                            <p><Icon type="user" />会议主持：阿牛</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="lee-card-con">
-                                <div className="stu-zcbd-con" style={{display:iconX ? 'block':'none'}}>
-                                    {/*要放置的内容 eg:*/}
+                        </div>
+
+                        <div className="lee-hy-item">
+                            <div className="lee-hy-item-card">
+                                <div className="lee-hy-item-card-title">
+                                    <span>会议录入</span>
+                                </div>
+                                <div className="lee-hy-item-card-con">
+                                    <div className="lee-hy-item-input">
+                                        <ConferenceFroms />
+                                    </div>
                                 </div>
                             </div>
                         </div>
