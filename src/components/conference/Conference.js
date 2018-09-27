@@ -2,7 +2,10 @@ import React,{Component} from 'react'
 import { Icon } from 'antd';
 import BarImg from '../../containers/Bar/RightTopBar';
 
-export default class Index extends Component {
+/**
+ * 会议
+ */
+export default class Conference extends Component {
 
 	constructor(props) {
 		super(props);

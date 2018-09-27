@@ -13,7 +13,7 @@ class LeaveFooter extends Component {
 	}
 	render() {
 		return (
-			<div className="leave-footer">
+			<div className="lee-leave-footer">
 				<input type="checkbox" checked={this.props.isAllChecked} onChange={this.handlerAllState.bind(this)} />
 				<span>{this.props.currentCount}已读/{this.props.totalCount}</span>
 				<Button onClick={this.handlerClear.bind(this)} >清空已读留言</Button>

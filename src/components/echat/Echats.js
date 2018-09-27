@@ -1,15 +1,11 @@
 import React,{ Component } from 'react';
-import {Breadcrumb} from 'antd'
-import echarts from 'echarts'
-import ReactEcharts from 'echarts-for-react'
 import 'echarts/map/js/china.js'
 
 import BubbleEchat from './BubbleEchat'
-import LineEchat from './LineEchat'
 import ColumnarEchat from './ColumnarEchat'
 import PieEchat from './PieEchat'
 
-import MapEchat from './MapEchat'
+
 import RadarEchat from './RadarEchat'
 
 /**
@@ -19,7 +15,6 @@ import RadarEchat from './RadarEchat'
  * 3. 柱状图 columnar
  * 4. 饼状图 pie
  * 5. 雷达图 radar
- * 6. 小地图 map
  */
 export default class Echat extends Component {
     constructor(props){
@@ -27,11 +22,9 @@ export default class Echat extends Component {
         this.state={
             component:[
                 {type:BubbleEchat,name:'气泡图'},
-                {type:LineEchat,name:'折线图'},
                 {type:ColumnarEchat,name:'柱状图'},
                 {type:PieEchat,name:'饼状图'},
-                {type:RadarEchat,name:'雷达图'},
-                {type:MapEchat,name:'小地图',isAll:true}
+                {type:RadarEchat,name:'雷达图',/*isAll:true*/},
             ]
         }
     }
@@ -40,7 +33,7 @@ export default class Echat extends Component {
         const { component } = this.state;
         return (
               <div className="lee-rbb-all">
-                    <div className="echat">
+                    <div className="lee-echat">
                           <ul>
                               {component.map(item =>{
                                   let Component = item.type;

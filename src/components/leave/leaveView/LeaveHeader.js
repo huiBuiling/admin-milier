@@ -34,7 +34,7 @@ class LeaveHeader extends Component {
 
 	render() {
 		return (
-			<div className="leave-header">
+			<div className="lee-leave-header">
                 <Search
                     placeholder="请输入您的可爱昵称"
                     enterButton="提交"

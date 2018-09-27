@@ -7,24 +7,33 @@ export default class LineEchat extends Component {
   lineEchat = {
         title: {
             text: '未来一周气温变化',
-            subtext: '纯属虚构'
+            textStyle:{
+                color:'#aaa',
+                fontStyle:'normal',
+                fontWeight:'normal',
+                fontSize:'16'
+            },
         },
         tooltip: {
             trigger: 'axis'
         },
         legend: {
-            data:['最高气温','最低气温']
+            right:'10%',
+            data: [
+                {
+                    name: '最高气温',
+                    icon: 'circle'
+                },
+                {
+                    name: '最低气温',
+                    icon: 'circle'
+                }
+            ]
         },
         toolbox: {
             show: true,
             feature: {
-                dataZoom: {
-                    yAxisIndex: 'none'
-                },
-                dataView: {readOnly: false},
                 magicType: {type: ['line', 'bar']},
-                restore: {},
-                saveAsImage: {}
             }
         },
         xAxis:  {
@@ -42,6 +51,11 @@ export default class LineEchat extends Component {
             {
                 name:'最高气温',
                 type:'line',
+                color: "#FC9DB2", //line tooltip color
+                lineStyle: { //line color
+                    color: "#FA5071"
+                },
+                smooth: true,
                 data:[11, 11, 15, 13, 12, 13, 10],
                 markPoint: {
                     data: [
@@ -58,6 +72,11 @@ export default class LineEchat extends Component {
             {
                 name:'最低气温',
                 type:'line',
+                color: "#9DC4FA", //折线图颜色,搭配markArea为面积图
+                lineStyle: { //折线的颜色
+                    color: "#3B9DFC"
+                },
+                smooth: true, //平滑处理
                 data:[1, -2, 2, 5, 3, 2, 0],
                 markPoint: {
                     data: [
@@ -90,8 +109,13 @@ export default class LineEchat extends Component {
 
   render() {
     return (
-      <div className="">
-          <ReactEcharts option={this.lineEchat} notMerge={true} lazyUpdate={true} />
+      <div>
+          <ReactEcharts
+              style={{width:'100%',height:'350px'}}
+              option={this.lineEchat}
+              notMerge={true}
+              lazyUpdate={true}
+          />
       </div>
     );
   }

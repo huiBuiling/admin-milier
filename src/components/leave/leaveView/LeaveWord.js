@@ -86,10 +86,10 @@ class LeaveWord extends Component {
 			totalCount: leaveList.length || 0,
 		}
 		return (
-			<div className="leave-edit">
+			<div className="lee-leave-edit">
 				<LeaveHeader addLeave={this.addLeave} />
 
-                <Timeline pending={<a href="#">See more</a>} className="leave-main">
+                <Timeline pending={<a href="#">See more</a>} className="lee-leave-main">
                     {leaveList.map((todo, index) => {
                         return <LeaveItem
 									key={index} {...todo}

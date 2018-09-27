@@ -4,7 +4,9 @@
 
 @fontColor:@color;
 @fontColor2:#616161;
-//@fontColor2:rgb(83,83,83);
+@fontColor3:#aaa;
+@fontColor4:#000;
+@fontColor5:#707070;
 
 @fontSize:14px;
 @fontSize2:12px;
@@ -245,6 +247,25 @@
   padding: 5px 20px 0;
 }
 
+.fl{
+  float: left;
+}
+
+.fr{
+  float: right;
+}
+
+.lee-cards{
+  background: @color;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(26,26,26,.1);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: @fontSize;
+  .border-radius(4px);
+}
+
 /*home*/
 .home{
   .common;
@@ -314,8 +335,8 @@
   }
 }
 
-/*echat*/
-.echat{
+/*lee-echat*/
+.lee-echat{
   width: 100%;
   ul{
     li{
@@ -339,14 +360,14 @@
   }
 }
 
-/*Leave*/
-.leave{
+/*lee-leave*/
+.lee-leave{
   width: 100%;
   height: 100%;
   background: #fff;
   overflow: hidden;
   .border-radius(2px);
-  .leave-l{
+  .lee-leave-l{
     width: 250px;
     height: 100%;
     display: inline-block;
@@ -370,14 +391,14 @@
       }
     }
   }
-  .leave-r{
+  .lee-leave-r{
     width: calc(100% - 250px);
     display: inline-block;
     padding: 10px;
     vertical-align: top;
 
-    /*leave*/
-    .leave-edit{
+    /*lee-leave*/
+    .lee-leave-edit{
       input[type=checkbox]{
         border: none;
         -webkit-appearance: none;
@@ -395,11 +416,11 @@
           background-size: 100% 100%;
         }
       }
-      .leave-header{
+      .lee-leave-header{
         background: #fff;
         padding: 10px 10px 20px;
       }
-      .leave-main{
+      .lee-leave-main{
         text-align: left;
         background: #fff;
         padding: 15px;
@@ -442,7 +463,7 @@
           }
         }
       }
-      .leave-footer{
+      .lee-leave-footer{
         background: #fff;
         text-align: left;
         padding: 10px 10px 20px 10px;
@@ -452,9 +473,9 @@
           color: #000;
         }
         .ant-btn {
-          color: #108ee9;
+          color: #0891ff;
           background-color: #fff;
-          border-color: #108ee9;
+          border-color: #0891ff;
           padding: 0 5px;
           position: absolute;
           right: 10px;
@@ -465,3 +486,145 @@
   }
 }
 
+/*lee Tenement*/
+.lee-wy{
+  color: @fontColor5;
+  .lee-wy-top{
+    .wy-color{color: #67A8FF;}
+    .wy-color2{color: #0FB7CF;}
+    .wy-color3{color: #FEB50C;}
+    .wy-color4{color: #FF0203;}
+    .lee-wy-top-item{
+      .lee-cards;
+      width: 24%;
+      float: left;
+      margin-right: 1.33333%;
+      padding: 25px 50px;
+      &:last-child{
+        margin-right: 0;
+      }
+      .lee-wy-top-item-l{
+        padding: 6px 0 0;
+        .anticon{
+          font-size: 40px;
+          font-weight: normal;
+        }
+      }
+      .lee-wy-top-item-r{
+        h3{
+          text-align: center;
+          font-size: @fontSize;
+          color: @fontColor2;
+          margin-bottom: 0;
+        }
+        p{
+          font-size: @fontSize20;
+          text-align: center;
+          font-weight: bold;
+          margin-bottom: 0;
+          line-height: 35px;
+        }
+      }
+    }
+  }
+  .lee-wy-con{
+    clear: both;
+    .lee-wy-con-l{
+      width: 74.5%;
+      display: inline-block;
+      margin-right: 1.5%;
+      .lee-cards;
+    }
+    .lee-wy-con-r{
+      width: 24%;
+      display: inline-block;
+      vertical-align: top;
+      .lee-cards;
+      height: 380px;
+      h4{
+        color: @fontColor3;
+        font-size: @fontSize6;
+        margin-bottom: 10px;
+      }
+      &>div{
+        width: 100%;
+        text-align: center;
+        height: 295px;
+        padding-top: 50px;
+        .ant-progress-circle-path{
+          stroke: #6AAAFE;
+        }
+        .lee-wy-con-r-pro{
+          p{
+            margin: 0 0 10px 0;
+            font-size: 1em;
+          }
+        }
+      }
+      .lee-wy-con-r-title{
+        width: 100%;
+        span{
+          color: @fontColor4;
+          display: inline-block;
+          &:first-child{
+            width: 60%;
+          }
+          em{
+            width: 15px;
+            height: 15px;
+            background: #67A8FF;
+            display: inline-block;
+            vertical-align: sub;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  .lee-wy-bot{
+    .lee-wy-bot-item{
+      width: 49%;
+      margin-right: 2%;
+      float: left;
+      .lee-cards;
+      &:last-child{
+        margin-right: 0;
+      }
+      h4{
+        color: @fontColor3;
+        font-size: @fontSize;
+        margin-bottom: 10px;
+      }
+      ul{
+        width: 100%;
+        li{
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 10px;
+          &.pending{
+            span:last-child{
+              color: #67A8FF;
+            }
+          }
+          &.active{
+            background: #F0F7FF;
+            span:last-child{
+              color: red;
+            }
+          }
+          span{
+            display: inline-block;
+            width: calc((100% - 160px)/2);
+            &:first-child{
+              width: 100px;
+            }
+            &:last-child{
+              width: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

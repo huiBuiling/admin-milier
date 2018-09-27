@@ -39,8 +39,8 @@ class Leave extends Component{
       const { LeaveList } = this.state;
       return (
           <div className="lee-rbb-all">
-              <div className="leave">
-                  <div className="leave-l">
+              <div className="lee-leave">
+                  <div className="lee-leave-l">
                       <Input placeholder="Search"  />
                       <ul>
                           {
@@ -56,7 +56,7 @@ class Leave extends Component{
                           }
                       </ul>
                   </div>
-                  <div className="leave-r">
+                  <div className="lee-leave-r">
                       <LeaveView />
                   </div>
               </div>
