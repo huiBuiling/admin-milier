@@ -1,12 +1,12 @@
 import React,{Component} from 'react'
 import { Progress,Timeline,Tag, Input, Tooltip, Button } from 'antd';
 
-import html from '../../assert/images/html.jpg'
-import jquery from '../../assert/images/jquery.jpg'
-import bootstrap from '../../assert/images/bootstrap.jpg'
-import vue from '../../assert/images/vue.jpg'
-import react from '../../assert/images/react.jpg'
-import angular from '../../assert/images/angular.jpg'
+import html from '../../assert/images/home/html.jpg'
+import jquery from '../../assert/images/home/jquery.jpg'
+import bootstrap from '../../assert/images/home/bootstrap.jpg'
+import vue from '../../assert/images/home/vue.jpg'
+import react from '../../assert/images/home/react.jpg'
+import angular from '../../assert/images/home/angular.jpg'
 
 
 // table列表

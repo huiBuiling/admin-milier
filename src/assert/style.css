@@ -197,7 +197,7 @@
   float: right;
 }
 /* 模块公共样式 */
-.lee-hy-item-cards {
+.lee-cards {
   background: #fff;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
@@ -295,6 +295,152 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+/*picture and music*/
+.lee-image {
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+  column-gap: 1em;
+}
+.lee-image .lee-image-item {
+  padding: 1em;
+  margin: 0 0 1em 0;
+  -moz-page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  border: 1px solid #000;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.lee-image .lee-image-item img {
+  width: 100%;
+}
+.lee-image .lee-image-item h4 {
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 8px;
+}
+.lee-image .lee-image-item p {
+  font-size: 14px;
+  color: #000;
+}
+.lee-image .lee-image-item .lee-music {
+  color: #5868d9;
+}
+.lee-image .lee-image-item .lee-music .lee-music-audio {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.lee-image .lee-image-item .lee-music > div .anticon {
+  width: 50px;
+  text-align: left;
+  font-size: 25px;
+  cursor: pointer;
+}
+.lee-image .lee-image-item .lee-music .lee-music-l {
+  width: 150px;
+  float: left;
+}
+.lee-image .lee-image-item .lee-music .lee-music-l .prev-no,
+.lee-image .lee-image-item .lee-music .lee-music-l .next-no {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
+.lee-image .lee-image-item .lee-music .lee-music-r {
+  width: 50px;
+  float: right;
+  color: #EB2F96;
+}
+.lee-image .lee-image-item .lee-music .lee-music-r .anticon {
+  text-align: right;
+}
+/*bottom music bar*/
+.lee-music-bar {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  background: #fff;
+  border-top: 1px solid #D9D9D9;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.lee-music-bar .lee-image-item {
+  width: 100%;
+  height: 80px;
+}
+.lee-music-bar .lee-image-item img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 20px;
+}
+.lee-music-bar .lee-image-item .lee-music {
+  width: calc(100% - 100px);
+  height: 80px;
+  float: left;
+  color: #5868d9;
+}
+.lee-music-bar .lee-image-item .lee-music .lee-music-audio {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.lee-music-bar .lee-image-item .lee-music .lee-music-l {
+  width: auto;
+  float: left;
+}
+.lee-music-bar .lee-image-item .lee-music .lee-music-l .lee-music-l-top h4 {
+  font-size: 14px;
+  color: #000;
+  margin-top: 8px;
+}
+.lee-music-bar .lee-image-item .lee-music .lee-music-l .lee-music-l-bot .anticon {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background: #5868d9;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 15px;
+}
+.lee-music-bar .lee-image-item .lee-music .lee-music-l .lee-music-l-bot .prev-no,
+.lee-music-bar .lee-image-item .lee-music .lee-music-l .lee-music-l-bot .next-no {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
+.lee-music-bar .lee-image-item .lee-music .lee-music-r {
+  width: 50px;
+  float: right;
+  line-height: 80px;
+  color: #EB2F96;
+}
+.lee-music-bar .lee-image-item .lee-music .lee-music-r .anticon {
+  width: 50px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+}
 /*lee-echat*/
 .lee-echat {
   width: 100%;
@@ -303,6 +449,18 @@
   width: calc(50% - 8px);
   float: left;
   margin-right: 8px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 .lee-echat ul li:nth-child(2n) {
   margin-left: 8px;
@@ -310,7 +468,6 @@
 }
 .lee-echat ul li .lee-hy-item-card h3 {
   margin-bottom: 0;
-  border-bottom: 2px solid #a0c101;
 }
 .lee-echat ul li .lee-hy-item-card .lee-hy-item-card-con {
   padding: 20px;

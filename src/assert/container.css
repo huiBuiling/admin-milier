@@ -6,81 +6,12 @@
 /*top bar user bg*/
 /*li active*/
 /*start*/
-/*.lee-card{
-  margin-bottom: 20px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(26,26,26,.1);
-  box-sizing: border-box;
-  font-size: @fontSize;
-  .border-radius(4px);
-  .lee-card-title{
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    background: @themsColor;
-    color: @fontColor;
-    font-size: 14px;
-    span{
-      font-size: @fontSize;
-    }
-    .lee-card-title-text{
-      font-size: 12px;
-      margin-left: 10px;
-    }
-    .lee-card-op-r{
-      float: right;
-      color: @color;
-      font-size: 14px;
-      cursor: pointer;
-      i{
-        padding-left: 7px;
-        font-size: 12px;
-      }
-    }
-  }
-  .lee-card-con{
-    background: @color;
-    color: @fontColor2;
-    font-size: 14px;
-    .lee-card-con-text{
-      .lee-card-con-text-title{
-        background: @themsColor;
-        background: -webkit-linear-gradient(left,rgba(@themsColor,.3), rgba(@themsColor,1)); !* Safari 5.1 - 6.0 *!
-        background: -o-linear-gradient(right,rgba(@themsColor,.3), rgba(@themsColor,1)); !* Opera 11.1 - 12.0 *!
-        background: -moz-linear-gradient(right, rgba(@themsColor,.3), rgba(@themsColor,1)); !* Firefox 3.6 - 15 *!
-        background: linear-gradient(to right, rgba(@themsColor,.3), rgba(@themsColor,1)); !* 标准的语法 *!
-        color: @color;
-        padding: 20px;
-        &>span{
-          width: 30px;
-          font-size: 18px;
-          display: inline-block;
-        }
-        &>div{
-          display: inline-block;
-          width: calc(100% - 30px);
-          vertical-align: text-top;
-          p{
-            margin-bottom: 3px;
-          }
-        }
-      }
-      .lee-card-con-text-li{
-        padding: 10px 20px;
-        .anticon{
-          margin-right: 15px;
-        }
-      }
-    }
-  }
-}*/
 * {
   margin: 0;
   padding: 0;
 }
 body {
   font-size: 14px;
-  font-family: "微软雅黑";
   font-style: normal;
 }
 a {
@@ -280,6 +211,11 @@ textarea {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
+  color: #fff;
+  font-size: 18px;
+}
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -333,15 +269,6 @@ textarea {
 }
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   padding: 20px;
-  /*.lee-rbb-all-item {
-              width: 50%;
-              float: left;
-              padding-right: 20px;
-              &:nth-child(2n) {
-                padding-right: 0;
-                padding-left: 20px;
-              }
-            }*/
 }
 .lee-admin .themsPurpleGHOST .lee-leftBar {
   width: 150px;
@@ -440,6 +367,11 @@ textarea {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
+  color: #fff;
+  font-size: 18px;
+}
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -493,15 +425,6 @@ textarea {
 }
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   padding: 20px;
-  /*.lee-rbb-all-item {
-              width: 50%;
-              float: left;
-              padding-right: 20px;
-              &:nth-child(2n) {
-                padding-right: 0;
-                padding-left: 20px;
-              }
-            }*/
 }
 .lee-admin .themsGreen .lee-leftBar {
   width: 150px;
@@ -598,6 +521,11 @@ textarea {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
+  color: #fff;
+  font-size: 18px;
+}
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -651,15 +579,6 @@ textarea {
 }
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   padding: 20px;
-  /*.lee-rbb-all-item {
-              width: 50%;
-              float: left;
-              padding-right: 20px;
-              &:nth-child(2n) {
-                padding-right: 0;
-                padding-left: 20px;
-              }
-            }*/
 }
 .lee-admin .themsGreenGHOST .lee-leftBar {
   width: 150px;
@@ -758,6 +677,11 @@ textarea {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
+  color: #fff;
+  font-size: 18px;
+}
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -811,15 +735,6 @@ textarea {
 }
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   padding: 20px;
-  /*.lee-rbb-all-item {
-              width: 50%;
-              float: left;
-              padding-right: 20px;
-              &:nth-child(2n) {
-                padding-right: 0;
-                padding-left: 20px;
-              }
-            }*/
 }
 .lee-admin .themsPink .lee-leftBar {
   width: 150px;
@@ -917,6 +832,11 @@ textarea {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
+  color: #fff;
+  font-size: 18px;
+}
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -970,15 +890,6 @@ textarea {
 }
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   padding: 20px;
-  /*.lee-rbb-all-item {
-              width: 50%;
-              float: left;
-              padding-right: 20px;
-              &:nth-child(2n) {
-                padding-right: 0;
-                padding-left: 20px;
-              }
-            }*/
 }
 .lee-admin .themsBlack .lee-leftBar {
   width: 150px;
@@ -1075,6 +986,11 @@ textarea {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
+  color: #fff;
+  font-size: 18px;
+}
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -1128,15 +1044,6 @@ textarea {
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   padding: 20px;
-  /*.lee-rbb-all-item {
-              width: 50%;
-              float: left;
-              padding-right: 20px;
-              &:nth-child(2n) {
-                padding-right: 0;
-                padding-left: 20px;
-              }
-            }*/
 }
 /*lee-skin*/
 .lee-skin {

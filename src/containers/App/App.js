@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon,Input,Badge,Menu, Dropdown } from 'antd';
+import { Link } from 'react-router-dom'
 
 import LeftBar from '../Bar/LeftBar'
 import RightBar from '../Bar/RightBar'
@@ -71,9 +72,6 @@ class App extends Component {
                         }
                     })
                 }
-                {/*<Menu.Item>
-                    <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
-                </Menu.Item>*/}
             </Menu>
         );
 		return(
@@ -113,6 +111,11 @@ class App extends Component {
 										<Icon type="skin" />
 									</Dropdown>
 								</div>
+                                <div className="span">
+                                    <Badge dot>
+										<Link to='/home:image'><Icon type="picture" theme="outlined" /></Link>
+                                    </Badge>
+                                </div>
 							</div>
 						</div>
                         <RightBar />
