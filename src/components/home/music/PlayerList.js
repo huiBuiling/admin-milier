@@ -101,13 +101,10 @@ export default class PlayerList extends Component {
                 }
 			],
 
-            currentMusic:-1,
-            isPlay:false,
-            minute:0,
-            second:0,
-            currentMinute:0,
-            currentSecond:0
-
+            currentMusic:-1,  //当前播放
+            isPlay:false,   //是否播放状态
+            allTime:'00：00',  //总时长
+            currentTime:'00：00'  //播放时长
 		};
 	}
 
@@ -141,12 +138,14 @@ export default class PlayerList extends Component {
                 second = "0" + second;
             }
 
+            let currentTime = `${minute} : ${second}`;
+
             if (flag == '1') {
-                this.setState({minute, second});
+                this.setState({allTime: currentTime});
             } else if (flag == '2') {
-                this.setState({currentMinute: minute, currentSecond: second});
+                this.setState({currentTime});
             } else if (flag == '3') {
-                return {minute, second};
+                return currentTime;
             }
 
 
@@ -220,7 +219,7 @@ export default class PlayerList extends Component {
 	render() {
 		let {
 		    list,isPlay, currentMusic,
-            minute, second, currentMinute, currentSecond
+            allTime, currentTime
 		} = this.state;
 		currentMusic = currentMusic == '-1' ? 0 : currentMusic;
 		return (
@@ -269,10 +268,8 @@ export default class PlayerList extends Component {
                         list={list}
                         current={currentMusic}
                         isPlay={isPlay}
-                        minute={minute}
-                        second={second}
-                        currentMinute={currentMinute}
-                        currentSecond={currentSecond}
+                        allTime={allTime}
+                        currentTime={currentTime}
 
                         audio={this.refs[`audio${currentMusic}`]}
 

@@ -206,7 +206,7 @@ export default class HomeMusic extends Component {
                                </div>
                     })}
 				</div>
-                {currentMusic != '-1' ?
+                {/*{currentMusic != '-1' ?
                     <div className="lee-music-bar">
                         <PlayerBar
                             list={list}
@@ -220,7 +220,7 @@ export default class HomeMusic extends Component {
                         />
                     </div>
                     :
-                    null}
+                    null}*/}
 			</div>
 			)
 	}

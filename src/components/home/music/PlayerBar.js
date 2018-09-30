@@ -14,7 +14,7 @@ export default class PlayerBar extends Component {
 	render() {
 		const {
 		    list, current, isPlay,
-            minute, second,currentMinute,currentSecond,audio,
+            allTime, currentTime, audio,
             pause, play, prev, next
 		} = this.props;
 		const currentMusic = list[current];
@@ -23,7 +23,6 @@ export default class PlayerBar extends Component {
 		if(audio != undefined) {
            percent = (audio.currentTime / audio.duration) * 100;
         }
-        // console.log('yes' + percent)
 
         const pauseCurrent = isPlay ? (percent == 100 ? false : true) : false;
 		return (
@@ -70,7 +69,7 @@ export default class PlayerBar extends Component {
                                     <div style={{ width: 170,display: 'inline-block' }}>
                                         <Progress
                                             percent={percent}
-                                            format={percent => `${currentMinute}：${currentSecond}/${minute}：${second}`}
+                                            format={percent => `${currentTime} / ${allTime}`}
                                             size="small" status={percent == 100 ? 'success':'active'}
                                             successPercent
                                         />
