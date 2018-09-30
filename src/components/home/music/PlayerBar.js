@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Icon } from 'antd';
+import { Icon,Progress } from 'antd';
 
 /**
  * 底部音乐
@@ -12,8 +12,20 @@ export default class PlayerBar extends Component {
 	}
 
 	render() {
-		const { list, current, isPlay, pause, play, prev, next } = this.props;
+		const {
+		    list, current, isPlay,
+            minute, second,currentMinute,currentSecond,audio,
+            pause, play, prev, next
+		} = this.props;
 		const currentMusic = list[current];
+
+		let percent = 0;
+		if(audio != undefined) {
+           percent = (audio.currentTime / audio.duration) * 100;
+        }
+        // console.log('yes' + percent)
+
+        const pauseCurrent = isPlay ? (percent == 100 ? false : true) : false;
 		return (
 			<div className="lee-rbb-all">
 				<div className="lee-music-bar">
@@ -41,7 +53,7 @@ export default class PlayerBar extends Component {
                                     />
 
                                     {/*播放|暂停*/}
-                                    {isPlay ?
+                                    {pauseCurrent ?
                                         <Icon type="pause-circle" theme="outlined" onClick={pause}/>
                                         :
                                         <Icon type="play-circle" theme="outlined" onClick={play}/>
@@ -54,6 +66,15 @@ export default class PlayerBar extends Component {
                                         className={current == (list.length - 1)? 'next-no':null}
                                         onClick={next}
                                     />
+
+                                    <div style={{ width: 170,display: 'inline-block' }}>
+                                        <Progress
+                                            percent={percent}
+                                            format={percent => `${currentMinute}：${currentSecond}/${minute}：${second}`}
+                                            size="small" status={percent == 100 ? 'success':'active'}
+                                            successPercent
+                                        />
+                                    </div>
                                 </div>
                             </div>
 

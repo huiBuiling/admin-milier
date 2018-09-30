@@ -14,82 +14,72 @@ export default class PlayerList extends Component {
 			list:[
 				{
 					url:'img01',
-					title:'清脆好听的钢琴声音',
+					title:'多喜欢你',
                     collect:true,
-                    musicUrl:'http://ydown.smzy.com/yinpin/2016-12/smzy_2016121308.mp3',
-					singer:'不知道',
-                    time:'04:23'
+                    musicUrl:'http://mp3.9ku.com/hot/2011/12-13/461514.mp3',
+					singer:'小贱',
 				},
                 {
                     url:'img02',
-                    title:'我的祖国红色',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-11/smzy_2017111611.mp3',
-                    singer:'不知道',
-                    time:'04:23'
+                    title:'等一分钟',
+                    musicUrl:'http://mp3.9ku.com/m4a/79882.m4a',
+                    singer:'徐誉滕',
                 },
                 {
                     url:'img03',
-                    title:'节奏欢快的短乐器配乐声影视音效',
+                    title:'爱情里没有谁对谁错',
                     collect:true,
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-09/smzy_2017093009.mp3',
-                    singer:'不知道',
-                    time:'04:23'
+                    musicUrl:'http://mp3.9ku.com/m4a/88100.m4a',
+                    singer:'郑源',
                 },
                 {
                     url:'img04',
-                    title:'诙谐欢快的背景音乐',
+                    title:'陪你到终点',
                     collect:true,
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-11/smzy_2017111608.mp3',
-                    singer:'不知道',
-                    time:'04:23'
+                    musicUrl:'http://mp3.9ku.com/hot/2012/10-31/473195.mp3',
+                    singer:'孙子涵',
                 },
                 {
                     url:'img05',
-                    title:'古灵精怪幽默',
+                    title:'老地方的雨',
                     musicUrl:'http://ydown.smzy.com/yinpin/2018-8/smzy_2018082304.mp3',
-                    singer:'不知道',
-                    time:'04:23'
+                    singer:'陈瑞',
                 },
                 {
                     url:'img06',
-                    title:'Deep Forest黑森林音乐',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2014-6/smzy_2014060504.mp3',
-                    singer:'不知道'
+                    title:'没那么坚强',
+                    musicUrl:'http://mp3.9ku.com/m4a/212762.m4a',
+                    singer:'阿泱',
                 },
                 {
                     url:'img07',
-                    title:'欢快背景音乐',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2008-7/smzy_20087180352457.mp3',
-                    singer:'不知道',
-                    time:'04:23'
+                    title:'三生三世十里桃花',
+                    musicUrl:'http://8.isdown.com:82/g1219/music2013/20160525/n22.m4a',
+                    singer:'萌萌哒天团',
                 },
                 {
                     url:'img08',
-                    title:'清晨鸟叫声',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-4/smzy_2017041003.mp3',
-                    singer:'不知道',
-                    time:'04:23'
+                    title:'白芍花开',
+                    musicUrl:'http://8.isdown.com:82/g1219/music2013/20150408/11.m4a',
+                    singer:'张碧晨',
                 },
                 {
                     url:'img09',
-                    title:'小猫宝宝叫声',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2016-4/smzy_2016042602.mp3',
-                    singer:'不知道',
-                    time:'04:23'
+                    title:'在水中央(古筝)',
+                    musicUrl:'http://8.isdown.com:82/g1219/qingyinyue/zgyy/66/6/1.mp3',
+                    singer:'未知',
                 },
                 {
                     url:'img10',
-                    title:'抒情浪漫音乐',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2008-7/smzy_200871823712922.mp3',
+                    title:'小猫宝宝叫声',
+                    musicUrl:'http://ydown.smzy.com/yinpin/2016-4/smzy_2016042602.mp3',
                     singer:'不知道',
-                    time:'04:23'
                 },
                 {
                     url:'img11',
                     title:'猫叫声',
                     musicUrl:'http://ydown.smzy.com/yinpin/2016-4/smzy_2016042603.mp3',
                     singer:'不知道',
-                    time:'04:23'
                 },
                 {
                     url:'img12',
@@ -102,29 +92,64 @@ export default class PlayerList extends Component {
                     title:'清脆好听的鸟叫声',
                     musicUrl:'http://ydown.smzy.com/yinpin/2017-4/smzy_2017041003.mp3',
                     singer:'不知道',
-                    time:'04:23'
                 },
                 {
                     url:'img01',
                     title:'毛驴的叫声',
                     musicUrl:'http://ydown.smzy.com/yinpin/2017-3/smzy_2017032804.mp3',
                     singer:'不知道',
-                    time:'04:23'
                 }
 			],
 
             currentMusic:-1,
-            isPlay:false
+            isPlay:false,
+            minute:0,
+            second:0,
+            currentMinute:0,
+            currentSecond:0
+
 		};
 	}
 
 	//结束当前播放
     currentPause = ()=>{
         let currentIndex = this.state.currentMusic;
-        console.log('1. 结束当前播放: ' + currentIndex);
-
         if(currentIndex != -1) {
+            // console.log('1. 结束当前播放: ' + currentIndex);
             this.pause(currentIndex);
+        }
+    }
+
+    //或是总时长和播放时间
+    time = (flag,audio)=>{
+	    if(audio != undefined) {
+            //时长转换
+            let time, minute, second = 0;
+            if (flag == '1') {
+                time = audio.duration;
+            } else if (flag == '2') {
+                time = audio.currentTime;
+            }
+
+            minute = parseInt(time / 60);
+            second = Math.round(time % 60);
+
+            if (minute < 10) {
+                minute = "0" + minute;
+            }
+            if (second < 10) {
+                second = "0" + second;
+            }
+
+            if (flag == '1') {
+                this.setState({minute, second});
+            } else if (flag == '2') {
+                this.setState({currentMinute: minute, currentSecond: second});
+            } else if (flag == '3') {
+                return {minute, second};
+            }
+
+
         }
     }
 
@@ -132,28 +157,27 @@ export default class PlayerList extends Component {
 	play = (index)=>{
         //结束当前播放
         this.currentPause();
-
-        let refAudio = `audio${index}`;
-        let audio = this.refs[refAudio];
+        const audio = this.refs[`audio${index}`];
         audio.play();
-        this.setState({isPlay:true});
 
-        console.log('1. 播放: ' + index);
+        this.time(1,audio);  //获取总时长
+        this.time(2,audio);  //获取播放进度
+
+        this.setState({ isPlay:true });
+        // console.log('1. 播放: ' + index);
     }
 
     //暂停
     pause = (index)=>{
-        console.log('2. 暂停: ' + index);
-
-        let refAudio = `audio${index}`;
-        let audio = this.refs[refAudio];
+        // console.log('2. 暂停: ' + index);
+        const audio = this.refs[`audio${index}`];
         audio.pause();
         this.setState({isPlay:false})
     }
 
     // 播放
     playCurrent = (index)=>{
-        console.log('2. 点击播放: ' + index);
+        // console.log('2. 点击播放: ' + index);
 
         this.play(index);
         this.setState({currentMusic:index});
@@ -170,8 +194,7 @@ export default class PlayerList extends Component {
             this.setState({currentMusic:index});
             this.play(index);
 		}
-
-        console.log('下一首: ' + index);
+        // console.log('下一首: ' + index);
 	}
 
     //上一首
@@ -181,12 +204,25 @@ export default class PlayerList extends Component {
             this.setState({currentMusic:index});
             this.play(index);
         }
+        // console.log('上一首: ' + index);
+    }
 
-        console.log('上一首: ' + index);
+    componentDidMount(){
+	    this.state.list.map((item,index)=>{
+            const audio = this.refs[`audio${index}`];
+            const {minute, second} = this.time(3,audio);
+            item.minute = minute;
+            item.second = second;
+        });
+	    // console.log(this.state.list);
     }
 
 	render() {
-		const { list,currentMusic,isPlay } = this.state;
+		let {
+		    list,isPlay, currentMusic,
+            minute, second, currentMinute, currentSecond
+		} = this.state;
+		currentMusic = currentMusic == '-1' ? 0 : currentMusic;
 		return (
 			<div className="lee-rbb-all" style={{padding:0}}>
 				<div className="lee-player">
@@ -203,6 +239,7 @@ export default class PlayerList extends Component {
                     </div>
                     {list.map((item,index)=>{
                         const active = currentMusic == index ? 'active' : null;
+                        const audio = this.refs[`audio${index}`];
                         return <div className="lee-player-item" key={index}>
                                     <div className={`lee-player-item-music ${active}`} onClick={()=>this.playCurrent(index)}>
                                         <audio
@@ -211,6 +248,8 @@ export default class PlayerList extends Component {
                                                ref={`audio${index}`}
                                                preload="true"
                                                className="lee-music-audio"
+                                               onCanPlay={() => this.time(1,audio)}
+                                               onTimeUpdate={(e) => this.time(2,audio)}
                                         />
                                         <span className="lee-player-item-num">{index + 1}</span>
                                         {/*喜欢*/}
@@ -225,21 +264,24 @@ export default class PlayerList extends Component {
                                </div>
                     })}
 				</div>
-                {currentMusic != '-1' ?
-                    <div className="lee-music-bar">
-                            <PlayerBar
-                                list={list}
-                                current={currentMusic}
-                                isPlay={isPlay}
+                <div className="lee-music-bar">
+                    <PlayerBar
+                        list={list}
+                        current={currentMusic}
+                        isPlay={isPlay}
+                        minute={minute}
+                        second={second}
+                        currentMinute={currentMinute}
+                        currentSecond={currentSecond}
 
-                                pause={()=>this.pause(currentMusic)}
-                                play={()=>this.play(currentMusic)}
-                                next={()=>this.next(currentMusic)}
-                                prev={()=>this.prev(currentMusic)}
-                            />
-                        </div>
-                    :
-                    null}
+                        audio={this.refs[`audio${currentMusic}`]}
+
+                        pause={()=>this.pause(currentMusic)}
+                        play={()=>this.play(currentMusic)}
+                        next={()=>this.next(currentMusic)}
+                        prev={()=>this.prev(currentMusic)}
+                    />
+                </div>
             </div>
         )
 	}
