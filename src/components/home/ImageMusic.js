@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import { Icon } from 'antd';
-import PlayerBar from './PlayerBar'
+import PlayerBar from './music/PlayerBar'
 
 /**
  * Music
@@ -100,15 +100,26 @@ export default class HomeMusic extends Component {
                 }
 			],
 
-            pause:-1,
+            currentMusic:-1,
+            isPlay:false
 		};
 	}
 
+    //结束当前播放
+    currentPause = ()=>{
+        let currentIndex = this.state.currentMusic;
+        if(currentIndex != -1) {
+            this.pause(currentIndex);
+        }
+    }
+
 	//播放
 	play = (index)=>{
+	    this.currentPause();
         let refAudio = `audio${index}`;
         let audio = this.refs[refAudio];
         audio.play();
+        this.setState({isPlay:true});
     }
 
     //暂停
@@ -116,66 +127,47 @@ export default class HomeMusic extends Component {
         let refAudio = `audio${index}`;
         let audio = this.refs[refAudio];
         audio.pause();
+        this.setState({isPlay:false});
     }
 
     //下一首
     next = (index)=>{
-        let currentIndex = this.state.pause;
-        if(currentIndex != -1) {
-            this.pause(currentIndex);  //先结束当前播放
-        }
-
         if(index != (this.state.list.length - 1)){
         	if(index == -1){
                 index += 2;
             }else{
         		index ++;
 			}
+            this.setState({currentMusic:index});
             this.play(index);
-            this.setState({pause:index});
 		}
 	}
 
     //上一首
     prev = (index)=>{
-        let currentIndex = this.state.pause;
-        this.pause(currentIndex);  //先结束当前播放
-
-        if(index != (this.state.list.length - 1)){
+        if(index > 0){
             index--;
+            this.setState({currentMusic:index});
             this.play(index);
-            this.setState({pause:index});
         }
         this.play(index);
     }
 
-    //点击
+    //点击播放
     handlerClick = (flag,index)=>{
-        let currentIndex = this.state.pause;
-        if(currentIndex != -1) {
-            this.pause(currentIndex);  //先结束当前播放
-        }
-
-        const { isPaused } = this.state;
 	    if(flag){
 	        //播放
-            this.setState({
-                pause:index,   //icon控制播放
-                // isPaused:true  //音乐播放
-            })
+            this.setState({currentMusic:index});
             this.play(index);
         }else{
 	        //暂停
-            this.setState({
-                pause:-1,   //icon控制暂停
-                // isPaused:false  //音乐暂停
-            })
+            this.setState({currentMusic:-1});
             this.pause(index);
         }
     }
 
 	render() {
-		const { list,pause,isPrev,isNext } = this.state;
+		const { list,currentMusic,isPlay } = this.state;
 		return (
 			<div className="lee-rbb-all">
 				<div className="lee-image">
@@ -197,14 +189,14 @@ export default class HomeMusic extends Component {
                                                className="lee-music-audio"
                                         />
                                         <div className="lee-music-l">
-											<Icon type="caret-left" theme="outlined" onClick={()=>this.prev(index)} className={isPrev || index == 0 ? 'prev-no':null}/>
+											<Icon type="caret-left" theme="outlined" onClick={()=>this.prev(index)} className={index == 0 ? 'prev-no':null}/>
                                             {/*播放|暂停*/}
-                                            {pause == index ?
+                                            {currentMusic == index ?
                                                 <Icon type="pause-circle" theme="outlined" onClick={()=>this.handlerClick(false,index)}/>
                                                 :
                                                 <Icon type="play-circle" theme="outlined" onClick={()=>this.handlerClick(true,index)}/>
                                             }
-                                            <Icon type="caret-right" theme="outlined" onClick={()=>this.next(index)} className={isPrev || index == (list.length - 1)? 'next-no':null}/>
+                                            <Icon type="caret-right" theme="outlined" onClick={()=>this.next(index)} className={index == (list.length - 1)? 'next-no':null}/>
                                         </div>
 
                                         <div className="lee-music-r">
@@ -214,9 +206,21 @@ export default class HomeMusic extends Component {
                                </div>
                     })}
 				</div>
-				<div className="lee-music-bar">
-                    <PlayerBar />
-				</div>
+                {currentMusic != '-1' ?
+                    <div className="lee-music-bar">
+                        <PlayerBar
+                            list={list}
+                            current={currentMusic}
+                            isPlay={isPlay}
+
+                            pause={()=>this.pause(currentMusic)}
+                            play={()=>this.play(currentMusic)}
+                            next={()=>this.next(currentMusic)}
+                            prev={()=>this.prev(currentMusic)}
+                        />
+                    </div>
+                    :
+                    null}
 			</div>
 			)
 	}

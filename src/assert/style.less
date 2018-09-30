@@ -470,6 +470,61 @@
   }
 }
 
+/*player list*/
+.lee-player{
+  .lee-player-item{
+    height: 40px;
+    line-height: 40px;
+    background: #FAFAFA;
+    color: #666666;
+    &:nth-child(2n){
+      background: #F5F5F7;
+    }
+    .lee-player-item-music{
+      padding: 0 15px;
+      cursor: pointer;
+      &.active{
+        background: #E3E3E5;
+      }
+      .lee-music-audio{
+        width: 100%;
+      }
+      span{
+        display: inline-block;
+      }
+      .lee-player-item-operation{
+        width: 60px;
+      }
+      .lee-player-item-num{
+        width: 30px;
+      }
+      .lee-player-item-heart{
+        width: 30px;
+        text-align: left;
+        color: rgb(205,41,41);
+      }
+      .lee-player-item-title{
+        width:calc(100% - 260px);
+        color: @fontColor4;
+      }
+      .lee-player-item-singer{
+        width: 150px;
+      }
+      .lee-player-item-time{
+        width: 50px;
+      }
+
+    }
+    .lee-player-item-music-t{
+      background: rgba(42,50,89,.7);
+      color: @fontColor;
+      .lee-player-item-title{
+        color: @fontColor !important;
+      }
+    }
+  }
+}
+
 /*lee-echat*/
 .lee-echat{
   width: 100%;

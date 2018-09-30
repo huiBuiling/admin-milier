@@ -166,6 +166,7 @@ textarea {
   height: 100%;
   color: #fff;
   overflow: hidden;
+  position: relative;
 }
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top {
   width: 100%;
@@ -320,6 +321,7 @@ textarea {
   height: 100%;
   color: #E9EEF1;
   overflow: hidden;
+  position: relative;
 }
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top {
   width: 100%;
@@ -476,6 +478,7 @@ textarea {
   height: 100%;
   color: #E9EEF1;
   overflow: hidden;
+  position: relative;
 }
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-top {
   width: 100%;
@@ -630,6 +633,7 @@ textarea {
   height: 100%;
   color: #E9EEF1;
   overflow: hidden;
+  position: relative;
 }
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top {
   width: 100%;
@@ -787,6 +791,7 @@ textarea {
   height: 100%;
   color: #535353;
   overflow: hidden;
+  position: relative;
 }
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-top {
   width: 100%;
@@ -941,6 +946,7 @@ textarea {
   height: 100%;
   color: #fff;
   overflow: hidden;
+  position: relative;
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top {
   width: 100%;

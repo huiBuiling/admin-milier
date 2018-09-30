@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import {Route,Link} from 'react-router-dom'
 
 import Home from "../../components/home/Home";
-import HomeImage from '../../components/home/Music'
+import HomeImage from '../../components/home/ImageMusic'
 import Echat from "../../components/echat/Echats";
 import Leave from "../../components/leave/Leave";
 import Map from '../../components/echat/MapEchat'
 import Conference from '../../components/conference/Conference'
 import Tenement from '../../components/tenement/Tenement'
+import PlayerList from '../../components/home/music/PlayerList'
 
 export default class RightBar extends Component {
     constructor(props){
@@ -21,6 +22,7 @@ export default class RightBar extends Component {
                 {path:'/map', component:Map},
                 {path:'/conference', component:Conference},
                 {path:'/tenement', component:Tenement},
+                {path:'/playerList', component:PlayerList},
             ]
         }
     }
