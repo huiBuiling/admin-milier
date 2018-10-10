@@ -26,28 +26,19 @@ export default class PlayerList extends Component {
     getCurrentUrl = (index,id)=>{
         axios.get(`http://localhost:4000/music/url?id=${id}`).then(res=>{
             if(res.status == 200){
-                this.play(index);
                 this.setState({currentUrl:res.data.data[0].url});
+                this.play(index);
             }
         })
     }
 
     // 喜欢音乐
-    live = (collect,id)=>{
-	    if(collect){   //当前为live状态，移除live
-            axios.get(`http://localhost:4000/fm_trash?id=${id}`).then(res=>{
-              if(res.code == 200){
-                  this.props.songList[id].collect = false;
-              }
-            })
-        }else{  //这是live
-            axios.get(`http://localhost:4000/like?id=${id}`).then(res=>{
-              if(res.code == 200){
-                  this.props.songList[id].collect = true;
-              }
-            })
-        }
-
+    live = (id)=>{
+        /*axios.get(`/like?id=${id}`).then(res=>{
+          if(res.status == 200){
+              this.props.songList[id].collect = true;
+          }
+        })*/
     }
 
 	//结束当前播放
@@ -116,8 +107,7 @@ export default class PlayerList extends Component {
 
     // 播放
     playCurrent = (index,id)=>{
-        this.getCurrentUrl(index,id);
-        this.setState({currentMusic:index});
+        this.setState({currentMusic:index},()=>this.getCurrentUrl(index,id));
     }
 
     //下一首
@@ -147,17 +137,18 @@ export default class PlayerList extends Component {
             item.minute = minute;
             item.second = second;
         });*/
+	    // this.pause(this.state.currentMusic);  //切换歌单后需保持停止
     }
 
     componentWillReceiveProps(){
-       /* if(this.props.playerNum != 0 && this.props.playerNum != undefined){
+        if(this.props.playerNum != 0 && this.props.playerNum != undefined){
             this.setState({
                 currentMusic:-1,
             })
             if(this.state.currentMusic != -1){
                 this.pause(this.state.currentMusic);  //切换歌单后需保持停止
             }
-        }*/
+        }
     }
 
 	render() {
@@ -234,7 +225,7 @@ export default class PlayerList extends Component {
                         audio={this.refs[`audio${currentMusic}`]}
 
                         pause={()=>this.pause(currentMusic)}
-                        play={()=>this.play(currentMusic)}
+                        play={()=>this.playCurrent(currentMusic,songList[currentMusic].id)}
                         next={()=>this.next(currentMusic)}
                         prev={()=>this.prev(currentMusic)}
                     />

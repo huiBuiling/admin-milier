@@ -69,7 +69,7 @@ export default class CloundPlayerList extends Component {
                     this.setState({
                         liveList: liveList,
                         playerNum:0
-                    },()=>this.setState({playerNum:0}));
+                    });
                 }
                 this.setState({
                     songList: songList,
@@ -77,7 +77,7 @@ export default class CloundPlayerList extends Component {
                     total:res.data.playlist.trackCount,
                     player:true,
                     playerNum:2
-                },()=>this.setState({playerNum:2}));
+                });
             }
         })
     }

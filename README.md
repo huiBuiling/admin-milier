@@ -25,9 +25,9 @@ antd + react 后台管理
 使用网易云接口：git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
 运行：set PORT=4000 && node app.js
 
-1. 用户登录：http://localhost:4000/login/cellphone?phone=xxx&password=xxx
-2. 获取喜欢的音乐，收藏和创建的歌单：http://localhost:4000/user/playlist?uid=xxxxxxxxx
-3. 对应歌单歌曲列表及根据喜欢列表设置喜欢：http://localhost:4000/playlist/detail?id=${id}
+1. 用户登录：/login/cellphone?phone=xxx&password=xxx
+2. 获取喜欢的音乐，收藏和创建的歌单：/user/playlist?uid=xxxxxxxxx
+3. 对应歌单歌曲列表及根据喜欢列表设置喜欢：/playlist/detail?id=${id}
    getSongList(flag, id)
 
 4. PLayerList:
@@ -50,7 +50,10 @@ antd + react 后台管理
 
 5. PlayerBar:操作
 
-6. 设置喜欢：
-   移除喜欢：
+6. 设置喜欢：/live?id=${id}
+   移除喜欢：/fm_trash?id=${id}
+
+7. 播放地址和时间未更新，但是图片和歌曲名是更新后的
+   设置为更新后，播放当前歌单列表的
 
 ```
