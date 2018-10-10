@@ -29,12 +29,7 @@ export default class PlayerBar extends Component {
 			<div className="lee-rbb-all">
 				<div className="lee-music-bar">
                     <div className="lee-image-item">
-                        {
-                            this.props.img ?
-                                <img src={currentMusic.url} alt=""/>
-                                :
-                                <img src={require(`../../../assert/images/img/${currentMusic.url}.jpg`)} alt=""/>
-                        }
+                        <img src={currentMusic.url} alt=""/>
                         <div className="lee-music">
                             <audio
                                 // controls   //显示原始样式

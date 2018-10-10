@@ -14,8 +14,7 @@ export default class LeftBar extends Component {
                 { path:'/map', icon:'global', title:'地图'},
                 { path:'/conference', icon:'team', title:'会议'},
                 { path:'/tenement', icon:'cluster', title:'物业'},
-                { path:'/playerList', icon:'customer-service', title:'音乐'},
-                { path:'/cloundPlayerList', icon:'customer-service', title:'网易'},
+                { path:'/cloundPlayerList', icon:'customer-service', title:'音乐'},
                 { path:'/zanding', icon:'paper-clip', title:'暂定'},
             ],
         }

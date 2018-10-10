@@ -11,67 +11,76 @@ export default class HomeMusic extends Component {
 		super(props);
 		this.state = {
 			list:[
-				{
-					url:'img01',
-					title:'清脆好听的钢琴声音',
+                {
+                    url:'img01',
+                    title:'多喜欢你',
                     collect:true,
-                    musicUrl:'http://ydown.smzy.com/yinpin/2016-12/smzy_2016121308.mp3',
-					desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
-				},
+                    musicUrl:'http://mp3.9ku.com/hot/2011/12-13/461514.mp3',
+                    singer:'小贱',
+                    desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
+                },
                 {
                     url:'img02',
-                    title:'我的祖国红色',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-11/smzy_2017111611.mp3',
+                    title:'等一分钟',
+                    musicUrl:'http://mp3.9ku.com/m4a/79882.m4a',
+                    singer:'徐誉滕',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img03',
-                    title:'节奏欢快的短乐器配乐声影视音效',
+                    title:'爱情里没有谁对谁错',
                     collect:true,
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-09/smzy_2017093009.mp3',
+                    musicUrl:'http://mp3.9ku.com/m4a/88100.m4a',
+                    singer:'郑源',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img04',
-                    title:'诙谐欢快的背景音乐',
+                    title:'陪你到终点',
                     collect:true,
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-11/smzy_2017111608.mp3',
+                    musicUrl:'http://mp3.9ku.com/hot/2012/10-31/473195.mp3',
+                    singer:'孙子涵',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img05',
-                    title:'古灵精怪幽默',
+                    title:'老地方的雨',
                     musicUrl:'http://ydown.smzy.com/yinpin/2018-8/smzy_2018082304.mp3',
+                    singer:'陈瑞',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img06',
-                    title:'Deep Forest黑森林音乐',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2014-6/smzy_2014060504.mp3',
+                    title:'没那么坚强',
+                    musicUrl:'http://mp3.9ku.com/m4a/212762.m4a',
+                    singer:'阿泱',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img07',
-                    title:'欢快背景音乐',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2008-7/smzy_20087180352457.mp3',
+                    title:'三生三世十里桃花',
+                    musicUrl:'http://8.isdown.com:82/g1219/music2013/20160525/n22.m4a',
+                    singer:'萌萌哒天团',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img08',
-                    title:'清晨鸟叫声',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2017-4/smzy_2017041003.mp3',
+                    title:'白芍花开',
+                    musicUrl:'http://8.isdown.com:82/g1219/music2013/20150408/11.m4a',
+                    singer:'张碧晨',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img09',
-                    title:'小猫宝宝叫声',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2016-4/smzy_2016042602.mp3',
+                    title:'在水中央(古筝)',
+                    musicUrl:'http://8.isdown.com:82/g1219/qingyinyue/zgyy/66/6/1.mp3',
+                    singer:'未知',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
                     url:'img10',
-                    title:'抒情浪漫音乐',
-                    musicUrl:'http://ydown.smzy.com/yinpin/2008-7/smzy_200871823712922.mp3',
+                    title:'小猫宝宝叫声',
+                    musicUrl:'http://ydown.smzy.com/yinpin/2016-4/smzy_2016042602.mp3',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 },
                 {
@@ -98,7 +107,7 @@ export default class HomeMusic extends Component {
                     musicUrl:'http://ydown.smzy.com/yinpin/2017-3/smzy_2017032804.mp3',
                     desc:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.'
                 }
-			],
+            ],
 
             currentMusic:-1,
             isPlay:false

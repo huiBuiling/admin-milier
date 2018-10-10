@@ -23,7 +23,6 @@ export default class RightBar extends Component {
                 {path:'/map', component:Map},
                 {path:'/conference', component:Conference},
                 {path:'/tenement', component:Tenement},
-                {path:'/playerList', component:PlayerList},
                 {path:'/cloundPlayerList', component:CloundPlayerList},
             ]
         }
