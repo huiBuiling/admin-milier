@@ -1,195 +1,16 @@
+/*字体图标*/
+[class^=icon-] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .text-overflow {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
-/*.app{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  .app-all{
-    width: 100%;
-    height: 100%;
-    .top {
-      width: 100%;
-      height: 55px;
-      line-height: 55px;
-      background: #FFFFFF;
-      color: @color_1;
-      position: fixed;
-      top: 0;
-      left: 0;
-      border-bottom: 1px solid @borderColor;
-      z-index: 999;
-      .logo {
-        width: 200px;
-        float: left;
-        display: inline-block;
-        img {
-          width: 120px;
-          height: 41px;
-          float: left;
-          margin: 7px 0;
-          padding-left: 20px;
-        }
-        .ant-switch{
-          cursor: pointer;
-          cursor: pointer;
-          opacity: 0;
-          width: 30px;
-          height: 55px;
-          float: right;
-        }
-        i {
-          font-size: 18px;
-          float: right;
-          margin-right: -40px;
-          line-height: 55px;
-        }
-      }
-      .menu {
-        float: left;
-        span {
-          margin: 0 10px;
-        }
-      }
-      .setting {
-        float: right;
-        margin-right: 20px;
-        >i {
-          margin: 0 20px;
-          font-size: 18px;
-        }
-      }
-      .mail {
-        .ant-badge {
-          i {
-            font-size: 20px;
-            margin: 0 20px;
-          }
-          .ant-badge-count {
-            min-width: 14px;
-            height: 14px;
-            line-height: 13px;
-            right: 20px;
-            top: 0;
-            font-size: 12px;
-            padding: 0;
-            .border-radius(50%);
-          }
-        }
-      }
-      .user {
-        .ant-badge {
-          .ant-avatar {
-            width: 38px;
-            height: 38px;
-            .border-radius(50%);
-          }
-        }
-      }
-      .ant-badge {
-        .ant-badge-dot {
-          top: 6px;
-          right: 2px;
-        }
-      }
-    }
-    .leftbar {
-      width: 200px;
-      position: fixed;
-      top: 56px;
-      height: 100%;;
-      .introduce {
-        padding: 40px 0 10px;
-        width: 200px;
-        background: @barColor;
-        //border-bottom: 1px solid @borderColor;
-        text-align: center;
-        img {
-          width: 80px;
-          height: 80px;
-          border: 1px solid @borderColor;
-          .border-radius(50%);
-        }
-        h3 {
-          color: @whiteColor;
-          padding: 30px 0 0;
-        }
-      }
-      .ant-menu {
-        width: 200px !important;
-        height: 100%;
-        background: @barColor !important;
-        .intro {
-          span {
-            font-size: 17px;
-            padding-left: 0 !important;
-            padding-right: 5px;
-          }
-        }
-      }
-      .ant-menu-inline {
-        .ant-menu-submenu-title {
-          padding-right: 10px;
-          height: 60px;
-          line-height: 60px;
-          font-size: 17px;
-        }
-        .ant-menu-item {
-          // padding-left: 20px !important;
-        }
-      }
-      .ant-menu.ant-menu-dark {
-        .ant-menu-item-selected {
-          background: #304047 !important;
-          border-right: 4px solid @themsColor;
-        }
-      }
-    }
-    .right{
-      margin-top: 55px;
-      width: calc(~"100% - 200px");
-      height: calc(~"100% - 55px");
-      margin-left: 200px;
-      background: #f0f2f5;
-      overflow: hidden;
-      .crumb{
-        !*background: #fff;
-        text-align: left;
-        line-height: 40px;
-        font-size: 16px;
-        padding-left: 15px;
-        z-index: 999;*!
-
-        background: #fff;
-        position: fixed;
-        top: 55px;
-        width: 100%;
-        height: 40px;
-        text-align: left;
-        line-height: 40px;
-        font-size: 16px;
-        padding-left: 15px;
-        z-index: 999;
-        .ant-breadcrumb-link{
-          .anticon{
-            font-size: 14px;
-          }
-        }
-      }
-      .content{
-        width: 100%;
-        //height: 100%;
-        height: calc(~"100% - 40px");
-        margin-top: 40px;
-        padding: 16px;
-        background: #f0f2f5;
-        overflow: auto;
-      }
-    }
-  }
-}*/
 .fl {
   float: left;
 }
@@ -297,9 +118,9 @@
 }
 /*picture and music*/
 .lee-image {
-  -moz-column-count: 3;
-  -webkit-column-count: 3;
-  column-count: 3;
+  -moz-column-count: 5;
+  -webkit-column-count: 5;
+  column-count: 5;
   -moz-column-gap: 1em;
   -webkit-column-gap: 1em;
   column-gap: 1em;
@@ -310,7 +131,6 @@
   -moz-page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   break-inside: avoid;
-  border: 1px solid #000;
   background: #fff;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
@@ -367,6 +187,168 @@
 .lee-image .lee-image-item .lee-music .lee-music-r .anticon {
   text-align: right;
 }
+@media screen and (max-width: 1440px) {
+  .lee-image {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .lee-image {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+@media screen and (max-width: 840px) {
+  .lee-image {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+/*clound player*/
+.lee-clound {
+  width: 100%;
+  height: calc(100% - 80px);
+  background: #FAFAFA;
+  overflow: hidden;
+}
+.lee-clound .lee-clound-l {
+  width: 230px;
+  height: 100%;
+  background: #F5F5F7;
+  display: inline-block;
+  color: #5C5C5C;
+  overflow: auto;
+  padding: 6px 0;
+}
+.lee-clound .lee-clound-l .ant-input-search {
+  margin: 0 10px 10px;
+  width: calc(100% - 20px);
+}
+.lee-clound .lee-clound-l h4 {
+  font-size: 15px;
+  line-height: 30px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.lee-clound .lee-clound-l h4 .anticon {
+  font-size: 13px;
+  float: right;
+  line-height: 30px;
+  color: #C4C4C5;
+}
+.lee-clound .lee-clound-l p {
+  font-size: 13px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  padding: 0 5px 0 25px;
+  line-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lee-clound .lee-clound-l p.active {
+  background: #E6E7EA;
+  color: #000;
+  border-left: 4px solid #5868d9;
+}
+.lee-clound .lee-clound-l p .anticon,
+.lee-clound .lee-clound-l p [class^=icon-] {
+  font-size: 13px;
+  margin-right: 7px;
+}
+.lee-clound .lee-clound-r {
+  width: calc(100% - 231px);
+  height: 100%;
+  overflow: auto;
+  display: inline-block;
+  vertical-align: top;
+}
+.lee-clound .lee-clound-r .lee-clound-r-t {
+  margin: 10px;
+  font-size: 16px;
+}
+.lee-clound .lee-clound-r .lee-clound-r-t span {
+  font-size: 12px;
+  margin-left: 20px;
+  color: #aaa;
+}
+/*player list*/
+.lee-player .lee-player-item {
+  height: 32px;
+  line-height: 32px;
+  background: #F5F5F7;
+  color: #666666;
+}
+.lee-player .lee-player-item:nth-child(2n) {
+  background: #FAFAFA;
+}
+.lee-player .lee-player-item .lee-player-item-music {
+  padding: 0 15px;
+  cursor: pointer;
+  height: 32px;
+  line-height: 32px;
+}
+.lee-player .lee-player-item .lee-player-item-music.active {
+  background: #E3E3E5;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-music-audio {
+  width: 100%;
+}
+.lee-player .lee-player-item .lee-player-item-music > span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-operation {
+  width: 60px;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-num {
+  width: 30px;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-heart {
+  width: 30px;
+  text-align: left;
+  color: #cd2929;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-title {
+  width: calc(100% - 170px - 40%);
+  color: #000;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-singer {
+  width: 20%;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-singer span {
+  position: relative;
+  left: 0;
+  margin: 0 3px;
+  /*&:after {
+            content: '/';
+            position: absolute;
+            left: 0;
+            width: 10px;
+          }
+          &:first-child:after{
+            content: '';
+          }*/
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-album {
+  width: 20%;
+}
+.lee-player .lee-player-item .lee-player-item-music .lee-player-item-time {
+  width: 50px;
+}
+.lee-player .lee-player-item .lee-player-item-music-t {
+  background: rgba(42, 50, 89, 0.7);
+  color: #fff;
+}
+.lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
+  color: #fff !important;
+}
 /*bottom music bar*/
 .lee-music-bar {
   width: 100%;
@@ -410,7 +392,7 @@
 .lee-music-bar .lee-image-item .lee-music .lee-music-l .lee-music-l-bot .anticon {
   width: 35px;
   height: 35px;
-  line-height: 35px;
+  line-height: 37px;
   background: #5868d9;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -433,64 +415,14 @@
   width: 50px;
   float: right;
   line-height: 80px;
-  color: #EB2F96;
+  color: #cd2929;
+  margin-right: 10px;
 }
 .lee-music-bar .lee-image-item .lee-music .lee-music-r .anticon {
   width: 50px;
   text-align: center;
   font-size: 25px;
   cursor: pointer;
-}
-/*player list*/
-.lee-player .lee-player-item {
-  height: 40px;
-  line-height: 40px;
-  background: #FAFAFA;
-  color: #666666;
-}
-.lee-player .lee-player-item:nth-child(2n) {
-  background: #F5F5F7;
-}
-.lee-player .lee-player-item .lee-player-item-music {
-  padding: 0 15px;
-  cursor: pointer;
-}
-.lee-player .lee-player-item .lee-player-item-music.active {
-  background: #E3E3E5;
-}
-.lee-player .lee-player-item .lee-player-item-music .lee-music-audio {
-  width: 100%;
-}
-.lee-player .lee-player-item .lee-player-item-music span {
-  display: inline-block;
-}
-.lee-player .lee-player-item .lee-player-item-music .lee-player-item-operation {
-  width: 60px;
-}
-.lee-player .lee-player-item .lee-player-item-music .lee-player-item-num {
-  width: 30px;
-}
-.lee-player .lee-player-item .lee-player-item-music .lee-player-item-heart {
-  width: 30px;
-  text-align: left;
-  color: #cd2929;
-}
-.lee-player .lee-player-item .lee-player-item-music .lee-player-item-title {
-  width: calc(100% - 260px);
-  color: #000;
-}
-.lee-player .lee-player-item .lee-player-item-music .lee-player-item-singer {
-  width: 150px;
-}
-.lee-player .lee-player-item .lee-player-item-music .lee-player-item-time {
-  width: 50px;
-}
-.lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
-  color: #fff;
-}
-.lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
-  color: #fff !important;
 }
 /*lee-echat*/
 .lee-echat {

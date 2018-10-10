@@ -29,7 +29,12 @@ export default class PlayerBar extends Component {
 			<div className="lee-rbb-all">
 				<div className="lee-music-bar">
                     <div className="lee-image-item">
-                        <img src={require(`../../../assert/images/img/${currentMusic.url}.jpg`)} alt=""/>
+                        {
+                            this.props.img ?
+                                <img src={currentMusic.url} alt=""/>
+                                :
+                                <img src={require(`../../../assert/images/img/${currentMusic.url}.jpg`)} alt=""/>
+                        }
                         <div className="lee-music">
                             <audio
                                 // controls   //显示原始样式
@@ -78,7 +83,7 @@ export default class PlayerBar extends Component {
                             </div>
 
                             <div className="lee-music-r">
-                                <Icon type="heart" theme={currentMusic.collect ? 'twoTone' : null} twoToneColor="rgba(205,41,41,.95)" />
+                                <Icon type="heart" theme={currentMusic.collect ? 'filled' : null} />
                             </div>
                         </div>
                     </div>

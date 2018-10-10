@@ -9,6 +9,7 @@ import Map from '../../components/echat/MapEchat'
 import Conference from '../../components/conference/Conference'
 import Tenement from '../../components/tenement/Tenement'
 import PlayerList from '../../components/home/music/PlayerList'
+import CloundPlayerList from '../../components/home/cloundMusic/CloundPlayerList'
 
 export default class RightBar extends Component {
     constructor(props){
@@ -23,6 +24,7 @@ export default class RightBar extends Component {
                 {path:'/conference', component:Conference},
                 {path:'/tenement', component:Tenement},
                 {path:'/playerList', component:PlayerList},
+                {path:'/cloundPlayerList', component:CloundPlayerList},
             ]
         }
     }

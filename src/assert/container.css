@@ -198,6 +198,9 @@ textarea {
   margin-right: 25px;
   cursor: pointer;
 }
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
+  margin-right: 10px;
+}
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
   width: 30px;
   height: 30px;
@@ -211,6 +214,18 @@ textarea {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
+  margin-right: 5px;
 }
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
@@ -269,6 +284,8 @@ textarea {
   background: rgba(88, 104, 217, 0.6);
 }
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
 .lee-admin .themsPurpleGHOST .lee-leftBar {
@@ -353,6 +370,9 @@ textarea {
   margin-right: 25px;
   cursor: pointer;
 }
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
+  margin-right: 10px;
+}
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
   width: 30px;
   height: 30px;
@@ -368,6 +388,18 @@ textarea {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
+  margin-right: 5px;
 }
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
@@ -426,6 +458,8 @@ textarea {
   background: rgba(88, 104, 217, 0.6);
 }
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
 .lee-admin .themsGreen .lee-leftBar {
@@ -510,6 +544,9 @@ textarea {
   margin-right: 25px;
   cursor: pointer;
 }
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
+  margin-right: 10px;
+}
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
   width: 30px;
   height: 30px;
@@ -523,6 +560,18 @@ textarea {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
+  margin-right: 5px;
 }
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
@@ -581,6 +630,8 @@ textarea {
   background: rgba(70, 212, 186, 0.6);
 }
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
 .lee-admin .themsGreenGHOST .lee-leftBar {
@@ -665,6 +716,9 @@ textarea {
   margin-right: 25px;
   cursor: pointer;
 }
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
+  margin-right: 10px;
+}
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
   width: 30px;
   height: 30px;
@@ -680,6 +734,18 @@ textarea {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
+  margin-right: 5px;
 }
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
@@ -738,6 +804,8 @@ textarea {
   background: rgba(102, 200, 212, 0.6);
 }
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
 .lee-admin .themsPink .lee-leftBar {
@@ -823,6 +891,9 @@ textarea {
   margin-right: 25px;
   cursor: pointer;
 }
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
+  margin-right: 10px;
+}
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
   width: 30px;
   height: 30px;
@@ -836,6 +907,18 @@ textarea {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
+  margin-right: 5px;
 }
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
@@ -894,6 +977,8 @@ textarea {
   background: rgba(250, 155, 193, 0.6);
 }
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
 .lee-admin .themsBlack .lee-leftBar {
@@ -978,6 +1063,9 @@ textarea {
   margin-right: 25px;
   cursor: pointer;
 }
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
+  margin-right: 10px;
+}
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
   width: 30px;
   height: 30px;
@@ -991,6 +1079,18 @@ textarea {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
+  margin-right: 5px;
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
@@ -1049,6 +1149,8 @@ textarea {
   background: rgba(88, 104, 217, 0.6);
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
 /*lee-skin*/

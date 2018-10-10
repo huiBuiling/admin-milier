@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Icon,Input,Badge,Menu, Dropdown } from 'antd';
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 import LeftBar from '../Bar/LeftBar'
 import RightBar from '../Bar/RightBar'
@@ -30,7 +31,10 @@ class App extends Component {
 				{ bgColor:'rgb(70,212,186)',color:'greenH',name:'绿',ghost:true},
 				{ bgColor:'rgb(250,155,193)',color:'pink',name:'粉'},
                 { bgColor:'rgb(67,66,69)',color:'black',name:'夜'}
-			]
+			],
+
+			name:null,
+            avatar:null
 		};
 	}
 
@@ -41,11 +45,25 @@ class App extends Component {
 		});
 	}
 
+	componentDidMount(){
+		axios.get('http://localhost:4000/login/cellphone?phone=13760845853&password=liuhuihui').then(res=>{
+            if(res.status == 200) {
+                this.setState({
+                    name: res.data.profile.nickname,
+                    avatar: res.data.profile.avatarUrl
+                })
+            }
+		})
+	}
+
 	
 
 	render() {
         const Search = Input.Search;
-        const { search,showSkin,skinColor,skinColorList, skin } = this.state;
+        const {
+        	search,showSkin,skinColor,skinColorList, skin,
+            name, avatar
+		} = this.state;
         const currentSkinColor = skinColorList[skinColor];
 
         const menu = (
@@ -95,26 +113,30 @@ class App extends Component {
 								</span>
 							</div>
 							<div className="lee-rightBar-top-r">
-								<div className="user">
-									<Icon type="user" />
-								</div>
-								<div className="span">
-									慧慧
-								</div>
-								<div className="span">
+								<div>
 									<Badge dot>
 										<Icon type="bell" />
 									</Badge>
 								</div>
-                                <div className="span">
+                                <div>
 									<Dropdown overlay={menu} trigger={['click']}>
 										<Icon type="skin" />
 									</Dropdown>
 								</div>
-                                <div className="span">
+                                <div>
                                     <Badge dot>
 										<Link to='/home:image'><Icon type="picture" theme="outlined" /></Link>
                                     </Badge>
+                                </div>
+                                <div className="user">
+                                    {avatar == null ?
+                                        <Icon type="user"/>
+                                        :
+                                        <img src={avatar} alt=""/>
+                                    }
+                                </div>
+                                <div className="name">
+                                    {name}
                                 </div>
 							</div>
 						</div>
