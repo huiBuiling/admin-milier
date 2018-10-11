@@ -1,9 +1,13 @@
 import React,{Component} from 'react'
 import { Icon,Progress } from 'antd';
+import { connect } from 'react-redux';
 
 /**
  * 底部音乐
  */
+@connect(
+    state=>state
+)
 export default class PlayerBar extends Component {
 
 	constructor(props) {
@@ -12,12 +16,13 @@ export default class PlayerBar extends Component {
 	}
 
 	render() {
+	    const { songList } = this.props.player;
 		const {
-		    list, current, isPlay,
-            allTime, currentTime, audio,
-            pause, play, prev, next
+		    audio, isPlay, current,
+            allTime, currentTime,
+            play, pause, prev, next
 		} = this.props;
-		const currentMusic = list[current];
+		const currentMusic = songList[current];
 
 		let percent = 0;
 		if(audio != undefined) {
@@ -31,13 +36,6 @@ export default class PlayerBar extends Component {
                     <div className="lee-image-item">
                         <img src={currentMusic.url} alt=""/>
                         <div className="lee-music">
-                            <audio
-                                // controls   //显示原始样式
-                                src={currentMusic.musicUrl}
-                                ref='audio'
-                                preload="true"
-                                className="lee-music-audio"
-                            />
                             <div className="lee-music-l">
                                 <div className="lee-music-l-top">
                                     {/*歌名*/}
@@ -62,11 +60,11 @@ export default class PlayerBar extends Component {
                                     <Icon
                                         type="caret-right"
                                         theme="outlined"
-                                        className={current == (list.length - 1)? 'next-no':null}
+                                        className={current == (songList.length - 1)? 'next-no':null}
                                         onClick={next}
                                     />
 
-                                    <div style={{ width: 170,display: 'inline-block' }}>
+                                    <div style={{ width: 200,display: 'inline-block' }}>
                                         <Progress
                                             percent={percent}
                                             format={percent => `${currentTime} / ${allTime}`}

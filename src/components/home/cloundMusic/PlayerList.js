@@ -8,12 +8,15 @@ import { connect } from 'react-redux';
  * PlayerList
  * 音乐列表
  */
+@connect(
+    state=>state
+)
 export default class PlayerList extends Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-            songList: this.props.songList,
+            // songList: this.props.player.songList,
 
             currentMusic:-1,  //当前播放
             isPlay:false,   //是否播放状态
@@ -27,8 +30,10 @@ export default class PlayerList extends Component {
     getCurrentUrl = (index,id)=>{
         axios.get(`http://localhost:4000/music/url?id=${id}`).then(res=>{
             if(res.status == 200){
-                this.setState({currentUrl:res.data.data[0].url});
-                this.play(index);
+                this.setState({
+                    currentUrl:res.data.data[0].url,
+                    currentMusic:index
+                },()=>this.play(index));
             }
         })
     }
@@ -54,19 +59,19 @@ export default class PlayerList extends Component {
     currentPause = ()=>{
         let currentIndex = this.state.currentMusic;
         if(currentIndex != -1) {
-            this.pause(currentIndex);
+            // this.pause(currentIndex);
+            const audio = this.refs[`audio${currentIndex}`];
+            audio.pause();
         }
     }
 
     //获取总时长和播放时间
-    time = (flag,audio)=>{
+    time = (flag,audio,isSet)=>{
 	    if(audio != undefined) {
             //时长转换
             let time, minute, second = 0;
             if (flag == '1') {
                 time = audio.duration;
-                // console.log('currentTime:' + audio.duration)
-
             } else if (flag == '2') {
                 time = audio.currentTime;
             }
@@ -83,15 +88,15 @@ export default class PlayerList extends Component {
 
             let currentTime = `${minute} : ${second}`;
 
-            if (flag == '1') {
-                this.setState({allTime: currentTime});
-            } else if (flag == '2') {
-                this.setState({currentTime});
-            } else if (flag == '3') {
+            if(isSet){
+                if (flag == '1') {
+                    this.setState({allTime: currentTime});
+                } else if (flag == '2') {
+                    this.setState({currentTime});
+                }
+            }else {
                 return currentTime;
             }
-
-
         }
     }
 
@@ -101,10 +106,14 @@ export default class PlayerList extends Component {
         this.currentPause();
         const audio = this.refs[`audio${index}`];
         audio.play();
-        this.time(1,audio);  //获取总时长
-        this.time(2,audio);  //获取播放进度
+        const allTime = this.time(1,audio,false);  //获取总时长
+        const currentTime = this.time(2,audio,false);  //获取播放进度
 
-        this.setState({ isPlay:true });
+        this.setState({
+            isPlay:true,
+            allTime,
+            currentTime
+        });
     }
 
     //暂停
@@ -116,13 +125,13 @@ export default class PlayerList extends Component {
 
     // 播放
     playCurrent = (index,id)=>{
-        this.setState({currentMusic:index},()=>this.getCurrentUrl(index,id));
+        this.getCurrentUrl(index,id);
     }
 
     //下一首
     next = (index)=>{
-	    let { songList } = this.state;
-        if(index != (this.state.list.length - 1)){
+	    let { songList } = this.props.player;
+        if(index != (songList.length - 1)){
         	if(index == -1){
                 index += 2;
             }else{
@@ -134,27 +143,22 @@ export default class PlayerList extends Component {
 
     //上一首
     prev = (index)=>{
+        let { songList } = this.props.player;
         if(index > 0){
             index--;
-            this.playCurrent(index,this.state.songList[index].id);
+            this.playCurrent(index,songList[index].id);
         }
     }
 
-    /*componentDidMount(){
-	    this.setState({
-            songList:this.props.songList
-	    });
-    }*/
-
     componentWillReceiveProps(){
 	    //切换歌单监听
-        if(this.props.playerNum != 0 && this.props.playerNum != undefined){
+        const { playerNum }  = this.props.player;
+        if(playerNum != 0 && playerNum != undefined){
             const audio = this.refs[`audio0`];
             this.time(1,audio);  //获取总时长
             this.time(2,audio);  //获取播放进度
             this.setState({
-                currentMusic:-1,
-                songList:this.props.songList
+                currentMusic:-1
             })
             if(this.state.currentMusic != -1){
                 this.pause(this.state.currentMusic);  //切换歌单后需保持停止
@@ -163,10 +167,15 @@ export default class PlayerList extends Component {
     }
 
 	render() {
-	    // let { songList} = this.props;
-		let { songList,isPlay, currentMusic,currentUrl, allTime, currentTime } = this.state;
+	    const { songList } = this.props.player;
+	    // console.log(this.props.player)
+		let {
+		    isPlay,
+            currentMusic,currentUrl,
+            allTime, currentTime
+		} = this.state;
 		currentMusic = currentMusic == '-1' ? 0 : currentMusic;
-
+        // debugger
 		return (
 			<div className="lee-rbb-all" style={{height: 'calc(100% - 80px)',padding:0}}>
 				<div className="lee-player">
@@ -191,19 +200,19 @@ export default class PlayerList extends Component {
                                     <div className={`lee-player-item-music ${active}`}>
                                         <audio
 											   // controls   //显示原始样式
-                                               src={this.props.songList ? currentUrl:item.musicUrl}
+                                               src={currentUrl}
                                                ref={`audio${index}`}
                                                preload="true"
                                                className="lee-music-audio"
-                                               onCanPlay={() => this.time(1,audio)}
-                                               onTimeUpdate={(e) => this.time(2,audio)}
+                                               onCanPlay={() => this.time(1,audio,true)}
+                                               onTimeUpdate={() => this.time(2,audio,true)}
                                         />
                                         <span className="lee-player-item-num">{index + 1}</span>
                                         {/*喜欢*/}
                                         <span>
                                             <Icon
                                                 className="lee-player-item-heart" type="heart" theme={item.collect ? 'filled' : null}
-                                                onClick={()=>this.live(collect,item.id)}
+                                                // onClick={()=>this.live(collect,item.id)}
                                             />
                                         </span>
                                         {/*歌名*/}
@@ -224,17 +233,18 @@ export default class PlayerList extends Component {
 				</div>
                 <div className="lee-music-bar">
                     {songList.length > 0 && <PlayerBar
-                        list={songList}
-
                         current={currentMusic}
+                        audio={this.refs[`audio${currentMusic}`]}
+
                         isPlay={isPlay}
+                        // allTime={this.time(1,currentMusic)}
+                        // currentTime={this.time(2,currentMusic)}
+
                         allTime={allTime}
                         currentTime={currentTime}
 
-                        audio={this.refs[`audio${currentMusic}`]}
-
-                        pause={()=>this.pause(currentMusic)}
                         play={()=>this.playCurrent(currentMusic,songList[currentMusic].id)}
+                        pause={()=>this.pause(currentMusic)}
                         next={()=>this.next(currentMusic)}
                         prev={()=>this.prev(currentMusic)}
                     />}

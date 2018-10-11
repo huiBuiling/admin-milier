@@ -65,5 +65,31 @@ antd + react 后台管理
    解决：Option key={item.id}
 
 9. 优化，使用redux
+   yarn add redux --dev
+   yarn add redux-thunk --dev
+   yarn add react-redux --dev
+
+   import { Provider } from 'react-redux'
+   import { createStore, applyMiddleware, compose } from 'redux';
+   import  thunk  from 'redux-thunk'
+   import { BrowserRouter,Switch } from 'react-router-dom';
+   import reducer from './reducer/reducers'
+
+   const store = createStore(reducer,compose(
+       applyMiddleware(thunk),
+       window.devToolsExtension ? window.devToolsExtension():f=>f
+   ))
+   ReactDOM.render(
+       <Provider store={store}>
+           <BrowserRouter>
+               <Switch>
+                   <App />
+               </Switch>
+           </BrowserRouter>
+       </Provider>
+   	, document.getElementById('root')
+   );
+
+
 
 ```
