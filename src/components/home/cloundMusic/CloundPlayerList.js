@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
-import { Icon,Input } from 'antd';
-import PlayerList from  '../music/PlayerList'
+import { Icon,Select } from 'antd';
+import PlayerList from './PlayerList'
 import axios from 'axios'
 
 /**
@@ -19,6 +19,7 @@ export default class CloundPlayerList extends Component {
             songList:[],        //对应歌单歌曲列表
             musicUrlList:[],    //对应歌单列表MP3地址
             liveList:[],        //喜欢的音乐列表
+            searchList:[],      //搜索列表
             current:null,       //当前选中歌单
             total:0,            //歌单数量
             liveId:0,
@@ -68,7 +69,7 @@ export default class CloundPlayerList extends Component {
                     //获取音乐列表
                     this.setState({
                         liveList: liveList,
-                        playerNum:0
+                        playerNum:1
                     });
                 }
                 this.setState({
@@ -82,17 +83,67 @@ export default class CloundPlayerList extends Component {
         })
     }
 
+    //获取歌曲
+    onChange=(val)=>{
+        console.log(`selected ${val}`);
+        let currentSearchList = [];
+        let searchList = this.state.searchList;
+        searchList.map(item=>{
+            let current = {};
+            let liveList = this.state.liveList;
+            current.id = item.id;
+            current.url = item.artists[0].img1v1Url;  //照片
+            current.title = item.name;  //音乐名
+            current.singer = [];  //歌手
+            item.artists.map(itemA =>{
+                current.singer.push({name:itemA.name});
+            })
+            current.album = item.album.name;   //专辑
+            liveList.filter(itemL=>{
+                if(itemL == item.id){
+                    current.collect = true;
+                }
+            });
+            currentSearchList.push(current);
+        })
+        this.setState({
+            searchVal:val,
+            songList:currentSearchList
+        })
+    }
+
+    //搜索歌曲
+    onSearch=(val)=>{
+        console.log(`selected ${val}`);
+        axios.get(`http://localhost:4000/search?keywords=${val}`).then(res=>{
+            if(res.data.code == 200){
+                console.log(res.data.result.songs)
+                this.setState({
+                    searchList:res.data.result.songs
+                })
+            }
+        })
+    }
+
 	render(){
-	    const Search = Input.Search;
-		const { list, songList, liveId, total, player, playerNum, current,playlistIcon, playlistIcon2 } = this.state;
+        const Option = Select.Option;
+		const { list, songList, searchList, liveId, total, player, playerNum, current,playlistIcon, playlistIcon2 } = this.state;
 		return (
 			<div className="lee-rbb-all" style={{padding:0}}>
 				<div className="lee-clound">
                     <div className="lee-clound-l">
-                        <Search
-                            placeholder="input search text"
-                            onSearch={this.search}
-                        />
+                        <Select
+                            showSearch
+                            placeholder="请输入内容"
+                            optionFilterProp="children"
+                            onChange={(val)=>this.onChange(val)}
+                            onSearch={(val)=>this.onSearch(val)}
+                        >
+                            {searchList.map(item=>{
+                                    return <Option key={item.id}>{item.name}</Option>
+                                })
+                            }
+                        </Select>
 
                         <h4 onClick={()=>this.setState({playlistIcon:!playlistIcon})}>创建的歌单<Icon type={playlistIcon ? 'down':'right'} /></h4>
                         <div style={{display:playlistIcon ? 'block':'none'}}>
@@ -125,10 +176,10 @@ export default class CloundPlayerList extends Component {
 
                         </div>
                         <h5 className="lee-clound-r-t">歌曲列表<span>歌曲数{total}</span></h5>
-                        {player ?<PlayerList
+                        {player && <PlayerList
                                     songList={songList}
                                     playerNum={playerNum}
-                                />:null}
+                                />}
                     </div>
                 </div>
             </div>

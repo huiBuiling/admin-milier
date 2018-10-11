@@ -8,7 +8,7 @@ import Leave from "../../components/leave/Leave";
 import Map from '../../components/echat/MapEchat'
 import Conference from '../../components/conference/Conference'
 import Tenement from '../../components/tenement/Tenement'
-import PlayerList from '../../components/home/music/PlayerList'
+import PlayerList from '../../components/home/cloundMusic/PlayerList'
 import CloundPlayerList from '../../components/home/cloundMusic/CloundPlayerList'
 
 export default class RightBar extends Component {

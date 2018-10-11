@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import { Icon } from 'antd';
-import PlayerBar from './music/PlayerBar'
+import PlayerBar from './cloundMusic/PlayerBar'
 
 /**
  * Music

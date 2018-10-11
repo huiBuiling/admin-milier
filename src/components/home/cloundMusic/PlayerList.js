@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import { Icon } from 'antd';
 import PlayerBar from './PlayerBar'
-import axios from 'axios'
+import axios from 'axios';
+import { connect } from 'react-redux';
 
 /**
  * PlayerList
@@ -12,7 +13,7 @@ export default class PlayerList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			list: [],
+            songList: this.props.songList,
 
             currentMusic:-1,  //当前播放
             isPlay:false,   //是否播放状态
@@ -32,13 +33,21 @@ export default class PlayerList extends Component {
         })
     }
 
-    // 喜欢音乐
-    live = (id)=>{
-        /*axios.get(`/like?id=${id}`).then(res=>{
-          if(res.status == 200){
-              this.props.songList[id].collect = true;
-          }
-        })*/
+    // 喜欢音乐 （暂未实现）
+    live = (collect,id)=>{
+	    if(collect){   //移除live
+            axios.get(`http://localhost:4000/fm_trash?id=${id}`).then(res=>{
+              if(res.status == 200){
+                  this.state.songList[id].collect = false;
+              }
+            })
+        }else{  //设置live
+            axios.get(`http://localhost:4000/like?id=${id}`).then(res=>{
+              if(res.status == 200){
+                  this.state.songList[id].collect = true;
+              }
+            })
+        }
     }
 
 	//结束当前播放
@@ -112,13 +121,14 @@ export default class PlayerList extends Component {
 
     //下一首
     next = (index)=>{
+	    let { songList } = this.state;
         if(index != (this.state.list.length - 1)){
         	if(index == -1){
                 index += 2;
             }else{
         		index ++;
 			}
-			this.playCurrent(index,this.props.songList[index].id);
+			this.playCurrent(index,songList[index].id);
 		}
 	}
 
@@ -126,24 +136,25 @@ export default class PlayerList extends Component {
     prev = (index)=>{
         if(index > 0){
             index--;
-            this.playCurrent(index,this.props.songList[index].id);
+            this.playCurrent(index,this.state.songList[index].id);
         }
     }
 
-    componentDidMount(){
-	    /*this.state.list.map((item,index)=>{
-            const audio = this.refs[`audio${index}`];
-            const {minute, second} = this.time(3,audio);
-            item.minute = minute;
-            item.second = second;
-        });*/
-	    // this.pause(this.state.currentMusic);  //切换歌单后需保持停止
-    }
+    /*componentDidMount(){
+	    this.setState({
+            songList:this.props.songList
+	    });
+    }*/
 
     componentWillReceiveProps(){
+	    //切换歌单监听
         if(this.props.playerNum != 0 && this.props.playerNum != undefined){
+            const audio = this.refs[`audio0`];
+            this.time(1,audio);  //获取总时长
+            this.time(2,audio);  //获取播放进度
             this.setState({
                 currentMusic:-1,
+                songList:this.props.songList
             })
             if(this.state.currentMusic != -1){
                 this.pause(this.state.currentMusic);  //切换歌单后需保持停止
@@ -152,8 +163,8 @@ export default class PlayerList extends Component {
     }
 
 	render() {
-	    let { songList} = this.props;
-		let { isPlay, currentMusic,currentUrl, allTime, currentTime } = this.state;
+	    // let { songList} = this.props;
+		let { songList,isPlay, currentMusic,currentUrl, allTime, currentTime } = this.state;
 		currentMusic = currentMusic == '-1' ? 0 : currentMusic;
 
 		return (
@@ -169,7 +180,7 @@ export default class PlayerList extends Component {
                             {/*专辑*/}
                             <span className="lee-player-item-album">专辑</span>
                             {/*时长*/}
-                            <span className="lee-player-item-time">时间</span>
+                            {/*<span className="lee-player-item-time">时间</span>*/}
                         </div>
                     </div>
                     {songList.map((item,index)=>{
@@ -177,7 +188,7 @@ export default class PlayerList extends Component {
                         const audio = this.refs[`audio${index}`];
                         let collect = item.collect ? true :false;
                         return <div className="lee-player-item" key={index}>
-                                    <div className={`lee-player-item-music ${active}`} onClick={()=>this.playCurrent(index,item.id)}>
+                                    <div className={`lee-player-item-music ${active}`}>
                                         <audio
 											   // controls   //显示原始样式
                                                src={this.props.songList ? currentUrl:item.musicUrl}
@@ -196,25 +207,23 @@ export default class PlayerList extends Component {
                                             />
                                         </span>
                                         {/*歌名*/}
-                                        <span className="lee-player-item-title">{item.title}</span>
+                                        <span className="lee-player-item-title" onClick={()=>this.playCurrent(index,item.id)}>{item.title}</span>
                                         {/*歌手*/}
-                                        <span className="lee-player-item-singer">
-                                            {this.props.songList ?
-                                                item.singer.map((itemS,index)=>{return <span key={index}>{itemS.name}</span>})
-                                                :
-                                                item.singer
-                                            }
+                                        <span className="lee-player-item-singer" onClick={()=>this.playCurrent(index,item.id)}>
+                                            {item.singer.map((itemS,index)=>{
+                                                return <span key={index}>{itemS.name}</span>
+                                            })}
                                         </span>
                                         {/*专辑*/}
-                                        <span className="lee-player-item-album">{item.album}</span>
+                                        <span className="lee-player-item-album" onClick={()=>this.playCurrent(index,item.id)}>{item.album}</span>
                                         {/*时长*/}
-                                        <span className="lee-player-item-time">{item.time}</span>
+                                        {/*<span className="lee-player-item-time">{item.time}</span>*/}
                                     </div>
                                </div>
                     })}
 				</div>
                 <div className="lee-music-bar">
-                    <PlayerBar
+                    {songList.length > 0 && <PlayerBar
                         list={songList}
 
                         current={currentMusic}
@@ -228,7 +237,7 @@ export default class PlayerList extends Component {
                         play={()=>this.playCurrent(currentMusic,songList[currentMusic].id)}
                         next={()=>this.next(currentMusic)}
                         prev={()=>this.prev(currentMusic)}
-                    />
+                    />}
                 </div>
             </div>
         )
