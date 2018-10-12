@@ -2,8 +2,11 @@
  * 音乐
  */
 import axios from 'axios';
+
 const SONG_LIST = 'SONG_LIST';
 const SEARCH = 'SEARCH';
+const OLD_SONG_LIST = 'OLD_SONG_LIST';
+const CURRENT_ITEM = 'CURRENT_ITEM';
 
 let initState = {
 	songList:[],      //当前选中歌单->歌曲列表
@@ -11,6 +14,10 @@ let initState = {
 	currentId:null,   //当前选中歌单
 	total:0,           //当前选中歌单歌曲总数
     playNum:0,         //歌单切换标识
+    oldSongList:[],    //botBar 对应列表
+    currentId:null,    //歌曲id
+	currentIndex:0, //歌曲index
+    currentUrl:null,   //歌曲地址
 }
 
 //reducer
@@ -21,7 +28,7 @@ export function player(state = initState, action){
 				...state,
                 songList:action.payload.songList,
                 liveList:action.payload.liveList,
-                currentId:action.payload.currentId,
+                playlistId:action.payload.playlistId,
                 total:action.payload.total,
                 playNum:action.payload.playNum
 			}
@@ -30,6 +37,18 @@ export function player(state = initState, action){
 				...state,
                 songList:action.songList
 			}
+		case OLD_SONG_LIST:
+			return {
+				...state,
+				oldSongList:action.oldSongList
+			}
+		case CURRENT_ITEM:
+			return {
+				...state,
+				currentId:action.item.currentId,
+				currentIndex:action.item.currentIndex,
+                currentUrl:action.item.currentUrl
+			}
 		default:
 			return state;
 	}
@@ -37,8 +56,8 @@ export function player(state = initState, action){
 
 //action
 //songsList
-export function songsList(songList,liveList,currentId,total,playNum) {
-	return {type:SONG_LIST,payload:{songList,liveList,currentId,total,playNum}};
+export function songsList(songList,liveList,playlistId,total,playNum) {
+	return {type:SONG_LIST,payload:{songList,liveList,playlistId,total,playNum}};
 }
 
 export function getSongsList(flag,id) {
@@ -85,4 +104,45 @@ export function getSearchList(currentSearchList) {
 	return dispatch=>{
 		return dispatch(search(currentSearchList));
 	}
+}
+
+//播放列表
+export function playerSongList(oldSongList) {
+    return {type:OLD_SONG_LIST,oldSongList};
+}
+
+export function getOldSongList(id) {
+    return (dispatch,getState) =>{
+        const listItem = getState().player.songList.filter(item => item.id == id);
+        const oldSongList = getState().player.oldSongList;
+        if(oldSongList.filter(item => item.id == id).length < 1){
+            oldSongList.push(listItem[0]);
+            return dispatch(playerSongList(oldSongList));
+        }else{
+            console.log('已经存在')
+        }
+
+    }
+}
+
+//当前选中
+export function currentItem(item) {
+	return {type:CURRENT_ITEM,item};
+}
+
+export function getCurrentItem(item) {
+	return dispatch=>{
+		return dispatch(currentItem(item));
+	}
+}
+
+//获取之前的选中
+export function getOldCurrentItem() {
+    return (dispatch,getState)=>{
+        const { currentId, currentUrl} = getState().player;
+    	const currentIndex = '-1';
+    	const item = { currentId, currentIndex, currentUrl};
+    	console.log(currentId)
+        return dispatch(currentItem(item));
+    }
 }

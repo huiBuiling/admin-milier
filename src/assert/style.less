@@ -215,6 +215,7 @@
 
     }
   }
+
 }
 
 @media screen and(max-width: 1440px) {
@@ -244,7 +245,7 @@
 /*clound player*/
 .lee-clound{
   width: 100%;
-  height: calc(100% - 80px);
+  height: calc(100% - 60px);
   background: #FAFAFA;
   overflow: hidden;
   .lee-clound-l{
@@ -333,6 +334,8 @@
       }
       &>span{
         display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
         .text-overflow;
       }
       .lee-player-item-operation{
@@ -389,7 +392,7 @@
 /*bottom music bar*/
 .lee-music-bar{
   width: 100%;
-  height: 80px;
+  height: 60px;
   overflow: hidden;
   background: @color;
   border-top: 1px solid @borderColor2;
@@ -398,18 +401,19 @@
   right: 0;
   .lee-image-item {
     width: 100%;
-    height: 80px;
+    height: 60px;
     img{
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       float: left;
-      margin-right: 20px;
     }
     .lee-music{
-      width: calc(100% - 100px);
-      height: 80px;
+      background: #F6F6F8;
+      width: calc(100% - 60px);
+      height: 60px;
       float: left;
       color: @themsColor;
+      padding-left: 20px;
       .lee-music-audio{
         width: 100%;
         margin-bottom: 10px;
@@ -417,13 +421,6 @@
       .lee-music-l{
         width: auto;
         float: left;
-        .lee-music-l-top{
-          h4{
-            font-size: @fontSize;
-            color: @fontColor4;
-            margin-top: 8px;
-          }
-        }
         .lee-music-l-bot{
           .anticon {
             width: 35px;
@@ -442,25 +439,139 @@
             cursor: default;
             opacity: 0.6;
           }
+          .lee-music-l-top{
+            font-size: @fontSize;
+            color: @fontColor4;
+            margin-top: 5px;
+            margin-bottom: 0;
+            .text-overflow;
+          }
+          .ant-progress-inner{
+            background: #ddd;
+          }
         }
       }
       .lee-music-r{
-        width: 50px;
+        width: 130px;
         float: right;
-        line-height: 80px;
+        line-height: 60px;
         color: rgb(205,41,41);
-        margin-right: 10px;
-        .anticon {
+        span {
           width: 50px;
           text-align: center;
           font-size: 20px;
           cursor: pointer;
+          display: inline-block;
+          vertical-align: top;
+        }
+        .lee-music-num{
+          .anticon{
+            color: #666;
+          }
+          span {
+            background: #E1E1E2;
+            display: inline-block;
+            width: 25px;
+            height: 18px;
+            line-height: 18px;
+            color: #666;
+            font-size: @fontSize;
+            .border-radius(0 10px 10px 0);
+            vertical-align: 2px;
+            font-size: 14px;
+            margin-left: -1px;
+          }
         }
       }
     }
   }
 }
 
+/*current player list history*/
+.lee-music-profile{
+  width: 400px;
+  max-height: 300px;
+  overflow: auto;
+  position: fixed;
+  right: 10px;
+  bottom: 60px;
+  background: #FAFAFA;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+  color: #000;
+  padding-bottom: 10px;
+  .border-radius(2px);
+  .lee-music-profile-title{
+    background: #F4F4F6;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid @borderColor2;
+    .anticon{
+      float: right;
+      line-height: 40px;
+      padding-right: 10px;
+      color: #666;
+      font-size: @fontSize6;
+      cursor: pointer;
+    }
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .lee-music-profile-opera{
+    line-height: 30px;
+    padding: 0 10px 0 30px;
+    color: #666;
+    span{
+      width: calc(100% - 4em);
+      display: inline-block;
+      &:last-child{
+        width: 4em;
+        text-align: right;
+        i{
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  div{
+    height: 32px;
+    line-height: 32px;
+    background: #F5F5F7;
+    color: #666;
+    padding: 0 10px;
+    &:nth-child(2n){
+      background: #FAFAFA;
+    }
+    &>span{
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 10px;
+    }
+    .lee-music-profile-status{
+      width: 20px;
+      padding-right: 0;
+      .anticon{
+        color: red;
+      }
+    }
+    .lee-music-profile-name{
+      width: 50%;
+      cursor: pointer;
+      .text-overflow;
+    }
+    .lee-music-profile-singer{
+      width: calc(50% - 30px);
+      color: @fontColor3;
+      .text-overflow;
+    }
+    .lee-music-profile-del{
+      width: 30px;
+      text-align: right;
+      color: red;
+      padding-right: 0;
+    }
+  }
+}
 
 /*lee-echat*/
 .lee-echat{
