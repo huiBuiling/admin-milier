@@ -39,7 +39,7 @@ export default class CloundPlayerList extends Component {
 
     //获取歌单列表，及根据喜欢列表设置喜欢
     getSongList = (flag, id)=>{
-	    console.log(id);
+	    // console.log(id);
         axios.get(`http://localhost:4000/playlist/detail?id=${id}`).then(res=>{
             if(res.status == 200) {
                 let songList = [];
@@ -78,19 +78,18 @@ export default class CloundPlayerList extends Component {
                     total:res.data.playlist.trackCount,
                     player:true,
                     playerNum:2
-                });
+                },()=>this.setState({songList:songList}));
             }
         })
     }
 
     //获取歌曲
     onChange=(val)=>{
-        console.log(`selected ${val}`);
+        // console.log(`selected ${val}`);
         let currentSearchList = [];
-        let searchList = this.state.searchList;
+        let { searchList,liveList } = this.state;
         searchList.map(item=>{
             let current = {};
-            let liveList = this.state.liveList;
             current.id = item.id;
             current.url = item.artists[0].img1v1Url;  //照片
             current.title = item.name;  //音乐名
@@ -109,15 +108,15 @@ export default class CloundPlayerList extends Component {
         this.setState({
             searchVal:val,
             songList:currentSearchList
-        })
+        },()=>this.setState({songList:currentSearchList}));
     }
 
     //搜索歌曲
     onSearch=(val)=>{
-        console.log(`selected ${val}`);
+        // console.log(`selected ${val}`);
         axios.get(`http://localhost:4000/search?keywords=${val}`).then(res=>{
             if(res.data.code == 200){
-                console.log(res.data.result.songs)
+                // console.log(res.data.result.songs)
                 this.setState({
                     searchList:res.data.result.songs
                 })

@@ -39,10 +39,6 @@ export default class PlayerBar extends Component {
                                 className="lee-music-audio"
                             />
                             <div className="lee-music-l">
-                                <div className="lee-music-l-top">
-                                    {/*歌名*/}
-                                    <h4>{currentMusic.title}</h4>
-                                </div>
                                 <div className="lee-music-l-bot">
                                     <Icon
                                         type="caret-left"
@@ -67,6 +63,8 @@ export default class PlayerBar extends Component {
                                     />
 
                                     <div style={{ width: 170,display: 'inline-block' }}>
+                                        {/*歌名*/}
+                                        <h4 className="lee-music-l-top">{currentMusic.title}</h4>
                                         <Progress
                                             percent={percent}
                                             format={percent => `${currentTime} / ${allTime}`}
@@ -78,7 +76,7 @@ export default class PlayerBar extends Component {
                             </div>
 
                             <div className="lee-music-r">
-                                <Icon type="heart" theme={currentMusic.collect ? 'filled' : null} />
+                                <span><Icon type="heart" theme={currentMusic.collect ? 'filled' : null}/></span>
                             </div>
                         </div>
                     </div>

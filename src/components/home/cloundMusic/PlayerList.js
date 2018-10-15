@@ -121,7 +121,7 @@ export default class PlayerList extends Component {
     //下一首
     next = (index)=>{
 	    let { songList } = this.state;
-        if(index != (this.state.list.length - 1)){
+        if(index != (songList.length - 1)){
         	if(index == -1){
                 index += 2;
             }else{
