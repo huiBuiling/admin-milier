@@ -9,13 +9,13 @@ import axios from 'axios'
  */
 export default class CloundPlayerList extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
+    constructor(props) {
+        super(props);
+        this.state = {
             playlistIcon:true,  //创建歌单
             playlistIcon2:true,  //收藏歌单
-		    player:false,       //是否播放中
-		    list:[],            //歌单列表
+            player:false,       //是否播放中
+            list:[],            //歌单列表
             songList:[],        //对应歌单歌曲列表
             musicUrlList:[],    //对应歌单列表MP3地址
             liveList:[],        //喜欢的音乐列表
@@ -24,8 +24,8 @@ export default class CloundPlayerList extends Component {
             total:0,            //歌单数量
             liveId:0,
             playerNum:0         //判断切换歌单是否重置
-		};
-	}
+        };
+    }
 
     componentDidMount(){
         axios.get('http://localhost:4000/user/playlist?uid=262606203').then(res=>{
@@ -39,7 +39,7 @@ export default class CloundPlayerList extends Component {
 
     //获取歌单列表，及根据喜欢列表设置喜欢
     getSongList = (flag, id)=>{
-	    console.log(id);
+        // console.log(id);
         axios.get(`http://localhost:4000/playlist/detail?id=${id}`).then(res=>{
             if(res.status == 200) {
                 let songList = [];
@@ -78,19 +78,18 @@ export default class CloundPlayerList extends Component {
                     total:res.data.playlist.trackCount,
                     player:true,
                     playerNum:2
-                });
+                },()=>this.setState({songList:songList}));
             }
         })
     }
 
     //获取歌曲
     onChange=(val)=>{
-        console.log(`selected ${val}`);
+        // console.log(`selected ${val}`);
         let currentSearchList = [];
-        let searchList = this.state.searchList;
+        let { searchList,liveList } = this.state;
         searchList.map(item=>{
             let current = {};
-            let liveList = this.state.liveList;
             current.id = item.id;
             current.url = item.artists[0].img1v1Url;  //照片
             current.title = item.name;  //音乐名
@@ -109,15 +108,15 @@ export default class CloundPlayerList extends Component {
         this.setState({
             searchVal:val,
             songList:currentSearchList
-        })
+        },()=>this.setState({songList:currentSearchList}));
     }
 
     //搜索歌曲
     onSearch=(val)=>{
-        console.log(`selected ${val}`);
+        // console.log(`selected ${val}`);
         axios.get(`http://localhost:4000/search?keywords=${val}`).then(res=>{
             if(res.data.code == 200){
-                console.log(res.data.result.songs)
+                // console.log(res.data.result.songs)
                 this.setState({
                     searchList:res.data.result.songs
                 })
@@ -125,12 +124,12 @@ export default class CloundPlayerList extends Component {
         })
     }
 
-	render(){
+    render(){
         const Option = Select.Option;
-		const { list, songList, searchList, liveId, total, player, playerNum, current,playlistIcon, playlistIcon2 } = this.state;
-		return (
-			<div className="lee-rbb-all" style={{padding:0}}>
-				<div className="lee-clound">
+        const { list, songList, searchList, liveId, total, player, playerNum, current,playlistIcon, playlistIcon2 } = this.state;
+        return (
+            <div className="lee-rbb-all" style={{padding:0}}>
+                <div className="lee-clound">
                     <div className="lee-clound-l">
                         <Select
                             showSearch
@@ -140,8 +139,8 @@ export default class CloundPlayerList extends Component {
                             onSearch={(val)=>this.onSearch(val)}
                         >
                             {searchList.map(item=>{
-                                    return <Option key={item.id}>{item.name}</Option>
-                                })
+                                return <Option key={item.id}>{item.name}</Option>
+                            })
                             }
                         </Select>
 
@@ -150,18 +149,18 @@ export default class CloundPlayerList extends Component {
                             {list.filter(item => {return item.creator.province == 140000}).map((item,index)=>{
                                     let flag = item.id == liveId ? 1:2;
                                     return <p
-                                            className={current == item.id ? 'active':null}
-                                            key={index}
-                                            onClick={()=>this.getSongList(flag,item.id)}>
-                                            <i className="icon-swticonyinle2" />{item.name}
-                                        </p>
+                                        className={current == item.id ? 'active':null}
+                                        key={index}
+                                        onClick={()=>this.getSongList(flag,item.id)}>
+                                        <i className="icon-swticonyinle2" />{item.name}
+                                    </p>
                                 }
                             )}
                         </div>
                         <h4 onClick={()=>this.setState({playlistIcon2:!playlistIcon2})}>收藏的歌单<Icon type={playlistIcon2 ? 'down':'right'} /></h4>
                         <div style={{display:playlistIcon2 ? 'block':'none'}}>
                             {list.filter(item => {return item.creator.province != 140000}).map((item,index)=>{
-                                return <p
+                                    return <p
                                         className={`lee-clound-live-player ${current == item.id ? ' active':''}`}
                                         key={index}
                                         onClick={()=>this.getSongList(2,item.id)}>
@@ -177,12 +176,12 @@ export default class CloundPlayerList extends Component {
                         </div>
                         <h5 className="lee-clound-r-t">歌曲列表<span>歌曲数{total}</span></h5>
                         {player && <PlayerList
-                                    songList={songList}
-                                    playerNum={playerNum}
-                                />}
+                            songList={songList}
+                            playerNum={playerNum}
+                        />}
                     </div>
                 </div>
             </div>
         )
-	}
+    }
 }

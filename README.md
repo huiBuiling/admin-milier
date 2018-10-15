@@ -64,44 +64,6 @@ antd + react 后台管理
    问题：切换歌单后第一次搜索点击列表未切换
    解决：Option key={item.id}
 
-9. 优化，使用redux
-   yarn add redux --dev
-   yarn add redux-thunk --dev
-   yarn add react-redux --dev
-
-   import { Provider } from 'react-redux'
-   import { createStore, applyMiddleware, compose } from 'redux';
-   import  thunk  from 'redux-thunk'
-   import { BrowserRouter,Switch } from 'react-router-dom';
-   import reducer from './reducer/reducers'
-
-   const store = createStore(reducer,compose(
-       applyMiddleware(thunk),
-       window.devToolsExtension ? window.devToolsExtension():f=>f
-   ))
-   ReactDOM.render(
-       <Provider store={store}>
-           <BrowserRouter>
-               <Switch>
-                   <App />
-               </Switch>
-           </BrowserRouter>
-       </Provider>
-   	, document.getElementById('root')
-   );
-
-10. 重置：
-    设置播放列表
-    初次播放列表push,当前歌单歌曲列表第一个，
-    切换歌单时保持playerBar不变，设置getOldCurrentItem即获取getState状态值
-
-    判断清空
-        否：播放历史记录的内容列表为播放列表
-        是：先暂停歌曲，图片，歌名全部置空
-           点击当前歌单歌曲播放，将列表歌曲设置为播放列表
-
-    播放列表组成：点击后听过的歌曲 + 点击后当前对应歌单内所有的歌曲列表 (注：已经存在的则不添加)
-
 ```
 
 ### 仿网易云音乐（redux版）
