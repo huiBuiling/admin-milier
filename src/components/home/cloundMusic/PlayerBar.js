@@ -2,24 +2,20 @@ import React,{Component} from 'react'
 import { Icon,Progress } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { getCurrentItem } from '../../../reducer/player.redux';
+import { getOldSongList,getCurrentItem,getOldCurrentItem } from '../../../reducer/player.redux';
 
 /**
  * 底部音乐
  */
 @connect(
     state=>state.player,
-    { getCurrentItem }
+    { getOldSongList,getCurrentItem,getOldCurrentItem }
 )
 export default class PlayerBar extends Component {
 
     constructor(props) {
         super(props);
-        // debugger
         this.state = {
-            // currentIndex:props.currentIndex,     //当前列表第几个播放
-            // currentId:props.currentId,       //歌曲id
-            // currentUrl:null,                 //MP3地址
             isPlay:props.isPlay,             //是否播放状态
             percentDuration:0,               //歌曲总时长
             allTime:'00:00',                 //歌曲总时间
@@ -32,6 +28,18 @@ export default class PlayerBar extends Component {
     componentWillMount(){
         //将组件this传递给父组件
         this.props.getChildrenThis(this);
+    }
+
+    //获取歌曲MP3地址
+    getCurrenturl = (currentId,currentIndex)=>{
+        axios.get(`http://localhost:4000/music/url?id=${currentId}`).then(res=>{
+            if(res.status == 200){
+                const currentUrl = res.data.data[0].url;
+                const item = {currentId,currentIndex,currentUrl};
+                this.props.getCurrentItem(item);
+                this.play();
+            }
+        });
     }
 
     //获取总时长和播放时间
@@ -76,12 +84,9 @@ export default class PlayerBar extends Component {
     //播放
     play = ()=>{
         const audio = this.refs.audio;
-        console.log(audio.src)
         // audio.load();  //重新加载音频元素。
-
         const allTime = this.time(1,audio,false);  //获取总时长
         const currentTime = this.time(2,audio,false);  //获取播放进度
-
         this.setState({
             isPlay:true,
             allTime, currentTime
@@ -98,42 +103,31 @@ export default class PlayerBar extends Component {
     }
 
     //下一首
-    /*next = (index)=>{
-        const { isPlay, oldPlay } = this.state;
-        const { player } = this.props;
-        let songList = isPlay && oldPlay ? player.oldSongList : player.songList;
-
-        if(index != (songList.length - 1)){
-        	if(index == -1){
-                index += 2;
+    next = ()=>{
+        let { songList,oldSongList,currentIndex } = this.props;
+        if(currentIndex != (songList.length - 1) && currentIndex != '-1'){
+        	if(currentIndex == -1){
+                currentIndex += 2;
             }else{
-        		index ++;
+                currentIndex ++;
 			}
-			this.playCurrent(index,songList[index].id);
-		}
-	}*/
+            this.playerCurrent(songList[currentIndex].id,currentIndex);
+            this.props.getOldSongList(songList[currentIndex].id);
+		}else{
+            // currentIndex == '-1',切换歌单
+            this.playerCurrent(songList[0].id,0);
+            this.props.getOldSongList(songList[0].id);
+        }
+	}
 
     //上一首
-    /*prev = (index)=>{
-	    const { isPlay, oldPlay } = this.state;
-        const { player } = this.props;
-        let songList = isPlay && oldPlay ? player.oldSongList : player.songList;
-        if(index > 0){
-            index--;
-            this.playCurrent(index,songList[index].id);
+    prev = ()=>{
+        let { songList,oldSongList,currentIndex } = this.props;
+        if(currentIndex > 0){
+            currentIndex--;
+            this.playerCurrent(oldSongList[currentIndex].id,currentIndex);
+            this.props.getOldSongList(oldSongList[currentIndex].id);
         }
-    }*/
-
-    //获取歌曲MP3地址
-    getCurrenturl = (currentId,currentIndex)=>{
-        axios.get(`http://localhost:4000/music/url?id=${currentId}`).then(res=>{
-            if(res.status == 200){
-                const currentUrl = res.data.data[0].url;
-                const item = {currentId,currentIndex,currentUrl};
-                this.props.getCurrentItem(item);
-                this.play();
-            }
-        });
     }
 
     //点击播放列表播放
@@ -150,23 +144,14 @@ export default class PlayerBar extends Component {
 
         let { songList, oldSongList, currentId, currentIndex, currentUrl } = this.props;
 
-        //初始设置判断是否未播放且播放列表为空
-        /*if(!isPlay && oldSongList.length < 1){
-            debugger
-            oldSongList = songList[0];
-        }*/
-
         //获取对应某一项
         let playerItem = songList[currentIndex];
 
         //代表已经切换歌单，但是音乐还在播放
         if(isPlay && currentIndex == '-1'){
-            console.log(oldSongList)
             oldSongList.filter(item => {
                 if (item.id == currentId) {
                     playerItem = item;
-                    console.log('yes' + currentId);
-                    console.log(playerItem);
                 }
             });
         }
@@ -176,6 +161,9 @@ export default class PlayerBar extends Component {
 
         //是否播放
         const pauseCurrent = isPlay ? (percent == 100 ? false : true) : false;
+
+        /*//下一首判断对应 oldSongList || oldSongList
+        let nextCurrent = currentIndex == (songList.length - 1);*/
         return (
             <div className="lee-rbb-all">
                 <div className="lee-music-bar">
@@ -197,7 +185,7 @@ export default class PlayerBar extends Component {
                                         type="caret-left"
                                         theme="outlined"
                                         className={currentIndex == 0 ? 'prev-no' : null}
-                                        // onClick={prev}
+                                        onClick={this.prev}
                                     />
 
                                     {/*播放|暂停*/}
@@ -212,8 +200,8 @@ export default class PlayerBar extends Component {
                                     <Icon
                                         type="caret-right"
                                         theme="outlined"
-                                        className={currentIndex == (oldSongList.length - 1) ? 'next-no' : null}
-                                        // onClick={next}
+                                        className={currentIndex == (songList.length - 1) ? 'next-no' : null}
+                                        onClick={this.next}
                                     />
 
                                     <div style={{width: 250, display: 'inline-block'}}>
@@ -250,9 +238,8 @@ export default class PlayerBar extends Component {
                         <span>共{oldSongList.length}首歌曲</span>
                         <span>清空<i className="icon-del1" /></span>
                     </p>
-                    {
-                        oldSongList.length > 0 && oldSongList.map((item,index)=>{
-                            return <div key={index} onClick={()=>this.playerCurrent(item.id,index)}>
+                    {oldSongList.length > 0 && oldSongList.map((item,index)=>{
+                        return <div key={index} onClick={()=>this.playerCurrent(item.id,index)}>
                                 <span className="lee-music-profile-status">
                                     {currentId == item.id ? <Icon type={isPlay ? 'caret-right':'pause'} /> : null}
                                 </span>

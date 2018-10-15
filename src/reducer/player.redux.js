@@ -11,9 +11,8 @@ const CURRENT_ITEM = 'CURRENT_ITEM';
 let initState = {
 	songList:[],      //当前选中歌单->歌曲列表
     liveList:[],      //喜欢歌曲列表
-	currentId:null,   //当前选中歌单
+    playlistId:null,   //当前选中歌单
 	total:0,           //当前选中歌单歌曲总数
-    playNum:0,         //歌单切换标识
     oldSongList:[],    //botBar 对应列表
     currentId:null,    //歌曲id
 	currentIndex:0, //歌曲index
@@ -30,7 +29,6 @@ export function player(state = initState, action){
                 liveList:action.payload.liveList,
                 playlistId:action.payload.playlistId,
                 total:action.payload.total,
-                playNum:action.payload.playNum
 			}
 		case SEARCH:
 			return {
@@ -63,11 +61,9 @@ export function songsList(songList,liveList,playlistId,total,playNum) {
 export function getSongsList(flag,id) {
 	return (dispatch,getState)=>{
         axios.get(`http://localhost:4000/playlist/detail?id=${id}`).then(res=>{
-            console.log(id);
             if(res.status == 200) {
                 let songList = [];
                 let liveList = flag == 1 ? [] : getState().player.liveList;
-                let playNum = getState().player.liveList ++;
 				res.data.playlist.tracks.map(item => {
 					let current = {};
 					current.id = item.id;
@@ -89,7 +85,7 @@ export function getSongsList(flag,id) {
 					songList.push(current);
 				});
 
-                dispatch(songsList(songList,liveList,id,res.data.playlist.trackCount,playNum));
+                dispatch(songsList(songList,liveList,id,res.data.playlist.trackCount));
             }
         })
     }

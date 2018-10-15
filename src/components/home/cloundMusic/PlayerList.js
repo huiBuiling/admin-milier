@@ -72,7 +72,6 @@ export default class PlayerList extends Component {
     render() {
         let { songList,currentId,currentIndex } = this.props;
         let {isPlay} = this.state;
-        // currentIndex = currentIndex == '-1' ? 0 : currentIndex;
         return (
             <div className="lee-rbb-all" style={{height: 'calc(100% - 80px)',padding:0}}>
                 <div className="lee-player">
