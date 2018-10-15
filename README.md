@@ -1,5 +1,4 @@
 # admin-milier
-<<<<<<< HEAD
 antd + react 后台管理
 
 ###### 启动：yarn run dev
@@ -183,6 +182,3 @@ antd + react 后台管理
     点击上一首或下一首可能播放歌曲会出现偏差
 
 ```
-=======
-admin-milier
->>>>>>> 5e89246d92f9cfd450a30964eec6ee479f8ef3c9
