@@ -15,6 +15,13 @@ antd + react 后台管理
 >首页
 >图表
 >记事
+```
+    https://www.npmjs.com/package/localdb
+    import LocalDb from "localDb";
+    let Notes = new localdb('notes', 'Array', true);
+    this.db.add(item);  //只能是对象，感觉和以前不一样了，弃用
+```
+
 >地图
 >会议
 >物业
@@ -38,15 +45,6 @@ antd + react 后台管理
    总时长和播放时间：this.time(flag,audio);  歌曲总时长：audio.duration  播放时长：audio.currentTime
    结束当前播放：this.currentPause();   //每次播放新歌曲前都应该先结束当前
    获取当前音乐地址：this.getCurrentUrl(index,id)
-   <audio
-   //  controls   //显示原始样式
-       src={this.props.songList ? currentUrl:item.musicUrl}
-       ref={`audio${index}`}
-       preload="true"
-       className="lee-music-audio"
-       onCanPlay={() => this.time(1,audio)}
-       onTimeUpdate={(e) => this.time(2,audio)}
-    />
 
 5. PlayerBar:操作
 

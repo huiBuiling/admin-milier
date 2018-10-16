@@ -4,6 +4,7 @@ import { Timeline } from 'antd';
 import LeaveHeader from './LeaveHeader';
 import LeaveItem from './LeaveItem';
 import LeaveFooter from './LeaveFooter';
+// import localdb from 'localdb'
 
 class LeaveWord extends Component {
 	constructor(props) {
@@ -12,6 +13,8 @@ class LeaveWord extends Component {
 			leaveList : [],
 			isAllChecked:false  //是否选中
 		};
+		this.addLeave = this.addLeave.bind(this);
+
 	}
 
 	//判断是否所有任务状态都已经完成,同步底部的全选框
@@ -29,6 +32,8 @@ class LeaveWord extends Component {
 	//添加任务，传递给Header组件的方法
 	addLeave = (leaveItem)=>{
 		this.state.leaveList.push(leaveItem);
+		console.log(this.db)
+        // this.db.set("leaveList",this.state.leaveList);
 		this.allChecked();
 	}
 
@@ -46,6 +51,7 @@ class LeaveWord extends Component {
             this.state.leaveList[index].isDone = isDone;
             this.allChecked();
         }
+        this.db.set('leaveList', this.state.leaveList);
     }
 
     //修改任务
@@ -60,6 +66,7 @@ class LeaveWord extends Component {
         if(value){
             this.state.leaveList.splice(index,1,editItem);
             this.setState({leaveList:this.state.leaveList});
+            this.db.set('leaveList',this.state.leaveList);
         }
     } */
 
@@ -71,12 +78,15 @@ class LeaveWord extends Component {
 			leaveList:leaveList,
 			isAllChecked:false
 		})
+        this.db.set("leaveList",leaveList);
 	}
 
 	//删除当前任务，传递给TodoItem的方法
 	delateCurrentLeave = (index)=>{
 		this.state.leaveList.splice(index, 1);
+        localStorage.noteData.splice(index,1);
         this.setState({leaveList: this.state.leaveList});
+        // this.db.set("leaveList",this.state.leaveList);
 	}
 	
 	render() {

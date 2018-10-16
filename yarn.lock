@@ -3433,6 +3433,10 @@ loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
+localdb@^0.2.12:
+  version "0.2.12"
+  resolved "http://registry.npm.taobao.org/localdb/download/localdb-0.2.12.tgz#fab8c10a136433d39a15402c3faf65ae9ce486ef"
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
