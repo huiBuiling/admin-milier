@@ -27,43 +27,6 @@ antd + react 后台管理
 >物业
 >仿网易云音乐
 
-### 仿网易云音乐
-```
-使用网易云接口：git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
-运行：set PORT=4000 && node app.js
-
-1. 用户登录：/login/cellphone?phone=xxx&password=xxx
-2. 获取喜欢的音乐，收藏和创建的歌单：/user/playlist?uid=xxxxxxxxx
-3. 对应歌单歌曲列表及根据喜欢列表设置喜欢：/playlist/detail?id=${id}
-   getSongList(flag, id)
-
-4. PLayerList:
-   播放：this.play(index)     audio.play();
-   停止：this.pause(index)    audio.pause();
-   下一首：this.next(index)
-   上一首：this.prev(index)
-   总时长和播放时间：this.time(flag,audio);  歌曲总时长：audio.duration  播放时长：audio.currentTime
-   结束当前播放：this.currentPause();   //每次播放新歌曲前都应该先结束当前
-   获取当前音乐地址：this.getCurrentUrl(index,id)
-
-5. PlayerBar:操作
-
-6. 设置喜欢：/live?id=${id}
-   移除喜欢：/fm_trash?id=${id}
-   error:通知需要登录，但是已登录，尴尬
-
-7. 播放地址和时间未更新，但是图片和歌曲名是更新后的
-   设置为更新后，播放当前歌单列表的
-   问题：
-        获取歌曲时间未点击显示的还是上一曲的;
-        获取歌曲时间初始获取为NAN，目前设置为00：00（囧）
-
-8. 搜索：/search?keywords=${val}
-   问题：切换歌单后第一次搜索点击列表未切换
-   解决：Option key={item.id}
-
-```
-
 ### 仿网易云音乐（redux版）
 ```
 1.使用redux
@@ -147,5 +110,13 @@ antd + react 后台管理
             点击单曲，播放列表变为当前歌单对应歌曲
             切换操作（上一首，下一首）
                 播放列表对应歌曲所在列表，即播放列表
+
+```
+
+> 拖曳
+- [x] github:https://github.com/bevacqua/dragula
+- [x] npm install dragula --save
+- [x] 使用时拖动会复制出对应的 ，记得列表添加类名控制样式
+```
 
 ```
