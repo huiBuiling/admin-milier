@@ -2,14 +2,14 @@ import React,{Component} from 'react'
 import { Icon,Progress } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { getOldSongList,getCurrentItem,getOldCurrentItem } from '../../../reducer/player.redux';
+import { getCurrentItem } from '../../../reducer/player.redux';
 
 /**
  * 底部音乐
  */
 @connect(
     state=>state.player,
-    { getOldSongList,getCurrentItem,getOldCurrentItem }
+    { getCurrentItem }
 )
 export default class PlayerBar extends Component {
 
@@ -35,11 +35,17 @@ export default class PlayerBar extends Component {
         axios.get(`http://localhost:4000/music/url?id=${currentId}`).then(res=>{
             if(res.status == 200){
                 const currentUrl = res.data.data[0].url;
+                console.log(currentId + ":" + currentUrl);
                 const item = {currentId,currentIndex,currentUrl};
                 this.props.getCurrentItem(item);
                 this.play();
             }
         });
+    }
+
+    //点击播放列表播放
+    playerCurrent = (id,index)=>{
+        this.getCurrenturl(id,index);
     }
 
     //获取总时长和播放时间
@@ -104,35 +110,20 @@ export default class PlayerBar extends Component {
 
     //下一首
     next = ()=>{
-        let { songList,oldSongList,currentIndex } = this.props;
-        if(currentIndex != (songList.length - 1) && currentIndex != '-1'){
-        	if(currentIndex == -1){
-                currentIndex += 2;
-            }else{
-                currentIndex ++;
-			}
-            this.playerCurrent(songList[currentIndex].id,currentIndex);
-            this.props.getOldSongList(songList[currentIndex].id);
-		}else{
-            // currentIndex == '-1',切换歌单
-            this.playerCurrent(songList[0].id,0);
-            this.props.getOldSongList(songList[0].id);
-        }
+        let { oldSongList,currentIndex } = this.props;
+        if(currentIndex != (oldSongList.length - 1)){
+            currentIndex ++;
+            this.playerCurrent(oldSongList[currentIndex].id,currentIndex);
+		}
 	}
 
     //上一首
     prev = ()=>{
-        let { songList,oldSongList,currentIndex } = this.props;
+        let { oldSongList,currentIndex } = this.props;
         if(currentIndex > 0){
             currentIndex--;
             this.playerCurrent(oldSongList[currentIndex].id,currentIndex);
-            this.props.getOldSongList(oldSongList[currentIndex].id);
         }
-    }
-
-    //点击播放列表播放
-    playerCurrent = (id,index)=>{
-        this.getCurrenturl(id,index);
     }
 
     render() {
@@ -142,19 +133,10 @@ export default class PlayerBar extends Component {
             profile
         } = this.state;
 
-        let { songList, oldSongList, currentId, currentIndex, currentUrl } = this.props;
+        let { oldSongList, currentId, currentIndex, currentUrl } = this.props;
 
         //获取对应某一项
-        let playerItem = songList[currentIndex];
-
-        //代表已经切换歌单，但是音乐还在播放
-        if(isPlay && currentIndex == '-1'){
-            oldSongList.filter(item => {
-                if (item.id == currentId) {
-                    playerItem = item;
-                }
-            });
-        }
+        let playerItem = oldSongList[currentIndex];
 
         //进度
         const percent = (percentCurrentTime / percentDuration) * 100;
@@ -162,13 +144,11 @@ export default class PlayerBar extends Component {
         //是否播放
         const pauseCurrent = isPlay ? (percent == 100 ? false : true) : false;
 
-        /*//下一首判断对应 oldSongList || oldSongList
-        let nextCurrent = currentIndex == (songList.length - 1);*/
         return (
             <div className="lee-rbb-all">
                 <div className="lee-music-bar">
                     <div className="lee-image-item">
-                        <img src={playerItem.url} alt=""/>
+                        <img src={playerItem != undefined && playerItem.url} alt=""/>
                         <div className="lee-music">
                             <div className="lee-music-l">
                                 <audio
@@ -200,13 +180,13 @@ export default class PlayerBar extends Component {
                                     <Icon
                                         type="caret-right"
                                         theme="outlined"
-                                        className={currentIndex == (songList.length - 1) ? 'next-no' : null}
+                                        className={currentIndex == (oldSongList.length - 1) ? 'next-no' : null}
                                         onClick={this.next}
                                     />
 
                                     <div style={{width: 250, display: 'inline-block'}}>
                                         {/*歌名*/}
-                                        <h4 className="lee-music-l-top">{playerItem.title}</h4>
+                                        <h4 className="lee-music-l-top">{playerItem != undefined && playerItem.title}</h4>
                                         <Progress
                                             percent={percent}
                                             format={percent => `${currentTime} / ${allTime}`}
@@ -223,7 +203,7 @@ export default class PlayerBar extends Component {
                                 <span className="lee-music-num">
                                     <Icon type="profile" theme="outlined"
                                           onClick={() => this.setState({profile: !profile})}/>
-                                    <span>{oldSongList.length == undefined ? 0 : oldSongList.length}</span>
+                                    <span>{oldSongList.length}</span>
                                 </span>
                             </div>
                         </div>
@@ -238,6 +218,7 @@ export default class PlayerBar extends Component {
                         <span>共{oldSongList.length}首歌曲</span>
                         <span>清空<i className="icon-del1" /></span>
                     </p>
+                    <div className="lee-music-profile-list">
                     {oldSongList.length > 0 && oldSongList.map((item,index)=>{
                         return <div key={index} onClick={()=>this.playerCurrent(item.id,index)}>
                                 <span className="lee-music-profile-status">
@@ -253,6 +234,7 @@ export default class PlayerBar extends Component {
                             </div>
                         })
                     }
+                    </div>
                 </div>
             </div>
         )

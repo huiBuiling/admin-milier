@@ -79,8 +79,9 @@ export default class CloundPlayerList extends Component {
 
     //切换歌单
     checkPlayer = (flag,id)=>{
+        // this.props.getOldCurrentItem(1);
         //设置当前播放音乐及其他不变
-        this.props.getOldCurrentItem();
+        this.props.getOldCurrentItem(2);
 	    //获取当前选中歌单列表
         this.props.getSongsList(flag,id);
     }

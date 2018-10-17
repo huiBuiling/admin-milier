@@ -3,7 +3,7 @@ import { Icon } from 'antd';
 import PlayerBar from './PlayerBar'
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getOldSongList,getCurrentItem } from '../../../reducer/player.redux'
+import { getOldSongList, getCurrentItem } from '../../../reducer/player.redux'
 
 /**
  * PlayerList
@@ -46,7 +46,9 @@ export default class PlayerList extends Component {
 
     // 点击播放
     playCurrent = (index,id)=>{
-        this.props.getOldSongList(id);
+        //设置当前列表为播放列表
+        this.props.getOldSongList();
+        //设置对应 id，index
         this.child.playerCurrent(id,index);
     }
 
@@ -70,7 +72,7 @@ export default class PlayerList extends Component {
     }
 
     render() {
-        let { songList,currentId,currentIndex } = this.props;
+        let { songList,currentId,currentIndex,oldSongList } = this.props;
         let {isPlay} = this.state;
         return (
             <div className="lee-rbb-all" style={{height: 'calc(100% - 80px)',padding:0}}>
@@ -89,7 +91,8 @@ export default class PlayerList extends Component {
                         </div>
                     </div>
                     {songList.map((item,index)=>{
-                        const active = currentIndex == index ? 'active' : null;
+                        //需判断 oldSongList == songList  isPlay && 已经切换歌单
+                        const active = currentIndex == index && !isPlay && songList.length == oldSongList.length  ? 'active' : null;
                         let collect = item.collect ? true :false;
                         return <div className="lee-player-item" key={index}>
                             <div className={`lee-player-item-music ${active}`}>

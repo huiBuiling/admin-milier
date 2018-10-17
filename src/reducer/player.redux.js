@@ -29,6 +29,7 @@ export function player(state = initState, action){
                 liveList:action.payload.liveList,
                 playlistId:action.payload.playlistId,
                 total:action.payload.total,
+                oldSongList:action.payload.oldSongList
 			}
 		case SEARCH:
 			return {
@@ -54,8 +55,8 @@ export function player(state = initState, action){
 
 //action
 //songsList
-export function songsList(songList,liveList,playlistId,total,playNum) {
-	return {type:SONG_LIST,payload:{songList,liveList,playlistId,total,playNum}};
+export function songsList(songList,liveList,oldSongList,playlistId,total,playNum) {
+	return {type:SONG_LIST,payload:{songList,liveList,oldSongList,playlistId,total,playNum}};
 }
 
 export function getSongsList(flag,id) {
@@ -85,7 +86,9 @@ export function getSongsList(flag,id) {
 					songList.push(current);
 				});
 
-                dispatch(songsList(songList,liveList,id,res.data.playlist.trackCount));
+                let oldSongList = flag == 1 ? songList : getState().player.oldSongList;
+
+                dispatch(songsList(songList,liveList,oldSongList,id,res.data.playlist.trackCount));
             }
         })
     }
@@ -107,17 +110,10 @@ export function playerSongList(oldSongList) {
     return {type:OLD_SONG_LIST,oldSongList};
 }
 
-export function getOldSongList(id) {
+export function getOldSongList() {
     return (dispatch,getState) =>{
-        const listItem = getState().player.songList.filter(item => item.id == id);
-        const oldSongList = getState().player.oldSongList;
-        if(oldSongList.filter(item => item.id == id).length < 1){
-            oldSongList.push(listItem[0]);
-            return dispatch(playerSongList(oldSongList));
-        }else{
-            console.log('已经存在')
-        }
-
+        const oldSongList = getState().player.songList;
+        return dispatch(playerSongList(oldSongList));
     }
 }
 
@@ -133,12 +129,15 @@ export function getCurrentItem(item) {
 }
 
 //获取之前的选中
-export function getOldCurrentItem() {
+export function getOldCurrentItem(flag) {
     return (dispatch,getState)=>{
         const { currentId, currentUrl} = getState().player;
-    	const currentIndex = '-1';
+    	let currentIndex = 0;
+    	if(flag == 2){
+            currentIndex = getState().player.currentIndex;
+		}
     	const item = { currentId, currentIndex, currentUrl};
-    	console.log(currentId)
+    	// console.log(currentId)
         return dispatch(currentItem(item));
     }
 }

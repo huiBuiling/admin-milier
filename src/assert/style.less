@@ -491,7 +491,7 @@
 .lee-music-profile{
   width: 400px;
   max-height: 300px;
-  overflow: auto;
+  overflow: hidden;
   position: fixed;
   right: 10px;
   bottom: 60px;
@@ -533,42 +533,47 @@
       }
     }
   }
-  div{
-    height: 32px;
-    line-height: 32px;
-    background: #F5F5F7;
-    color: #666;
-    padding: 0 10px;
-    &:nth-child(2n){
-      background: #FAFAFA;
-    }
-    &>span{
-      display: inline-block;
-      vertical-align: middle;
-      padding-right: 10px;
-    }
-    .lee-music-profile-status{
-      width: 20px;
-      padding-right: 0;
-      .anticon{
-        color: red;
+  .lee-music-profile-list {
+    width: 100%;
+    max-height: calc(300px - 80px);
+    overflow: auto;
+    div {
+      height: 32px;
+      line-height: 32px;
+      background: #F5F5F7;
+      color: #666;
+      padding: 0 10px;
+      &:nth-child(2n) {
+        background: #FAFAFA;
       }
-    }
-    .lee-music-profile-name{
-      width: 50%;
-      cursor: pointer;
-      .text-overflow;
-    }
-    .lee-music-profile-singer{
-      width: calc(50% - 30px);
-      color: @fontColor3;
-      .text-overflow;
-    }
-    .lee-music-profile-del{
-      width: 30px;
-      text-align: right;
-      color: red;
-      padding-right: 0;
+      & > span {
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: 10px;
+      }
+      .lee-music-profile-status {
+        width: 20px;
+        padding-right: 0;
+        .anticon {
+          color: red;
+        }
+      }
+      .lee-music-profile-name {
+        width: 50%;
+        cursor: pointer;
+        .text-overflow;
+      }
+      .lee-music-profile-singer {
+        width: calc(50% - 30px);
+        color: @fontColor3;
+        .text-overflow;
+      }
+      .lee-music-profile-del {
+        width: 30px;
+        text-align: right;
+        color: red;
+        padding-right: 0;
+      }
     }
   }
 }
