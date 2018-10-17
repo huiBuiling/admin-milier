@@ -46,7 +46,7 @@ class App extends Component {
 	}
 
 	componentDidMount(){
-		axios.get('http://localhost:4000/login/cellphone?phone=13760845853&password=liuhuihui').then(res=>{
+        axios.get('http://localhost:4000/login/cellphone?phone=xxx&password=xxx').then(res=>{
             if(res.status == 200) {
                 this.setState({
                     name: res.data.profile.nickname,
