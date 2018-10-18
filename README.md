@@ -1,6 +1,8 @@
 # admin-milier
 antd + react 后台管理
 
+> 部分前端设计效果均是参照可爱的设计小姐姐和小哥哥们的风格，仅个人学习使用哦
+
 ###### 启动：yarn run dev
 ###### 安装：yarn
 ###### 访问：http://localhost:5201/
@@ -13,6 +15,7 @@ antd + react 后台管理
 
 ### leftbar
 >首页
+>介绍
 >图表
 >记事
 ```

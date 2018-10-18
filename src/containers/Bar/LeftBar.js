@@ -9,6 +9,7 @@ export default class LeftBar extends Component {
         this.state = {
             links:[
                 { path:'/home', icon:'home', title:'首页'},
+                { path:'/intro', icon:'pushpin', title:'介绍'},
                 { path:'/echat', icon:'dot-chart', title:'图表'},
                 { path:'/leave', icon:'pushpin', title:'记事'},
                 { path:'/map', icon:'global', title:'地图'},

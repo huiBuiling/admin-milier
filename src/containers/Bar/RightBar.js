@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {Route,Link} from 'react-router-dom'
 
 import Home from "../../components/home/Home";
-import HomeImage from '../../components/home/ImageMusic'
+import HomeImage from '../../components/home/ImageMusic';
+import Intro from '../../components/intro/Intro';
 import Echat from "../../components/echat/Echats";
 import Leave from "../../components/leave/Leave";
-import Map from '../../components/echat/MapEchat'
-import Conference from '../../components/conference/Conference'
-import Tenement from '../../components/tenement/Tenement'
-import CloundPlayerList from '../../components/home/cloundMusic/CloundPlayerList'
+import Map from '../../components/echat/MapEchat';
+import Conference from '../../components/conference/Conference';
+import Tenement from '../../components/tenement/Tenement';
+import CloundPlayerList from '../../components/home/cloundMusic/CloundPlayerList';
 
 export default class RightBar extends Component {
     constructor(props){
@@ -17,6 +18,7 @@ export default class RightBar extends Component {
             route:[
                 {exact:true, path:'/home', component:Home},
                 {exact:true, path:'/home:image', component:HomeImage},
+                {path:'/intro', component:Intro},
                 {path:'/echat', component:Echat},
                 {path:'/leave', component:Leave},
                 {path:'/map', component:Map},
