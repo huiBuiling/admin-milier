@@ -1,12 +1,13 @@
 import React,{Component} from 'react'
 import { Icon } from 'antd';
 import adminImg from '../../assert/images/admin.jpg'
-import introBg from '../../assert/images/intro/intro_bg.jpg'
-import introBg2 from '../../assert/images/intro/intro_bg2.jpg'
-import introBg3 from '../../assert/images/intro/intro_bg3.jpg'
-import introBg4 from '../../assert/images/intro/intro_bg4.jpg'
-import introBg5 from '../../assert/images/intro/intro_bg5.jpg'
-import introBg6 from '../../assert/images/intro/intro_bg6.jpg'
+import introBg from '../../assert/images/intro/intro_bg.jpg';
+import introBg2 from '../../assert/images/intro/intro_bg2.jpg';
+import introBg3 from '../../assert/images/intro/intro_bg3.jpg';
+import introBg4 from '../../assert/images/intro/intro_bg4.jpg';
+import introBg5 from '../../assert/images/intro/intro_bg5.jpg';
+import introBg6 from '../../assert/images/intro/intro_bg6.jpg';
+import introBg7 from '../../assert/images/intro/intro_bg7.jpg';
 
 /**
  * 介绍
@@ -16,7 +17,7 @@ export default class Intro extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            currentImg:3,
+            currentImg:1,
         }
 	}
 
@@ -44,9 +45,12 @@ export default class Intro extends Component {
                                     <div><p>137******53</p><p>Tel</p></div>
                                     <div><p>10.10%</p><p>Fat</p></div>
                                 </div>
+                                <div className="lee-intro-con-l-r" style={{textAlign:'center'}}>
+                                    <p style={{color:'#75C181',fontSize:30,marginBottom:0}}>188</p>
+                                    <p style={{color:'#adadad'}}>Now</p>
+                                </div>
                             </div>
                             <div className="lee-intro-con-r">
-
                             </div>
                         </div>
 
@@ -57,9 +61,9 @@ export default class Intro extends Component {
                                 <span onClick={()=>this.setState({currentImg:3})}></span>
                             </div>
                             <figure className="lee-intro-bot-img" style={{display:currentImg == 1 ? 'block':'none'}}>
-                                <img src={introBg} alt=""/>
+                                <img src={introBg7} alt=""/>
                                 <figcaption>
-                                    <h2>落日余晖 </h2>
+                                    <h2>云的倾诉</h2>
                                 </figcaption>
                             </figure>
                             <div className="lee-intro-bot-img2" style={{display:currentImg == 2 ? 'block':'none'}}>
