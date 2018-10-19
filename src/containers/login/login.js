@@ -5,6 +5,7 @@ import { getLoginData } from '../../reducer/login.redux'
 
 import login from '../../assert/images/login1.png';
 import login3 from '../../assert/images/login3.png';
+import logo from '../../assert/images/logo2.png'
 
 const confirm = Modal.confirm;
 
@@ -60,7 +61,7 @@ export default class Login extends Component {
                  <div className="lee-login-bg" style={randomNum < 5 ? bgStyle : bgStyle3}>
                      <div className="lee-login-con" style={randomNum < 5 ? {left: '7%'} : {right: '7%'}}>
                          <div className="lee-login-con-l">
-
+                             <img src={logo} alt=""/>
                          </div>
                          <div className="lee-login-con-r">
                              <h3>米粒儿</h3>

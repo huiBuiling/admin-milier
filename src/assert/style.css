@@ -60,9 +60,13 @@
 .lee-login .lee-login-bg .lee-login-con .lee-login-con-l {
   width: 55%;
   height: 100%;
-  background: #425dbd;
   float: left;
   box-shadow: -12px -12px 10px rgba(255, 255, 255, 0.6);
+  opacity: 0.8;
+}
+.lee-login .lee-login-bg .lee-login-con .lee-login-con-l img {
+  width: 100%;
+  height: 100%;
 }
 .lee-login .lee-login-bg .lee-login-con .lee-login-con-r {
   width: 45%;
