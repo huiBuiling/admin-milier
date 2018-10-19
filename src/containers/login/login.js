@@ -63,7 +63,8 @@ export default class Login extends Component {
 
                          </div>
                          <div className="lee-login-con-r">
-                             <h3>MILIER</h3>
+                             <h3>米粒儿</h3>
+                             <h4>MILIER</h4>
                              <Input
                                  placeholder="Enter your username"
                                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}

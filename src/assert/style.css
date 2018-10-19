@@ -72,8 +72,15 @@
   box-shadow: 12px 12px 10px rgba(255, 255, 255, 0.6);
 }
 .lee-login .lee-login-bg .lee-login-con .lee-login-con-r h3 {
-  margin: 50px 0 100px;
+  margin: 50px 0 0;
   text-align: center;
+  color: #425dbd;
+  font-size: 20px;
+}
+.lee-login .lee-login-bg .lee-login-con .lee-login-con-r h4 {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 70px;
 }
 .lee-login .lee-login-bg .lee-login-con .lee-login-con-r .ant-input-affix-wrapper {
   width: 80%;
