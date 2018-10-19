@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Route,Link} from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
+import Login from '../../containers/login/login'
 import Home from "../../components/home/Home";
 import HomeImage from '../../components/home/ImageMusic';
 import Intro from '../../components/intro/Intro';
@@ -16,8 +17,9 @@ export default class RightBar extends Component {
         super(props);
         this.state = {
             route:[
-                {exact:true, path:'/home', component:Home},
-                {exact:true, path:'/home:image', component:HomeImage},
+                {exact:true, path:'/login', component:Login},
+                {path:'/home', component:Home},
+                {path:'/home:image', component:HomeImage},
                 {path:'/intro', component:Intro},
                 {path:'/echat', component:Echat},
                 {path:'/leave', component:Leave},

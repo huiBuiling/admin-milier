@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { Icon,Input,Badge,Menu, Dropdown } from 'antd';
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import { Link,withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import LeftBar from '../Bar/LeftBar'
 import RightBar from '../Bar/RightBar'
+import adminImg from '../../assert/images/admin.jpg'
 
+@withRouter
+	@connect(
+		state => state.login
+	)
 class App extends Component {
 	constructor(props) { 
 		super(props);  
 		this.state = {  
 			mode: 'inline',
 			toggle:'',
-
+            avatarDefault:adminImg,
 			search:false,   //搜索
             showSkin:false,  //皮肤
             skinColor:'black',
@@ -32,38 +37,13 @@ class App extends Component {
 				{ bgColor:'rgb(250,155,193)',color:'pink',name:'粉'},
                 { bgColor:'rgb(67,66,69)',color:'black',name:'夜'}
 			],
-
-			name:null,
-            avatar:null
 		};
 	}
 
-	changeMode = (values) => {
-		this.setState({
-			mode: values ? 'inline':'vertical',
-			toggle: values ? '' : 'app2'
-		});
-	}
-
-	componentDidMount(){
-		axios.get('http://localhost:4000/login/cellphone?phone=xxx&password=xxx').then(res=>{
-            if(res.status == 200) {
-                this.setState({
-                    name: res.data.profile.nickname,
-                    avatar: res.data.profile.avatarUrl
-                })
-            }
-		})
-	}
-
-	
-
 	render() {
         const Search = Input.Search;
-        const {
-        	search,showSkin,skinColor,skinColorList, skin,
-            name, avatar
-		} = this.state;
+        const { userName, avatar } = this.props;
+        const { avatarDefault, search, skinColor, skinColorList, skin } = this.state;
         const currentSkinColor = skinColorList[skinColor];
 
         const menu = (
@@ -129,15 +109,16 @@ class App extends Component {
                                     </Badge>
                                 </div>
                                 <div className="user">
-                                    {avatar == null ?
-                                        <Icon type="user"/>
-                                        :
-                                        <img src={avatar} alt=""/>
-                                    }
+									<img src={avatar == '' ? avatarDefault : avatar} alt=""/>
                                 </div>
                                 <div className="name">
-                                    {name}
+                                    {userName}
                                 </div>
+								{userName == '' && avatar == '' ?
+                                    <div className="login-in" onClick={()=>this.props.history.push('/login')}>登录</div>
+									:
+                                    <div className="login-out" onClick={()=>this.props.history.push('/login')}>退出</div>
+                                }
 							</div>
 						</div>
                         <RightBar />

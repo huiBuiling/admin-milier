@@ -232,6 +232,11 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
+  margin-left: 30px;
+  margin-right: 0;
+}
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -406,6 +411,11 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
+.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
+  margin-left: 30px;
+  margin-right: 0;
+}
 .lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -577,6 +587,11 @@ textarea {
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
   color: #fff;
   font-size: 18px;
+}
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
+.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
+  margin-left: 30px;
+  margin-right: 0;
 }
 .lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot {
   width: 100%;
@@ -752,6 +767,11 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
+.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
+  margin-left: 30px;
+  margin-right: 0;
+}
 .lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -925,6 +945,11 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
+.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
+  margin-left: 30px;
+  margin-right: 0;
+}
 .lee-admin .themsPink .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -1096,6 +1121,11 @@ textarea {
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
   color: #fff;
   font-size: 18px;
+}
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
+  margin-left: 30px;
+  margin-right: 0;
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot {
   width: 100%;

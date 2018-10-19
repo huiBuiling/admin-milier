@@ -66,7 +66,7 @@
 
 .fr{float: right;}
 
-/* 模块公共样式 */
+/* common moudle style */
 .lee-cards{
   background: @color;
   overflow: hidden;
@@ -78,7 +78,78 @@
   .border-radius(4px);
 }
 
-/* 模块样式 */
+/* moudle style */
+
+/*login*/
+.lee-login{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: #090437;
+  .lee-login-bg{
+    //background: url(/images/login1.png) 0 130px no-repeat;
+    //background-image: url(/images/login1.png);
+    background-position: 0 10%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    .lee-login-con{
+      width: 660px;
+      height: 400px;
+      position: absolute;
+      top: calc((100% - 480px)/2);
+      //left: calc((100% - 660px)/2);
+      text-align: center;
+      .lee-login-con-l{
+        width: 55%;
+        height: 100%;
+        background: #425dbd;
+        float: left;
+        box-shadow: -12px -12px 10px rgba(255, 255, 255, 0.6);
+      }
+      .lee-login-con-r{
+        width: 45%;
+        height: 100%;
+        background: @fontColor;
+        float: left;
+        box-shadow: 12px 12px 10px rgba(255, 255, 255, 0.6);
+        h3{
+          margin: 50px 0 100px;
+          text-align: center;
+        }
+        .ant-input-affix-wrapper{
+          width: 80%;
+          margin: 30px auto;
+          display: block;
+          .ant-input,.ant-input:hover,.ant-input:focus{
+            border-width: 0 0 1px 0 !important;
+            border-radius: 0;
+            box-shadow: none;
+          }
+        }
+        .ant-btn{
+          width: 80%;
+          background: #425dbd;
+          text-align: center;
+          border:none;
+        }
+        p{
+          text-align: right;
+          margin: 20px;
+          color: #425dbd;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
 /*home*/
 .lee-home{
   width: 100%;
