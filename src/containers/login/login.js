@@ -54,11 +54,10 @@ export default class Login extends Component {
 
     render() {
         const { accounts,passpword,randomNum } = this.state;
-        const bgStyle = {backgroundImage: `url(${login})`};
-        const bgStyle3 = {backgroundImage: `url(${login3})`};
+        const bg = randomNum < 5 ? randomNum < 2.5 ? login : login : login3;
         return (
-            <div className="lee-login">
-                 <div className="lee-login-bg" style={randomNum < 5 ? bgStyle : bgStyle3}>
+            <div className="lee-login" style={{background: randomNum < 5 ? '#090437':'#0c2034'}}>
+                 <div className="lee-login-bg" style={{backgroundImage: `url(${bg})`}}>
                      <div className="lee-login-con" style={randomNum < 5 ? {left: '7%'} : {right: '7%'}}>
                          <div className="lee-login-con-l">
                              <img src={logo} alt=""/>
