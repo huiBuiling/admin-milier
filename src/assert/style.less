@@ -535,7 +535,7 @@
         }
       }
       .lee-music-r{
-        width: 130px;
+        width: 160px;
         float: right;
         line-height: 60px;
         color: rgb(205,41,41);
@@ -656,6 +656,33 @@
         text-align: right;
         color: red;
         padding-right: 0;
+      }
+    }
+  }
+}
+
+/* music volume */
+.lee-music-volume{
+  height: 300px;
+  overflow: hidden;
+  position: fixed;
+  right: 120px;
+  bottom: 35px;
+  padding: 20px 0;
+  .ant-slider{
+    &:focus{
+      outline: none;
+    }
+    .ant-slider-rail {
+        background: #666c88;
+    }
+    .ant-slider-track{
+      background-color: #cd2929;
+    }
+    .ant-slider-handle{
+      border: 2px solid #cd2929;
+      &:focus{
+        box-shadow: 0 0 0 2px #cd2929;
       }
     }
   }

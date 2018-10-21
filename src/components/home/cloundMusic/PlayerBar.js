@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Icon,Progress } from 'antd';
+import { Icon,Progress,Slider } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { getCurrentItem } from '../../../reducer/player.redux';
@@ -22,6 +22,8 @@ export default class PlayerBar extends Component {
             currentTime:'00:00',             //歌曲进度时间
             percentCurrentTime:0,            //歌曲进度时长
             profile:false,                   //显示播放列表
+            volume:50,                        //音量
+            showVolume:false,                //显示音量进度
         };
     }
 
@@ -93,6 +95,8 @@ export default class PlayerBar extends Component {
         // audio.load();  //重新加载音频元素。
         const allTime = this.time(1,audio,false);  //获取总时长
         const currentTime = this.time(2,audio,false);  //获取播放进度
+        audio.volume = (this.state.volume / 100);
+        console.log(audio.volume);
         this.setState({
             isPlay:true,
             allTime, currentTime
@@ -126,11 +130,16 @@ export default class PlayerBar extends Component {
         }
     }
 
+    setVolume = (val)=>{
+        const audio = this.refs.audio;
+        audio.volume = (val/ 100);
+    }
+
     render() {
         let {
             isPlay,
             allTime,currentTime,percentDuration,percentCurrentTime,
-            profile
+            profile,showVolume,volume
         } = this.state;
 
         let { oldSongList, currentId, currentIndex, currentUrl } = this.props;
@@ -157,6 +166,9 @@ export default class PlayerBar extends Component {
                                     ref='audio'
                                     preload="true"
                                     className="lee-music-audio"
+                                    // defaultMuted={false}  //设置或返回音频默认是否静音。
+                                    loop={true}  //循环播放
+                                    onVolumeChange={()=>console.log('改变')}
                                     onCanPlay={() => this.time(1, this.refs.audio, true)}
                                     onTimeUpdate={() => this.time(2, this.refs.audio, true)}
                                 />
@@ -188,6 +200,7 @@ export default class PlayerBar extends Component {
                                         {/*歌名*/}
                                         <h4 className="lee-music-l-top">{playerItem != undefined && playerItem.title}</h4>
                                         <Progress
+                                            style={{width:'75%'}}
                                             percent={percent}
                                             format={percent => `${currentTime} / ${allTime}`}
                                             size="small" status={percent == 100 ? 'success' : 'active'}
@@ -196,9 +209,10 @@ export default class PlayerBar extends Component {
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <div className="lee-music-r">
                                 {/*<span>列表循环</span>*/}
+                                <span><Icon type="sound" theme="outlined" onClick={()=>this.setState({showVolume:!showVolume})} /></span>
                                 <span><Icon type="heart" theme={playerItem.collect ? 'filled' : null}/></span>
                                 <span className="lee-music-num">
                                     <Icon type="profile" theme="outlined"
@@ -209,6 +223,21 @@ export default class PlayerBar extends Component {
                         </div>
                     </div>
                 </div>
+                
+                <div className="lee-music-volume" style={{display:showVolume ? 'block':'none'}}>
+                    <Slider 
+                        vertical 
+                        defaultValue={volume} 
+                        max={100}
+                        min={0}
+                        onChange={(val)=>{
+                            console.log(val);
+                            this.setState({volume:val});
+                            this.setVolume(val);
+                        }}
+                    />
+                </div>
+
                 <div className="lee-music-profile" style={{display:profile ? 'block':'none'}}>
                     <p className="lee-music-profile-title">
                         播放列表
