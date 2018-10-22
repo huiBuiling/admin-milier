@@ -3,13 +3,21 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+//判断开发 | 生产
+let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+const isLocal = WEBPACK_ENV === 'dev';
+
+
 module.exports = {
+    devtool: isLocal ? 'source-map' : 'none',  //设置本地源代码
     entry: './src/index.js',  //入口
     output: {   //输出
-        path: path.resolve(__dirname, '/dist'),
-        publicPath:'/',
-        filename: 'js/bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        // publicPath: isLocal ? '/dist/' : 'xxx/dist/',
+        publicPath: '/dist/',
+        filename: 'js/bundle.js',
     },
+
     module: {
         rules: [
             {
@@ -72,11 +80,14 @@ module.exports = {
             template: './src/index.html'
         }),
         // new ExtractTextPlugin('./[name].css'),  //独立css
-        new ExtractTextPlugin('assert/style.css'),
+        new ExtractTextPlugin('css/style.css'),
     ],
     devServer: {
         port:'5201',
         // contentBase: path.resolve(__dirname, 'dist'),
-        historyApiFallback: true
+        // historyApiFallback: true
+        historyApiFallback: {
+            index: '/dist/index.html'
+        }
     },
 };

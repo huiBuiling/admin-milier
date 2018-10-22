@@ -500,7 +500,7 @@
   background: #ddd;
 }
 .lee-music-bar .lee-image-item .lee-music .lee-music-r {
-  width: 130px;
+  width: 160px;
   float: right;
   line-height: 60px;
   color: #cd2929;
@@ -630,6 +630,30 @@
   color: red;
   padding-right: 0;
 }
+/* music volume */
+.lee-music-volume {
+  height: 300px;
+  overflow: hidden;
+  position: fixed;
+  right: 120px;
+  bottom: 35px;
+  padding: 20px 0;
+}
+.lee-music-volume .ant-slider:focus {
+  outline: none;
+}
+.lee-music-volume .ant-slider .ant-slider-rail {
+  background: #666c88;
+}
+.lee-music-volume .ant-slider .ant-slider-track {
+  background-color: #cd2929;
+}
+.lee-music-volume .ant-slider .ant-slider-handle {
+  border: 2px solid #cd2929;
+}
+.lee-music-volume .ant-slider .ant-slider-handle:focus {
+  box-shadow: 0 0 0 2px #cd2929;
+}
 /*lee-echat*/
 .lee-echat {
   width: 100%;
@@ -708,7 +732,7 @@
   vertical-align: text-bottom;
   width: 20px;
   height: 20px;
-  background-image: url(./images/check.png);
+  background-image: url(images/note/check.png);
   background-size: 100% 100%;
 }
 .lee-leave .lee-leave-r .lee-leave-edit input[type=checkbox]:checked:before {
@@ -716,7 +740,7 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background-image: url(./images/checked.png);
+  background-image: url(images/note/checked.png);
   background-size: 100% 100%;
 }
 .lee-leave .lee-leave-r .lee-leave-edit .lee-leave-header {

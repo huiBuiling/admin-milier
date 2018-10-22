@@ -3,9 +3,13 @@ import { Icon,Input,Button,Modal } from 'antd';
 import { connect } from 'react-redux';
 import { getLoginData } from '../../reducer/login.redux'
 
-import login from '../../assert/images/login1.png';
-import login3 from '../../assert/images/login3.png';
-import logo from '../../assert/images/logo2.png'
+import login from '../../assert/images/login/login1.png';
+import login3 from '../../assert/images/login/login3.png';
+
+import logo from '../../assert/images/logo/logo_bg2_1.jpg'
+import logo2 from '../../assert/images/logo/logo_bg2_2.jpg'
+import logo3 from '../../assert/images/logo/logo_bg3_1.png'
+import logo4 from '../../assert/images/logo/logo_bg4_1.png'
 
 const confirm = Modal.confirm;
 
@@ -33,7 +37,7 @@ export default class Login extends Component {
     login = ()=>{
         const { accounts,passpword } = this.state;
         this.props.getLoginData(accounts,passpword);
-        this.props.history.push('/home')
+        this.props.history.push('/map')
     }
 
     moment = ()=>{
@@ -44,7 +48,7 @@ export default class Login extends Component {
             okText: '确定',
             cancelText: '取消',
             onOk () {
-                self.props.history.push('/home');
+                self.props.history.push('/map');
             },
             onCancel() {
                 // console.log('Cancel');
@@ -55,13 +59,15 @@ export default class Login extends Component {
     render() {
         const { accounts,passpword,randomNum } = this.state;
         const bg = randomNum < 5 ? randomNum < 2.5 ? login : login : login3;
+
+        const logoImg = randomNum < 5 ? randomNum < 2.5 ? logo : logo2 : logo3;
         return (
             <div className="lee-login" style={{background: randomNum < 5 ? '#090437':'#0c2034'}}>
                  <div className="lee-login-bg" style={{backgroundImage: `url(${bg})`}}>
                      <div className="lee-login-con" style={randomNum < 5 ? {left: '7%'} : {right: '7%'}}>
                          <div className="lee-login-con-l">
-                             <img src={logo} alt=""/>
-                         </div>
+                             <img src={logo2} alt="" />
+                          </div>
                          <div className="lee-login-con-r">
                              <h3>米粒儿</h3>
                              <h4>MILIER</h4>

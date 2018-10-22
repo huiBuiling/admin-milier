@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import ReactDOM from 'react-dom'
 import { Timeline,Input,Button } from 'antd';
-import ok from '../../../assert/images/ok.png'
+import ok from '../../../assert/images/note/ok.png'
 const { TextArea } = Input;
 
 
