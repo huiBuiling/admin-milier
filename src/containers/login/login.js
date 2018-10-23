@@ -6,10 +6,8 @@ import { getLoginData } from '../../reducer/login.redux'
 import login from '../../assert/images/login/login1.png';
 import login3 from '../../assert/images/login/login3.png';
 
-import logo from '../../assert/images/logo/logo_bg2_1.jpg'
-import logo2 from '../../assert/images/logo/logo_bg2_2.jpg'
-import logo3 from '../../assert/images/logo/logo_bg3_1.png'
-import logo4 from '../../assert/images/logo/logo_bg4_1.png'
+import logo2 from '../../assert/images/logo/logo2.png'
+import logo3 from '../../assert/images/logo/logo3.png'
 
 const confirm = Modal.confirm;
 
@@ -60,13 +58,13 @@ export default class Login extends Component {
         const { accounts,passpword,randomNum } = this.state;
         const bg = randomNum < 5 ? randomNum < 2.5 ? login : login : login3;
 
-        const logoImg = randomNum < 5 ? randomNum < 2.5 ? logo : logo2 : logo3;
+        const logoImg = randomNum < 5 ? logo2 : logo3;
         return (
             <div className="lee-login" style={{background: randomNum < 5 ? '#090437':'#0c2034'}}>
                  <div className="lee-login-bg" style={{backgroundImage: `url(${bg})`}}>
                      <div className="lee-login-con" style={randomNum < 5 ? {left: '7%'} : {right: '7%'}}>
                          <div className="lee-login-con-l">
-                             <img src={logo2} alt="" />
+                             <img src={logoImg} alt="" style={{marginTop:randomNum < 5 ? 0:50}}/>
                           </div>
                          <div className="lee-login-con-r">
                              <h3>米粒儿</h3>
