@@ -124,3 +124,23 @@ antd + react 后台管理
 ```
 
 ```
+
+> 动画
+```
+yarn add animate.css --dev
+https://daneden.github.io/animate.css/
+https://github.com/daneden/animate.css
+```
+
+> svg
+```
+https://github.com/qrohlf/trianglify
+
+const canvas = Trianglify({
+            width: 1920,
+            height: 1080,
+            cell_size: Math.random()*200 + 40,
+            x_colors: 'random',
+            variance: Math.random(),
+        }).canvas();
+```

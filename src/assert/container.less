@@ -105,12 +105,6 @@ textarea {
 @leftBarFontColorP:@topBarFontColorGhost;
 @rightBgColorP:rgb(229,234,237);
 
-/*themsBlack*/
-@logoColorB:rgb(42,50,89);
-@topBgColorB:rgb(31,36,56);
-@leftBarColorB:rgb(42,50,89);
-@rightBgColorB:rgba(31,36,56,.95);
-
 /*thems*/
 .lee-admin {
   width: 100%;
@@ -123,57 +117,82 @@ textarea {
   }
   .themsPurple {
     .leeThem();
-    /*
-      logo, leftBar,
-      topBar, topBarFont,
-      thems, thems2,
-      font, rightBg
-
-      userColor: ghost
-        when (@topBarColor = rgb(239,243,246)
-        background: @themsColor;
-        color: #fff;
-
-      liCurrentColor: ghost
-        when (@logoColor = @topBarColor){
-        background: rgba(230,231,234);
-}
-    */
   }
-  .themsPurpleGHOST {
-    .leeThem(@logoColorPH, @leftBarColorPH,
-            @topBarColorGhost, @topBarFontColorGhost,
-            @themsColor, @thems2Color,
-            @rightBgColor, @color
+/*  .themsPurpleGHOST {
+    .leeThem(
+            @logoColorPH, @leftBarColorPH,#fff,
+            @topBarColorGhost, @topBarFontColorGhost,@rightBgColor
+            @themsColor,@color
     );
   }
   .themsGreen {
-    .leeThem(@logoColorG, @leftBarColorG,
-            @topBarColorG, @topBarFontColor,
-            @thems2Color:#56b9c5, @thems2Color,
-            @rightBgColor, @rightBgColorB
+    .leeThem(
+            @logoColorG, @leftBarColorG,#fff,
+            @topBarColorG, @topBarFontColor,@rightBgColor,
+            @themsColor:#56b9c5, @rightBgColorB
     );
   }
   .themsGreenGHOST {
-    .leeThem(@logoColorG, @leftBarColorG,
-            @topBarColorGhost, @topBarFontColorGhost,
-            @themsColor:#66c8d4, @thems2Color,
-            @rightBgColor, @rightBgColorB
+    .leeThem(
+            @logoColorG, @leftBarColorG,#fff,
+            @topBarColorGhost, @topBarFontColorGhost,@rightBgColor,
+            @themsColor:#66c8d4, @rightBgColorB
     );
   }
   .themsPink {
-    .leeThem(@logoColorP, @leftBarColorP,
-            @logoColorP, @color,
-            @logoColorP, @thems2Color,
-            @leftBarFontColorP,@rightBgColorP
+    .leeThem(
+            @logoColorP, @leftBarColorP,#fff,
+            @logoColorP, @color,@leftBarFontColorP,
+            @logoColorP, @rightBgColorP
+    );
+  }*/
+
+  /*themsBlack*/
+  @rightBgColorB:rgba(31,36,56,.95);
+
+  @logoBlack:rgb(42,50,89);
+  @leftBarBlack:rgb(42,50,89);
+
+  @liFontBlack:#fff;
+  @liActiveBgBlack:rgb(31,36,56);
+  @liActiveBorderBlack:rgb(219,99,113);
+
+  @topBarBlack:rgb(31,36,56);
+  @topBarFontBlack:rgb(158,186,217);
+
+  @rightBgBlack:rgba(31,36,56,.95);;
+  @themsBlack:#d2d4e8;
+  @fontBlack:#fff;
+  .themsBlack {
+    .leeThem(
+            @logoBlack, @leftBarBlack,
+            @liFontBlack,@liActiveBgBlack,@liActiveBorderBlack,
+            @topBarBlack,@topBarFontBlack
+            @rightBgBlack,@themsBlack, @fontBlack
     );
   }
-  .themsBlack {
-    .leeThem(@logoColorB, @topBgColorB,
-            @topBgColorB, @color,
-            @themsColor, @thems2Color,
-            @color,@rightBgColorB
-    );
+
+  /* themsSVGLF */
+  @logoSVG:#dcdaeb;
+  @leftBarSVG:rgb(158,186,217);
+
+  @liFontSVG:#fff;
+  @liActiveBgSVG:rgb(213, 213, 232);
+  @liActiveBorderSVG:rgb(219,99,113);
+
+  @topBarSVG:rgb(158,186,217);
+  @topBarFontSVG:rgb(158,186,217);
+
+  @rightBgSVG:transparent;
+  @themsSVG:#d2d4e8;
+  @fontSVG:#fff;
+  .themsSVGLF {
+    .leeThem(
+            @logoSVG, @leftBarSVG,
+            @liFontSVG,@liActiveBgSVG,@liActiveBorderSVG,
+            @topBarSVG,@topBarFontSVG
+            @rightBgSVG,@themsSVG, @fontSVG
+    )
   }
 }
 
@@ -182,7 +201,6 @@ textarea {
   width: 350px;
   background: #fff;
   padding: 8px 0 8px 10px;
-  text-align: right;
   li{
     width: 35px;
     height: 35px;

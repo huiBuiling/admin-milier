@@ -11,6 +11,7 @@ import reducer from './reducer/reducers'
 import 'antd/dist/antd.min.css';
 import './assert/container.less';
 import './assert/style.less';
+import "animate.css";
 
 const store = createStore(reducer,compose(
     applyMiddleware(thunk),

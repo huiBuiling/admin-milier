@@ -3,7 +3,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/*top bar user bg*/
 /*li active*/
 /*start*/
 * {
@@ -86,35 +85,46 @@ textarea {
 /*themsPurpleGhost*/
 /*themsGreen , themsGreenGhost*/
 /*themsPink*/
-/*themsBlack*/
 /*thems*/
 .lee-admin {
   width: 100%;
   height: 100%;
+  /*  .themsPurpleGHOST {
+    .leeThem(
+            @logoColorPH, @leftBarColorPH,#fff,
+            @topBarColorGhost, @topBarFontColorGhost,@rightBgColor
+            @themsColor,@color
+    );
+  }
+  .themsGreen {
+    .leeThem(
+            @logoColorG, @leftBarColorG,#fff,
+            @topBarColorG, @topBarFontColor,@rightBgColor,
+            @themsColor:#56b9c5, @rightBgColorB
+    );
+  }
+  .themsGreenGHOST {
+    .leeThem(
+            @logoColorG, @leftBarColorG,#fff,
+            @topBarColorGhost, @topBarFontColorGhost,@rightBgColor,
+            @themsColor:#66c8d4, @rightBgColorB
+    );
+  }
+  .themsPink {
+    .leeThem(
+            @logoColorP, @leftBarColorP,#fff,
+            @logoColorP, @color,@leftBarFontColorP,
+            @logoColorP, @rightBgColorP
+    );
+  }*/
+  /*themsBlack*/
+  /* themsSVGLF */
 }
 .lee-admin .thems {
   width: 100%;
   height: 100%;
   display: flex;
   flex-flow: row;
-}
-.lee-admin .themsPurple {
-  /*
-      logo, leftBar,
-      topBar, topBarFont,
-      thems, thems2,
-      font, rightBg
-
-      userColor: ghost
-        when (@topBarColor = rgb(239,243,246)
-        background: @themsColor;
-        color: #fff;
-
-      liCurrentColor: ghost
-        when (@logoColor = @topBarColor){
-        background: rgba(230,231,234);
-}
-    */
 }
 .lee-admin .themsPurple .lee-leftBar {
   width: 150px;
@@ -134,8 +144,6 @@ textarea {
   width: 150px;
   height: calc(100% - 50px);
   background: #1f2438;
-  color: #fff;
-  font-size: 14px;
 }
 .lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
   padding-top: 25px;
@@ -150,15 +158,17 @@ textarea {
   width: 100%;
   height: 100%;
   padding-left: 25px;
-  color: #fff;
   font-size: 14px;
+  color: #fff;
 }
 .lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
   margin-right: 9px;
 }
+.lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active {
+  background: #fff;
+}
 .lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
-  border-right: 4px solid #5868d9;
-  background: rgba(42, 50, 89, 0.5);
+  border-right: 4px solid #fff;
 }
 .lee-admin .themsPurple .lee-rightBar {
   width: calc(100% - 150px);
@@ -200,20 +210,6 @@ textarea {
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
   margin-right: 10px;
 }
-.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border: 1px solid #5868d9;
-  background: #fff;
-  color: #5868d9;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
   width: 40px;
   height: 40px;
@@ -239,7 +235,6 @@ textarea {
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
-  background: #E9EEF1;
 }
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
   width: 100%;
@@ -271,7 +266,7 @@ textarea {
   width: 150px;
   height: 170px;
   line-height: 25px;
-  background: rgba(70, 212, 186, 0.6);
+  background: transparent;
   position: absolute;
   top: -1px;
   right: 150px;
@@ -288,715 +283,6 @@ textarea {
   background: rgba(88, 104, 217, 0.6);
 }
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar {
-  width: 150px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-top {
-  width: 150px;
-  background: #2a3259;
-  color: #fff;
-  height: 50px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
-  font-size: 20px;
-  line-height: 50px;
-  padding-left: 25px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
-  height: calc(100% - 50px);
-  background: #1f2438;
-  color: #E9EEF1;
-  font-size: 14px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
-  padding-top: 25px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding-left: 25px;
-  color: #E9EEF1;
-  font-size: 14px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
-  margin-right: 9px;
-}
-.lee-admin .themsPurpleGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
-  border-right: 4px solid #5868d9;
-  background: rgba(42, 50, 89, 0.5);
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar {
-  width: calc(100% - 150px);
-  height: 100%;
-  color: #E9EEF1;
-  overflow: hidden;
-  position: relative;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top {
-  width: 100%;
-  height: 50px;
-  background: #eff3f6;
-  color: #535353;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
-  width: 240px;
-  padding: 0 20px;
-  float: left;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
-  line-height: 50px;
-  font-size: 14px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
-  margin-right: 10px;
-  font-size: 20px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
-  float: right;
-  line-height: 50px;
-  padding-right: 25px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 25px;
-  cursor: pointer;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
-  margin-right: 10px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border: 1px solid #5868d9;
-  background: #fff;
-  color: #5868d9;
-  background: #5868d9;
-  color: #fff;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
-  margin-right: 5px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
-  color: #fff;
-  font-size: 18px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot {
-  width: 100%;
-  height: calc(100% - 50px);
-  background: #fff;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
-  width: 100%;
-  height: 170px;
-  position: relative;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
-  width: 100%;
-  height: 100%;
-  margin-top: -1px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
-  position: absolute;
-  left: 25px;
-  top: 30px;
-  font-size: 14px;
-  color: #E9EEF1;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
-  font-size: 20px;
-  margin-right: 10px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
-  width: 150px;
-  height: 170px;
-  line-height: 25px;
-  background: rgba(70, 212, 186, 0.6);
-  position: absolute;
-  top: -1px;
-  right: 150px;
-  padding: 60px 0;
-  color: #E9EEF1;
-  font-size: 16px;
-  text-align: center;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
-  font-size: 20px;
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
-  right: 0;
-  background: rgba(88, 104, 217, 0.6);
-}
-.lee-admin .themsPurpleGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-.lee-admin .themsGreen .lee-leftBar {
-  width: 150px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-top {
-  width: 150px;
-  background: #306174;
-  color: #fff;
-  height: 50px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
-  font-size: 20px;
-  line-height: 50px;
-  padding-left: 25px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
-  height: calc(100% - 50px);
-  background: #36908f;
-  color: #E9EEF1;
-  font-size: 14px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
-  padding-top: 25px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding-left: 25px;
-  color: #E9EEF1;
-  font-size: 14px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
-  margin-right: 9px;
-}
-.lee-admin .themsGreen .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
-  border-right: 4px solid #46d4ba;
-  background: rgba(42, 50, 89, 0.5);
-}
-.lee-admin .themsGreen .lee-rightBar {
-  width: calc(100% - 150px);
-  height: 100%;
-  color: #E9EEF1;
-  overflow: hidden;
-  position: relative;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top {
-  width: 100%;
-  height: 50px;
-  background: #46d4ba;
-  color: #fff;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
-  width: 240px;
-  padding: 0 20px;
-  float: left;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
-  line-height: 50px;
-  font-size: 14px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
-  margin-right: 10px;
-  font-size: 20px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
-  float: right;
-  line-height: 50px;
-  padding-right: 25px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 25px;
-  cursor: pointer;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
-  margin-right: 10px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border: 1px solid #46d4ba;
-  background: #fff;
-  color: #46d4ba;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
-  margin-right: 5px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
-  color: #fff;
-  font-size: 18px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot {
-  width: 100%;
-  height: calc(100% - 50px);
-  background: rgba(31, 36, 56, 0.95);
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
-  width: 100%;
-  height: 170px;
-  position: relative;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
-  width: 100%;
-  height: 100%;
-  margin-top: -1px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
-  position: absolute;
-  left: 25px;
-  top: 30px;
-  font-size: 14px;
-  color: #E9EEF1;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
-  font-size: 20px;
-  margin-right: 10px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
-  width: 150px;
-  height: 170px;
-  line-height: 25px;
-  background: rgba(86, 185, 197, 0.6);
-  position: absolute;
-  top: -1px;
-  right: 150px;
-  padding: 60px 0;
-  color: #E9EEF1;
-  font-size: 16px;
-  text-align: center;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
-  font-size: 20px;
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
-  right: 0;
-  background: rgba(70, 212, 186, 0.6);
-}
-.lee-admin .themsGreen .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar {
-  width: 150px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-top {
-  width: 150px;
-  background: #306174;
-  color: #fff;
-  height: 50px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
-  font-size: 20px;
-  line-height: 50px;
-  padding-left: 25px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
-  height: calc(100% - 50px);
-  background: #36908f;
-  color: #E9EEF1;
-  font-size: 14px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
-  padding-top: 25px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding-left: 25px;
-  color: #E9EEF1;
-  font-size: 14px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
-  margin-right: 9px;
-}
-.lee-admin .themsGreenGHOST .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
-  border-right: 4px solid #66c8d4;
-  background: rgba(42, 50, 89, 0.5);
-}
-.lee-admin .themsGreenGHOST .lee-rightBar {
-  width: calc(100% - 150px);
-  height: 100%;
-  color: #E9EEF1;
-  overflow: hidden;
-  position: relative;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top {
-  width: 100%;
-  height: 50px;
-  background: #eff3f6;
-  color: #535353;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
-  width: 240px;
-  padding: 0 20px;
-  float: left;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
-  line-height: 50px;
-  font-size: 14px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
-  margin-right: 10px;
-  font-size: 20px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
-  float: right;
-  line-height: 50px;
-  padding-right: 25px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 25px;
-  cursor: pointer;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
-  margin-right: 10px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border: 1px solid #66c8d4;
-  background: #fff;
-  color: #66c8d4;
-  background: #66c8d4;
-  color: #fff;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
-  margin-right: 5px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
-  color: #fff;
-  font-size: 18px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot {
-  width: 100%;
-  height: calc(100% - 50px);
-  background: rgba(31, 36, 56, 0.95);
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
-  width: 100%;
-  height: 170px;
-  position: relative;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
-  width: 100%;
-  height: 100%;
-  margin-top: -1px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
-  position: absolute;
-  left: 25px;
-  top: 30px;
-  font-size: 14px;
-  color: #E9EEF1;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
-  font-size: 20px;
-  margin-right: 10px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
-  width: 150px;
-  height: 170px;
-  line-height: 25px;
-  background: rgba(70, 212, 186, 0.6);
-  position: absolute;
-  top: -1px;
-  right: 150px;
-  padding: 60px 0;
-  color: #E9EEF1;
-  font-size: 16px;
-  text-align: center;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
-  font-size: 20px;
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
-  right: 0;
-  background: rgba(102, 200, 212, 0.6);
-}
-.lee-admin .themsGreenGHOST .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-.lee-admin .themsPink .lee-leftBar {
-  width: 150px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-top {
-  width: 150px;
-  background: #fa9bc1;
-  color: #fff;
-  height: 50px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
-  font-size: 20px;
-  line-height: 50px;
-  padding-left: 25px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
-  height: calc(100% - 50px);
-  background: #f5f5f7;
-  color: #535353;
-  font-size: 14px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
-  padding-top: 25px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding-left: 25px;
-  color: #535353;
-  font-size: 14px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
-  margin-right: 9px;
-}
-.lee-admin .themsPink .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
-  border-right: 4px solid #fa9bc1;
-  background: rgba(42, 50, 89, 0.5);
-  background: rgba(230, 231, 234);
-}
-.lee-admin .themsPink .lee-rightBar {
-  width: calc(100% - 150px);
-  height: 100%;
-  color: #535353;
-  overflow: hidden;
-  position: relative;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top {
-  width: 100%;
-  height: 50px;
-  background: #fa9bc1;
-  color: #fff;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
-  width: 240px;
-  padding: 0 20px;
-  float: left;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
-  line-height: 50px;
-  font-size: 14px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
-  margin-right: 10px;
-  font-size: 20px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
-  float: right;
-  line-height: 50px;
-  padding-right: 25px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 25px;
-  cursor: pointer;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
-  margin-right: 10px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border: 1px solid #fa9bc1;
-  background: #fff;
-  color: #fa9bc1;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
-  margin-right: 5px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
-  color: #fff;
-  font-size: 18px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot {
-  width: 100%;
-  height: calc(100% - 50px);
-  background: #e5eaed;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
-  width: 100%;
-  height: 170px;
-  position: relative;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
-  width: 100%;
-  height: 100%;
-  margin-top: -1px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
-  position: absolute;
-  left: 25px;
-  top: 30px;
-  font-size: 14px;
-  color: #535353;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
-  font-size: 20px;
-  margin-right: 10px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
-  width: 150px;
-  height: 170px;
-  line-height: 25px;
-  background: rgba(70, 212, 186, 0.6);
-  position: absolute;
-  top: -1px;
-  right: 150px;
-  padding: 60px 0;
-  color: #535353;
-  font-size: 16px;
-  text-align: center;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
-  font-size: 20px;
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
-  right: 0;
-  background: rgba(250, 155, 193, 0.6);
-}
-.lee-admin .themsPink .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -1018,9 +304,7 @@ textarea {
 .lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot {
   width: 150px;
   height: calc(100% - 50px);
-  background: #1f2438;
-  color: #fff;
-  font-size: 14px;
+  background: #2a3259;
 }
 .lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
   padding-top: 25px;
@@ -1035,15 +319,17 @@ textarea {
   width: 100%;
   height: 100%;
   padding-left: 25px;
-  color: #fff;
   font-size: 14px;
+  color: #fff;
 }
 .lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
   margin-right: 9px;
 }
+.lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active {
+  background: #1f2438;
+}
 .lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
-  border-right: 4px solid #5868d9;
-  background: rgba(42, 50, 89, 0.5);
+  border-right: 4px solid #db6371;
 }
 .lee-admin .themsBlack .lee-rightBar {
   width: calc(100% - 150px);
@@ -1085,20 +371,6 @@ textarea {
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
   margin-right: 10px;
 }
-.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user .anticon {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  border: 1px solid #5868d9;
-  background: #fff;
-  color: #5868d9;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
   width: 40px;
   height: 40px;
@@ -1124,7 +396,6 @@ textarea {
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
-  background: rgba(31, 36, 56, 0.95);
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
   width: 100%;
@@ -1156,7 +427,7 @@ textarea {
   width: 150px;
   height: 170px;
   line-height: 25px;
-  background: rgba(70, 212, 186, 0.6);
+  background: transparent;
   position: absolute;
   top: -1px;
   right: 150px;
@@ -1170,9 +441,170 @@ textarea {
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
   right: 0;
-  background: rgba(88, 104, 217, 0.6);
+  background: rgba(255, 255, 255, 0.6);
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.lee-admin .themsSVGLF .lee-leftBar {
+  width: 150px;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-top {
+  width: 150px;
+  background: #dcdaeb;
+  color: #fff;
+  height: 50px;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-top .lee-leftBar-logo {
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 25px;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot {
+  width: 150px;
+  height: calc(100% - 50px);
+  background: #9ebad9;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul {
+  padding-top: 25px;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-left: 25px;
+  font-size: 14px;
+  color: #fff;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a .anticon {
+  margin-right: 9px;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active {
+  background: #d5d5e8;
+}
+.lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li.active a {
+  border-right: 4px solid #db6371;
+}
+.lee-admin .themsSVGLF .lee-rightBar {
+  width: calc(100% - 150px);
+  height: 100%;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top {
+  width: 100%;
+  height: 50px;
+  background: #9ebad9;
+  color: #fff;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
+  width: 240px;
+  padding: 0 20px;
+  float: left;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span {
+  line-height: 50px;
+  font-size: 14px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-search > span .anticon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r {
+  float: right;
+  line-height: 50px;
+  padding-right: 25px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user {
+  margin-right: 10px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div.name {
+  margin-right: 5px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span .anticon,
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
+  color: #fff;
+  font-size: 18px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
+  margin-left: 30px;
+  margin-right: 0;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot {
+  width: 100%;
+  height: calc(100% - 50px);
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg {
+  width: 100%;
+  height: 170px;
+  position: relative;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg img {
+  width: 100%;
+  height: 100%;
+  margin-top: -1px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .address .anticon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block {
+  width: 150px;
+  height: 170px;
+  line-height: 25px;
+  background: transparent;
+  position: absolute;
+  top: -1px;
+  right: 150px;
+  padding: 60px 0;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block .anticon {
+  font-size: 20px;
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .barimg .block2 {
+  right: 0;
+  background: rgba(255, 255, 255, 0.6);
+}
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot .lee-rightBar-bot-bot .lee-rbb-all {
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -1182,7 +614,6 @@ textarea {
   width: 350px;
   background: #fff;
   padding: 8px 0 8px 10px;
-  text-align: right;
 }
 .lee-skin li {
   width: 35px;

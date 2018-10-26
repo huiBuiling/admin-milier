@@ -59,12 +59,6 @@
 @leftBarW:150px;
 @leftBarL:25px;
 
-/*top bar user bg*/
-.userColor(@topBarColor,@themsColor) when (@topBarColor = rgb(239,243,246)) {
-  background: @themsColor;
-  color: #fff;
-}
-
 /*li active*/
 .liCurrentColor(@logoColor,@topBarColor) when (@logoColor = @topBarColor){
   background: rgba(230,231,234);
@@ -72,15 +66,17 @@
 
 /*start*/
 .leeThem(
+  //left bg: top | bot
   @logoColor:@logoColor,@leftBarColor:@leftBarColor,
-  @topBarColor:@topBarColor,@topBarFontColor:@topBarFontColor,
 
-  //@logoFontColor:#fff,@leftBarFontColor:#fff,
-  //@topBarFontColor:#fff,@rightFontColor,
+  //left li: font | li active : bg | font
+  @liFont:#fff,@liActiveBg:#fff,@liActiveBorder:#fff,
 
-  @themsColor:@themsColor,@thems2Color:@thems2Color,
+  //right: top | top font | top left border
+  @topBarColor:@topBarColor,@topFont:#fff,
 
-  @fontColor:@fontColor,@rightBgColor:@rightBgColor
+  //right botBg | thems | global font color
+  @rightBgColor:@rightBgColor,@themsColor:@themsColor,@fontColor:@fontColor
 ){
     .lee-leftBar {
       width: @leftBarW;
@@ -99,8 +95,6 @@
         width: @leftBarW;
         height: calc(100% - 50px);
         background: @leftBarColor;
-        color: @fontColor;
-        font-size: @fontSize;
         .lee-leftBar-list {
           ul {
             padding-top: @leftBarL;
@@ -114,17 +108,17 @@
                 width: 100%;
                 height: 100%;
                 padding-left: @leftBarL;
-                color: @fontColor;
                 font-size: @fontSize;
+                color: @liFont;
                 .anticon {
                   margin-right: 9px;
                 }
               }
               &.active {
+                background:@liActiveBg;
                 a {
-                  border-right: 4px solid @themsColor;
-                  background: rgba(42, 50, 89,.5);
-                  .liCurrentColor(@logoColor,@topBarColor);
+                  border-right: 4px solid @liActiveBorder;
+
                 }
               }
             }
@@ -168,17 +162,6 @@
             cursor: pointer;
             &.user {
               margin-right: 10px;
-              .anticon {
-                width: 30px;
-                height: 30px;
-                text-align: center;
-                line-height: 30px;
-                border:1px solid @themsColor;
-                background: #fff;
-                color: @themsColor;
-                .userColor(@topBarColor,@themsColor);
-                .border-radius(50%);
-              }
               img{
                 width: 40px;
                 height: 40px;
@@ -204,7 +187,7 @@
       .lee-rightBar-bot {
         width: 100%;
         height: calc(100% - 50px);
-        background: @rightBgColor;
+        //background: @rightBgColor;
         .lee-rightBar-bot-bot {
           width: 100%;
           height: 100%;
@@ -233,7 +216,8 @@
               width: 150px;
               height: 170px;
               line-height: 25px;
-              background: rgba(@thems2Color, 0.6);
+              //background: rgba(@thems2Color, 0.6);
+              background: transparent;
 
               position: absolute;
               top: -1px;

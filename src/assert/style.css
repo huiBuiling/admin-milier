@@ -282,6 +282,161 @@
     column-count: 2;
   }
 }
+/*global music*/
+.lee-music-opera {
+  position: fixed;
+  top: 200px;
+  right: 30px;
+}
+.lee-music-opera .lee-music-animate {
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f58021;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+  margin-right: -20px;
+  margin-top: -2px;
+}
+.lee-music-opera .lee-music-animate .uninfinite {
+  animate-duration: 2s;
+  animate-delay: 2s;
+  animation-iteration-count: 5;
+}
+.lee-music-opera .in {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f58021;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+.lee-music-opera .in:after {
+  opacity: 0.6;
+  content: '';
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid #f58021;
+  display: block;
+  animation: sonarEffect 2.3s infinite ease-out 85ms;
+  animate-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
+}
+.lee-music-opera .in:before {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  top: -17px;
+  right: -17px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid #f58021;
+  display: block;
+  animation: sonarEffect2 2.3s infinite ease-out 85ms;
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animate-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
+  -moz-animation-iteration-count: 3;
+}
+@keyframes sonarEffect {
+  0% {
+    z-index: -1;
+    opacity: 0.6;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  55% {
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+@keyframes sonarEffect2 {
+  0% {
+    z-index: -1;
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.15;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 2px 2px rgba(255, 255, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.5);
+  }
+  55% {
+    opacity: 0.3;
+    box-shadow: 0 0 0 2px rgba(245, 128, 33, 0.1), 0 0 4px 4px rgba(245, 128, 33, 0.3), 0 0 0 4px rgba(245, 128, 33, 0.5);
+  }
+  75% {
+    opacity: 0.15;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 2px 2px rgba(255, 255, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.lee-music-opera2 {
+  position: fixed;
+  right: 0;
+  top: 198px;
+  height: 80px;
+}
+.lee-music-opera2 .lee-music-opera2-bar .anticon {
+  color: #5868d9;
+  font-size: 25px;
+  width: 50px;
+  height: 50px;
+  line-height: 55px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 20px -3px;
+  text-align: center;
+  top: -15px;
+  right: 100px;
+  position: absolute;
+}
+.lee-music-opera2 .lee-music-opera2-bar .anticon-caret-right {
+  top: 65px;
+  right: 25px;
+}
+.lee-music-opera2 .lee-music-opera2-bar .anticon-pause-circle,
+.lee-music-opera2 .lee-music-opera2-bar .anticon-play-circle {
+  right: 85px;
+  top: 45px;
+  transition: background 2s;
+}
 /*clound player*/
 .lee-clound {
   width: 100%;

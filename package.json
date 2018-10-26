@@ -11,6 +11,7 @@
     "dist": "yarn webpack -p"
   },
   "devDependencies": {
+    "animate.css": "^3.7.0",
     "antd": "^3.9.3",
     "axios": "^0.18.0",
     "babel-core": "6.26.0",
@@ -39,6 +40,7 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "style-loader": "0.19.1",
+    "trianglify": "^1.2.0",
     "url-loader": "^1.1.1",
     "webpack": "3.10.0",
     "webpack-dev-server": "2.9.7"
