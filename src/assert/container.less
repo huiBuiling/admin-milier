@@ -1,4 +1,5 @@
 @import "thems.less";
+@import "style.less";
 
 * {
   margin: 0;
@@ -7,6 +8,7 @@
 body {
   font-size: 14px;
   font-style: normal;
+  overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -148,26 +150,25 @@ textarea {
   }*/
 
   /*themsBlack*/
-  @rightBgColorB:rgba(31,36,56,.95);
-
   @logoBlack:rgb(42,50,89);
-  @leftBarBlack:rgb(42,50,89);
+  @leftBarBlack:rgb(31,36,56);
 
   @liFontBlack:#fff;
-  @liActiveBgBlack:rgb(31,36,56);
-  @liActiveBorderBlack:rgb(219,99,113);
+  @liActiveBgBlack:rgb(36,43,73);
+  @liActiveBorderBlack:rgb(91,107,227);
 
-  @topBarBlack:rgb(31,36,56);
-  @topBarFontBlack:rgb(158,186,217);
+  @topBarBlack:@leftBarBlack;
+  @topBarFontBlack:#fff;
 
-  @rightBgBlack:rgba(31,36,56,.95);;
-  @themsBlack:#d2d4e8;
+  @rightBgBlack:rgb(42,47,66);
+  @themsBlack:#ddd;
   @fontBlack:#fff;
+
   .themsBlack {
     .leeThem(
             @logoBlack, @leftBarBlack,
             @liFontBlack,@liActiveBgBlack,@liActiveBorderBlack,
-            @topBarBlack,@topBarFontBlack
+            @topBarBlack,@topBarFontBlack,
             @rightBgBlack,@themsBlack, @fontBlack
     );
   }
@@ -176,22 +177,74 @@ textarea {
   @logoSVG:#dcdaeb;
   @leftBarSVG:rgb(158,186,217);
 
-  @liFontSVG:#fff;
-  @liActiveBgSVG:rgb(213, 213, 232);
-  @liActiveBorderSVG:rgb(219,99,113);
+  @liActiveBgSVG:rgba(213, 213, 232,.3);
+  @liActiveBorderSVG:rgba(219,99,113,.6);
 
-  @topBarSVG:rgb(158,186,217);
   @topBarFontSVG:rgb(158,186,217);
 
-  @rightBgSVG:transparent;
-  @themsSVG:#d2d4e8;
-  @fontSVG:#fff;
+  @fontW:#fff;
+  @transparent:transparent;
+  /* 蓝色 */
+  .themsSVGL {
+   .leeThem(
+            #5f89bd, #6fa2cc,
+            @fontW,rgba(255,255,255,.5),@fontW,
+            #5f89bd,@topBarFontSVG,
+            @transparent,#5f89bd, @fontW
+    )
+  }
+  /* 蓝粉色 */
   .themsSVGLF {
     .leeThem(
-            @logoSVG, @leftBarSVG,
-            @liFontSVG,@liActiveBgSVG,@liActiveBorderSVG,
-            @topBarSVG,@topBarFontSVG
-            @rightBgSVG,@themsSVG, @fontSVG
+            #dcdaeb, rgb(158,186,217),
+            @fontW,rgba(213, 213, 232,.3),rgb(220, 218, 235),
+            rgb(158,186,217),rgb(158,186,217),
+            @transparent,#d2d4e8, @fontW
+    )
+  }
+  /* 蓝粉色H */
+  .themsSVGLFH{
+    .leeThem(
+            #5f89bd, #6fa2cc,
+            @fontW,rgba(255,255,255,.5),@fontW,
+            #5f89bd,@topBarFontSVG,
+            @transparent,#5f89bd, @fontW
+    )
+  }
+  /* 蓝粉紫色 */
+  .themsSVGLFZ {
+    .leeThem(
+            #9992c5, #fff,
+            @fontW,rgba(213, 213, 232,.3),#946fa7,
+            #9992c5,@fontW,
+            @transparent,#946fa7, @fontW
+    )
+  }
+  /* 粉色 */
+  .themsSVGF {
+    .leeThem(
+            #cc94c7, @fontW,
+            @fontW,rgba(255,255,255,.5),#cc94c7,
+            #cc94c7,@fontW,
+            @transparent,#cc94c7, @fontW
+    )
+  }
+  /* 粉紫色 */
+  .themsSVGFZ {
+    .leeThem(
+            #a689c4, #6fa2cc,
+            @fontW,rgba(255,255,255,.5),#fff,
+            #a689c4,#fff,
+            @transparent,#a689c4, @fontW
+    )
+  }
+  /* 橘粉色 */
+  .themsSVGGF {
+    .leeThem(
+            #faa0b4, @fontW,
+            @fontW,rgba(255,255,255,.5),#faa0b4,
+            #faa0b4,@fontW,
+            @transparent,#5f89bd, @fontW
     )
   }
 }

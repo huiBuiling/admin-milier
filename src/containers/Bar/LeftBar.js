@@ -7,6 +7,7 @@ export default class LeftBar extends Component {
     constructor(props){
         super(props);
         this.state = {
+            active:0,
             links:[
                 { path:'/home', icon:'home', title:'首页'},
                 { path:'/intro', icon:'pushpin', title:'介绍'},
@@ -21,9 +22,19 @@ export default class LeftBar extends Component {
         }
     }
 
+    componentDidMount(){
+        //设置active
+        const { pathname } = this.props.location;
+        this.state.links.filter((item, index)=>{
+            if(pathname == item.path){
+                this.setState({active:index})
+            }
+        });
+    }
+
     render() {
         const { pathname } = this.props.location;
-        const { links } = this.state;
+        const { links,active } = this.state;
         return (
             <div className="lee-leftBar">
                 <div className="lee-leftBar-top">
@@ -33,10 +44,12 @@ export default class LeftBar extends Component {
                     <div className="lee-leftBar-list">
                         <ul>
                             {links.map((item, index)=>{
-                                return <li className={pathname == item.path ? "active":null} key={index}>
+                                return <li className={pathname == item.path ? "active animated jackInTheBox":null} key={index}>
                                             <Link to={item.path} onClick={()=>this.setState({active:index})}><Icon type={item.icon} />{item.title}</Link>
                                        </li>
                             })}
+
+                            <div className="libar" style={{transform: `translate3d(0px, ${active * 50}px, 0px)`}}></div>
                         </ul>
                     </div>
                 </div>

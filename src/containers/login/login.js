@@ -35,7 +35,7 @@ export default class Login extends Component {
     login = ()=>{
         const { accounts,passpword } = this.state;
         this.props.getLoginData(accounts,passpword);
-        this.props.history.push('/map')
+        this.props.history.push('/home')
     }
 
     moment = ()=>{
@@ -46,7 +46,7 @@ export default class Login extends Component {
             okText: '确定',
             cancelText: '取消',
             onOk () {
-                self.props.history.push('/map');
+                self.props.history.push('/home');
             },
             onCancel() {
                 // console.log('Cancel');

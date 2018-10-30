@@ -51,7 +51,7 @@ class LeaveWord extends Component {
             this.state.leaveList[index].isDone = isDone;
             this.allChecked();
         }
-        this.db.set('leaveList', this.state.leaveList);
+        // this.db.set('leaveList', this.state.leaveList);
     }
 
     //修改任务
@@ -78,13 +78,13 @@ class LeaveWord extends Component {
 			leaveList:leaveList,
 			isAllChecked:false
 		})
-        this.db.set("leaveList",leaveList);
+        // this.db.set("leaveList",leaveList);
 	}
 
 	//删除当前任务，传递给TodoItem的方法
 	delateCurrentLeave = (index)=>{
 		this.state.leaveList.splice(index, 1);
-        localStorage.noteData.splice(index,1);
+        // localStorage.noteData.splice(index,1);
         this.setState({leaveList: this.state.leaveList});
         // this.db.set("leaveList",this.state.leaveList);
 	}
@@ -111,7 +111,6 @@ class LeaveWord extends Component {
                     })}
 
                 </Timeline>
-                )
 
 				<LeaveFooter
 					currentCount={(leaveList && leaveList.filter((todo) => todo.isDone)).length || 0}

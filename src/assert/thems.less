@@ -1,16 +1,22 @@
-@logoColor:rgb(42,50,89);
-@leftBarColor:rgb(31,36,56);
-@topBarColor:rgb(88,104,217);
-@rightBgColor:rgb(232,239,242);
+//left bg: top | bot
+@logo:rgb(42,50,89);
+@leftBar:rgb(31,36,56);
 
-@topBarFontColor:#fff;
+//left li: font | li active : bg | font
+@liFont:#fff;
+@liActiveBg:#fff;
+@liActiveBorder:#fff;
 
-@themsColor:rgb(88,104,217);
-@thems2Color:rgb(70,212,186);
+//right: top | top font | top left border
+@topBar:rgb(88,104,217);
+@topFont:#fff;
 
+//right botBg | thems | global font color
+@rightBg:rgb(232,239,242);
+@thems:rgb(88,104,217);
+@thems2:rgb(70,212,186);
 @fontColor:@color;
 @fontColor2:#616161;
-//@fontColor2:rgb(83,83,83);
 
 @fontSize:14px;
 @fontSize2:12px;
@@ -56,33 +62,66 @@
   white-space: nowrap;
 }
 
+/*rotate360*/
+@-webkit-keyframes spinAround {
+  from {-webkit-transform:rotate(0deg)}
+  to {-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes spinAround {
+  from {-webkit-transform:rotate(0deg)}
+  to {-webkit-transform:rotate(360deg)}
+}
+@keyframes spinAround {
+  from {-webkit-transform:rotate(0deg)}
+  to {-webkit-transform:rotate(360deg)}
+}
+
 @leftBarW:150px;
 @leftBarL:25px;
-
-/*li active*/
-.liCurrentColor(@logoColor,@topBarColor) when (@logoColor = @topBarColor){
-  background: rgba(230,231,234);
-}
 
 /*start*/
 .leeThem(
   //left bg: top | bot
-  @logoColor:@logoColor,@leftBarColor:@leftBarColor,
+  @logo:@logo,@leftBar:@leftBar,
 
   //left li: font | li active : bg | font
-  @liFont:#fff,@liActiveBg:#fff,@liActiveBorder:#fff,
+  @liFont:@liFont,@liActiveBg:@liActiveBg,@liActiveBorder:@liActiveBorder,
 
   //right: top | top font | top left border
-  @topBarColor:@topBarColor,@topFont:#fff,
+  @topBar:@topBar,@topFont:@topFont,
 
   //right botBg | thems | global font color
-  @rightBgColor:@rightBgColor,@themsColor:@themsColor,@fontColor:@fontColor
+  @rightBg:@rightBg,@thems:@thems,@fontColor:@fontColor
 ){
+    /*lee-leftBar-bot li active*/
+    .liCurrentColor when (@logo = @topBar){
+      background: transparent;
+      a {
+        color: @logo;
+      }
+    }
+
+    /*lee-leftBar-bot li active border*/
+    .liCurrentBorColor(@liActiveBorder){
+      background: @liActiveBorder;
+    }
+
+    /*lee-leftBar-bot BG*/
+    .lee-leftBar-bot-BG when (@logo = @topBar){
+      background: transparent;
+      border-right: 2px solid @leftBar;
+    }
+
+    /*lee-rightBar-bot BG*/
+    .lee-rightBar-bot-BG(@rightBg){
+      background: @rightBg;
+    }
+
     .lee-leftBar {
       width: @leftBarW;
       .lee-leftBar-top {
         width: @leftBarW;
-        background: @logoColor;
+        background: @logo;
         color: #fff;
         height: 50px;
         .lee-leftBar-logo {
@@ -94,33 +133,47 @@
       .lee-leftBar-bot {
         width: @leftBarW;
         height: calc(100% - 50px);
-        background: @leftBarColor;
+        background: @leftBar;
+        .lee-leftBar-bot-BG;
         .lee-leftBar-list {
           ul {
             padding-top: @leftBarL;
+            position: relative;
             li {
               width: 100%;
               height: 50px;
               line-height: 50px;
-              // margin-bottom: @leftBarL;
+              transition: all 2s ease;
               a {
                 display: block;
                 width: 100%;
                 height: 100%;
                 padding-left: @leftBarL;
-                font-size: @fontSize;
+                font-size: 15px;
+                font-weight: bold;
                 color: @liFont;
                 .anticon {
                   margin-right: 9px;
+                  font-size: 18px;
                 }
               }
               &.active {
-                background:@liActiveBg;
-                a {
-                  border-right: 4px solid @liActiveBorder;
-
-                }
+                background: @liActiveBg;
+                .liCurrentColor;
               }
+            }
+            .libar{
+              transition:
+                      transform .5s cubic-bezier(.645,.045,.355,1),
+                      height .5s cubic-bezier(.645,.045,.355,1),
+                      -webkit-transform .5s cubic-bezier(.645,.045,.355,1);
+              position: absolute;
+              width: 4px;
+              height: 50px;
+              z-index: 1;
+              top: 25px;
+              right: -2px;
+              .liCurrentBorColor(@liActiveBorder);
             }
           }
 
@@ -136,8 +189,8 @@
       .lee-rightBar-top {
         width: 100%;
         height: 50px;
-        background: @topBarColor;
-        color: @topBarFontColor;
+        background: @topBar;
+        color: @topFont;
         .lee-rightBar-search {
           width: 240px;
           padding: 0 20px;
@@ -187,19 +240,18 @@
       .lee-rightBar-bot {
         width: 100%;
         height: calc(100% - 50px);
-        //background: @rightBgColor;
+        .lee-rightBar-bot-BG(@rightBg);
         .lee-rightBar-bot-bot {
           width: 100%;
           height: 100%;
           overflow: auto;
           .barimg {
             width: 100%;
-            height: 170px;
+            height: 260px;
             position: relative;
             img {
               width: 100%;
               height: 100%;
-              margin-top: -1px;
             }
             .address {
               position: absolute;
@@ -212,28 +264,82 @@
                 margin-right: 10px;
               }
             }
-            .block {
-              width: 150px;
-              height: 170px;
-              line-height: 25px;
-              //background: rgba(@thems2Color, 0.6);
-              background: transparent;
-
-              position: absolute;
-              top: -1px;
-              right: 150px;
-              padding: 60px 0;
-
+            /*.barimg-r-t {
+              width: auto;
+              height: 20px;
+              text-align: center;
               color: @fontColor;
               font-size: @fontSize6;
-              text-align: center;
-              .anticon {
-                font-size: @fontSize20;
-              }
-            }
-            .block2 {
+              position: absolute;
+              bottom: 0;
               right: 0;
-              background: rgba(@themsColor, 0.6);
+              overflow: hidden;
+              .block {
+                width: 20px;
+                height: 20px;
+                //float: right;
+                display: inline-table;
+                background: rgba(255, 255, 255,.7);
+                margin-left: 12px;
+                .anticon {
+                  font-size: @fontSize20;
+                }
+                &:last-child{
+                  margin-left: 0;
+                }
+              }
+            }*/
+            .barimg-r-b {
+              bottom: 20px;
+              margin-right: 16px;
+            }
+            .barimg-r {
+              width: 100%;
+              height: 80px;
+              overflow: hidden;
+              position: absolute;
+              bottom: 0;
+              .barimg-r-t {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
+                .block {
+                  width: 20px;
+                  height: 20px;
+                  float: left;
+                  background: rgba(72, 103, 186,.5);
+                  margin-left: 20px;
+                  .anticon {
+                    font-size: @fontSize20;
+                  }
+                  &:nth-child(3) {
+                    margin: 0 20px;
+                  }
+                  &:first-child, &:nth-child(4) {
+                    margin-left: 0;
+                  }
+                }
+                &:nth-child(2n){
+                  .block{
+                    background:rgba(235, 204, 199,.5);
+                    //border:1px solid rgba(235, 204, 199,.5);
+                  }
+                }
+              }
+              .barimg-r-t2{
+                bottom: 60px;
+                .block {
+                  background:rgba(235, 204, 199,.5);
+                }
+                &:nth-child(2n){
+                  .block{
+                    background: rgba(72, 103, 186,.5);
+                  }
+                }
+              }
             }
           }
           .lee-rbb-all {
@@ -244,4 +350,6 @@
         }
       }
     }
+
+
 }
