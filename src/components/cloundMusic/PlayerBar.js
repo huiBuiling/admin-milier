@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import { Icon,Progress,Slider } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { getCurrentItem } from '../../../reducer/player.redux';
+import { getCurrentItem } from '../../reducer/player.redux';
 
 /**
  * 底部音乐

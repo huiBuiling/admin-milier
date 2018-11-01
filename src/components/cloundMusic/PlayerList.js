@@ -3,7 +3,7 @@ import { Icon } from 'antd';
 import PlayerBar from './PlayerBar'
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { getOldSongList, getCurrentItem } from '../../../reducer/player.redux'
+import { getOldSongList, getCurrentItem } from '../../reducer/player.redux'
 
 /**
  * PlayerList

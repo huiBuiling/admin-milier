@@ -132,7 +132,7 @@ https://daneden.github.io/animate.css/
 https://github.com/daneden/animate.css
 ```
 
-> svg
+> svg皮肤背景色
 ```
 https://github.com/qrohlf/trianglify
 
@@ -143,4 +143,47 @@ const canvas = Trianglify({
             x_colors: 'random',
             variance: Math.random(),
         }).canvas();
+```
+
+> snap.svg
+```
+https://www.npmjs.com/package/snapsvg
+yarn add snapsvg --dev
+
+官网：
+
+引入：import Snap from 'snapsvg';
+报错：Uncaught TypeError: Cannot read property 'on' of undefined
+解决：
+    yarn add imports-loader
+    1. 如此引用import Snap from 'imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js'
+    2. 或修改webpack配置
+        module: {
+                rules: [
+                    {
+                        test: require.resolve('snapsvg'),
+                        use: 'imports-loader?this=>window,fix=>module.exports=0',
+                    }
+                ]
+        }
+
+使用：
+     var s = Snap("#svg");
+     var bigCircle = s.circle(150, 150, 100);
+```
+
+> Elastic Progress
+```
+
+```
+
+> TweenMax
+```
+官网：http://greensock.com/
+Github:https://github.com/greensock/GreenSock-JS/
+
+yarn add gsap --dev
+
+引入：
+import { TweenMax } from "gsap/TweenMax";
 ```
