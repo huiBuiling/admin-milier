@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn webpack-dev-server",
-    "dist": "yarn webpack -p"
+    "dist": "yarn webpack -p",
+    "dev:dll": "yarn webpack --config webpack.dll.config.js"
   },
   "devDependencies": {
     "animate.css": "^3.7.0",
@@ -32,7 +33,6 @@
     "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "^2.0.0",
     "gsap": "^2.0.2",
-    "history": "^4.7.2",
     "html-webpack-plugin": "2.30.1",
     "imports-loader": "^0.8.0",
     "less": "^3.8.1",
@@ -50,7 +50,6 @@
   },
   "dependencies": {
     "dragula": "^3.7.2",
-    "localdb": "^0.2.12",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-router-dom": "^4.3.1"
