@@ -16,6 +16,10 @@ export default class Robot extends Component {
             robot2:{},
             robot3:{},
             robot4:{},
+            robot5:{},
+            robot6:{},
+            robot7:{},
+            robot8:{}
 		};
 	}
 
@@ -24,16 +28,30 @@ export default class Robot extends Component {
         this.svgInit('#robot2','robot2');
         this.svgInit('#robot3','robot3');
         this.svgInit('#robot4','robot4');
+        this.svgInit('#robot5','robot5');
+        this.svgInit('#robot6','robot6');
+        this.svgInit('#robot7','robot7');
+        this.svgInit('#robot8','robot8');
 
         //缩小（由于画大了）
         TweenMax.staggerTo(".robot-svg",0,{opacity:0});
-        TweenMax.staggerTo(".robot-svg",2,{scale:.3,opacity:1,top:-200},1);
-        TweenMax.staggerTo("#robot",3,{left:-100},1);
-        TweenMax.staggerTo("#robot2",3,{left:100},1);
-        TweenMax.staggerTo("#robot4",3,{left:180},1);
+        TweenMax.staggerTo(".robot-svg",1,{scale:.3,opacity:1,top:-180},1);
 
-        TweenMax.staggerTo("#robot",5,{rotationZ:20},2);
-        TweenMax.staggerTo("#robot2",5,{rotationZ:-20},2);
+        TweenMax.staggerTo("#robot",3,{left:-170,rotationZ:20},1);
+
+        TweenMax.staggerTo("#robot2",3,{left:-60},1);
+
+        TweenMax.staggerTo("#robot3",3,{left:20,rotationZ:20},1);
+
+        TweenMax.staggerTo("#robot4",3,{left:130,rotationZ:-20},1);
+
+        TweenMax.staggerTo("#robot5",3,{left:210,rotationZ:20},1);
+
+        TweenMax.staggerTo("#robot6",3,{left:320,rotationZ:-20},1);
+
+        TweenMax.staggerTo("#robot7",3,{left:420,rotationZ:20},1);
+
+        TweenMax.staggerTo("#robot8",3,{left:520,rotationZ:8},1);
 
         this.loading(".box",1);
     }
@@ -157,17 +175,30 @@ export default class Robot extends Component {
 
     //调用动画
     nowJump = ()=>{
-	    const { robot1, robot2, robot3, robot4 } = this.state;
+	    const { robot1, robot2, robot3, robot4, robot5, robot6, robot7, robot8 } = this.state;
         this.jump(robot1);
         this.jump(robot2);
         this.jump(robot3);
         this.jump(robot4);
+        this.jump(robot5);
+        this.jump(robot6);
+        this.jump(robot7);
+        this.jump(robot8);
     }
 
 	render() {
 		return (
 			<div className="robot-all">
                     <div className="loading">
+                        <div className="box box1 green"></div>
+                        <div className="box box3 grey"></div>
+                        <div className="box box3 orange"></div>
+                        <div className="box box4 green"></div>
+                        <div className="box box4 grey"></div>
+                        <div className="box box5 orange"></div>
+                        <div className="box box5 green"></div>
+                        <div className="box box6 grey"></div>
+                        <div className="box box6 orange"></div>
                         <div className="box box1 green"></div>
                         <div className="box box3 grey"></div>
                         <div className="box box3 orange"></div>
@@ -185,6 +216,10 @@ export default class Robot extends Component {
                         <svg className="robot-svg" id='robot2' style={{width:500,height:900}} ></svg>
                         <svg className="robot-svg" id='robot3' style={{width:500,height:900}} ></svg>
                         <svg className="robot-svg" id='robot4' style={{width:500,height:900}} ></svg>
+                        <svg className="robot-svg" id='robot5' style={{width:500,height:900}} ></svg>
+                        <svg className="robot-svg" id='robot6' style={{width:500,height:900}} ></svg>
+                        <svg className="robot-svg" id='robot7' style={{width:500,height:900}} ></svg>
+                        <svg className="robot-svg" id='robot8' style={{width:500,height:900}} ></svg>
                     </div>
 			</div>
 			)
