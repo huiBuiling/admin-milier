@@ -8,6 +8,7 @@ let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 const isLocal = WEBPACK_ENV === 'dev';
 
 module.exports = {
+    // context:path.resolve(__dirname, 'src'),    //设置根路径
     devtool: isLocal ? 'source-map' : 'none',  //设置本地源代码
     entry: './src/index.js',  //入口
     output: {   //输出
@@ -49,29 +50,36 @@ module.exports = {
                     fallback: "style-loader",
                     use: ['css-loader','less-loader']
                 })
-            },{
+            },
+            {
                 test: /\.(png|jpg|gif)$/,  //图片的配置
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192,
+                            limit: 1024,
                             name: 'images/[name].[ext]'
                         }
                     }
                 ]
-            },{
+            },
+            {
                 test: /\.(eot|svg|ttf|woff|woff2|otf)$/,  // 字体图标的配置
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192,
+                            limit: 1024,
                             name: 'font/[name].[ext]'
                         }
                     }
                 ]
-            },{
+            },
+            /*{
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                use: ['url-loader?limit=10000&name=assets/images/[md5:hash:base64:10].[ext]']
+            },*/
+            {
                 //snap.svg
                 // test: require.resolve('snapsvg'),
                 test: require.resolve('snapsvg/dist/snap.svg.js'),
@@ -91,11 +99,9 @@ module.exports = {
         // new ExtractTextPlugin('./[name].css'),  //独立css
         new ExtractTextPlugin('css/style.css'),
         new webpack.DllReferencePlugin({
-            context: __dirname,
-            manifest: require('./manifest.json'),
-            name: 'dll',
-            scope: 'xyz',
-            sourceType: 'commonjs2'
+            context:__dirname,
+            manifest: require('./dist/dll/manifest.json'),
+            name: 'dll'
         }),
     ],
     devServer: {

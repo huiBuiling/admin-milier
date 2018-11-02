@@ -14,15 +14,16 @@ const vendors = [
     'echarts',
     'echarts-for-react',
     'gsap',
-    'snapsvg',
+    // 'snapsvg',
     'dragula',
 
     // ...其它库
 ];
 
 module.exports = {
+    // context:path.resolve(__dirname, 'src'),
     output: {
-        path:path.join(__dirname, 'dist'),
+        path:path.join(__dirname, 'dist/dll'),
         filename: 'dll.js',
         library: 'dll'
     },
@@ -31,8 +32,8 @@ module.exports = {
     },
     plugins: [
         new webpack.DllPlugin({
-            context: __dirname,
-            path: path.join(__dirname,'manifest.json'),
+            context:__dirname,
+            path: path.join(__dirname,'dist/dll/manifest.json'),
             name: 'dll'
         })
     ],
