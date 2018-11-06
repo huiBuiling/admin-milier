@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon,Input,Badge,Menu, Dropdown } from 'antd';
+import { Icon,Input,Badge,Menu, Dropdown,Divider } from 'antd';
 import Trianglify from 'Trianglify';   //svg背景
 import { Link,withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -210,6 +210,7 @@ class App extends Component {
 										<Link to='/home:image'><Icon type="picture" theme="outlined" /></Link>
                                     </Badge>
                                 </div>
+                                <Divider type="vertical" />
                                 <div className="user">
 									<img src={avatar == '' ? avatarDefault : avatar} alt=""/>
                                 </div>

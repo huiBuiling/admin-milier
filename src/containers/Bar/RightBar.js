@@ -10,7 +10,8 @@ import Leave from "../../components/leave/Leave";
 import Map from '../../components/echat/MapEchat';
 import Conference from '../../components/conference/Conference';
 import Tenement from '../../components/tenement/Tenement';
-import CloundPlayerList from '../../components/cloundMusic/CloundPlayerList';
+import CloundPlayer from '../../components/cloundMusic/CloundPlayerList';
+import Play from "../../components/play/play";
 
 export default class RightBar extends Component {
     constructor(props){
@@ -26,7 +27,8 @@ export default class RightBar extends Component {
                 {path:'/map', component:Map},
                 {path:'/conference', component:Conference},
                 {path:'/tenement', component:Tenement},
-                {path:'/cloundPlayerList', component:CloundPlayerList},
+                {path:'/cloundPlayer', component:CloundPlayer},
+                {path:'/play', component:Play},
             ]
         }
     }

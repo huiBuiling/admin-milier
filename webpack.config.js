@@ -7,17 +7,18 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 const isLocal = WEBPACK_ENV === 'dev';
 
+const comPlugInCss = new ExtractTextPlugin('dist/css/comPlugInCss.css'); //插件css
+const styleCss = new ExtractTextPlugin('dist/css/style.css'); //插件css
+
 module.exports = {
-    // context:path.resolve(__dirname, 'src'),    //设置根路径
+    context:path.resolve(__dirname, 'src'),
     devtool: isLocal ? 'source-map' : 'none',  //设置本地源代码
-    entry: './src/index.js',  //入口
+    entry: './index.js',  //入口
     output: {   //输出
-        path: path.resolve(__dirname, 'dist'),
-        // publicPath: isLocal ? '/dist/' : 'xxx/dist/',
-        publicPath: '/dist/',
+        path: path.join(__dirname, 'dist'),
+        publicPath: isLocal ? '/dist/' : '/dist/',
         filename: 'js/bundle.js',
     },
-
     module: {
         rules: [
             {
@@ -30,11 +31,20 @@ module.exports = {
                         plugins: ["transform-decorators-legacy"]
                     }
                 }
-            },{
-                test: /\.css$/,  //css文件处理
-                use: ExtractTextPlugin.extract({
+            },
+            {
+                test: /\.css$/,  //antd,animate css文件处理
+                include: /node_modules/,
+                use: comPlugInCss.extract({
+                    fallback: "style-loader",   //让打包后的css可以写入html文件中的<style>
+                    use: "css-loader"           //webpack把index.js 引入的css文件作为模块打包
+                })
+            },
+            {
+                test: /\.less$/,  //less文件处理
+                use: styleCss.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: ['css-loader','less-loader']
                 })
             },
             /*{
@@ -44,13 +54,6 @@ module.exports = {
                     use: ['css-loader','sass-loader']
                 })
             },*/
-            {
-                test: /\.less$/,  //less文件处理
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: ['css-loader','less-loader']
-                })
-            },
             {
                 test: /\.(png|jpg|gif)$/,  //图片的配置
                 use: [
@@ -88,16 +91,24 @@ module.exports = {
         ]
     },
     resolve: {
+        extensions: ['.js', '.jsx', '.less', '.scss', '.css'],
+        modules: [
+            path.resolve(__dirname, 'node_modules'),
+            path.join(__dirname, './src')
+        ],
+        // alias是配置全局的路径入口名称，只要涉及到下面配置的文件路径，可以直接用定义的单个字母表示整个路径
         alias: {
             snapsvg: 'snapsvg/dist/snap.svg.js',
         },
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './index.html'
         }),
         // new ExtractTextPlugin('./[name].css'),  //独立css
-        new ExtractTextPlugin('css/style.css'),
+        comPlugInCss,
+        styleCss,
+
         new webpack.DllReferencePlugin({
             context:__dirname,
             manifest: require('./dist/dll/manifest.json'),
