@@ -357,6 +357,13 @@ textarea {
   background: #5868d9;
   color: #fff;
 }
+.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -586,6 +593,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsPurple .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsPurple .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsPurple .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsPurple .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsPurple .lee-image {
   -moz-column-count: 5;
@@ -2349,6 +2366,13 @@ textarea {
   background: #1f2438;
   color: #fff;
 }
+.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -2578,6 +2602,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsBlack .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsBlack .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsBlack .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsBlack .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsBlack .lee-image {
   -moz-column-count: 5;
@@ -4357,6 +4391,13 @@ textarea {
   background: #5f89bd;
   color: #9ebad9;
 }
+.lee-admin .themsSVGL .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsSVGL .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -4586,6 +4627,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsSVGL .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsSVGL .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsSVGL .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsSVGL .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsSVGL .lee-image {
   -moz-column-count: 5;
@@ -6349,6 +6400,13 @@ textarea {
   background: #9ebad9;
   color: #9ebad9;
 }
+.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -6578,6 +6636,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsSVGLF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsSVGLF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsSVGLF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsSVGLF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsSVGLF .lee-image {
   -moz-column-count: 5;
@@ -8357,6 +8425,13 @@ textarea {
   background: #5f89bd;
   color: #9ebad9;
 }
+.lee-admin .themsSVGLFH .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsSVGLFH .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -8586,6 +8661,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsSVGLFH .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsSVGLFH .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsSVGLFH .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsSVGLFH .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsSVGLFH .lee-image {
   -moz-column-count: 5;
@@ -10365,6 +10450,13 @@ textarea {
   background: #9992c5;
   color: #fff;
 }
+.lee-admin .themsSVGLFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsSVGLFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -10594,6 +10686,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsSVGLFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsSVGLFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsSVGLFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsSVGLFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsSVGLFZ .lee-image {
   -moz-column-count: 5;
@@ -12373,6 +12475,13 @@ textarea {
   background: #cc94c7;
   color: #fff;
 }
+.lee-admin .themsSVGF .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsSVGF .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -12602,6 +12711,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsSVGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsSVGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsSVGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsSVGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsSVGF .lee-image {
   -moz-column-count: 5;
@@ -14381,6 +14500,13 @@ textarea {
   background: #a689c4;
   color: #fff;
 }
+.lee-admin .themsSVGFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsSVGFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -14610,6 +14736,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsSVGFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsSVGFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsSVGFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsSVGFZ .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsSVGFZ .lee-image {
   -moz-column-count: 5;
@@ -16389,6 +16525,13 @@ textarea {
   background: #faa0b4;
   color: #fff;
 }
+.lee-admin .themsSVGGF .lee-rightBar .lee-rightBar-top .lee-rightBar-toogle {
+  float: left;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 10px;
+  cursor: pointer;
+}
 .lee-admin .themsSVGGF .lee-rightBar .lee-rightBar-top .lee-rightBar-search {
   width: 240px;
   padding: 0 20px;
@@ -16618,6 +16761,16 @@ textarea {
   color: #425dbd;
   text-decoration: underline;
   cursor: pointer;
+}
+.lee-admin .themsSVGGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-l {
+  border-color: #87ceb7;
+}
+.lee-admin .themsSVGGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r h3,
+.lee-admin .themsSVGGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r p {
+  color: #87ceb7;
+}
+.lee-admin .themsSVGGF .lee-login .lee-login-bg .lee-logo-g .lee-login-con-r .ant-btn {
+  background: #87ceb7;
 }
 .lee-admin .themsSVGGF .lee-image {
   -moz-column-count: 5;
@@ -18217,6 +18370,22 @@ textarea {
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-b .lee-home-card:last-child {
   margin-right: 0;
+}
+/*toggle*/
+.lee-admin .lee-in {
+  background: #000;
+}
+.lee-admin .lee-in .lee-leftBar {
+  width: 70px;
+}
+.lee-admin .lee-in .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul li a > span {
+  display: none;
+}
+.lee-admin .lee-in .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul .libar {
+  left: 68px;
+}
+.lee-admin .lee-in .lee-rightBar {
+  width: calc(100% - 70px);
 }
 /*lee-skin*/
 .lee-skin {

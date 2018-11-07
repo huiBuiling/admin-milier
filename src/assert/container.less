@@ -249,6 +249,36 @@ textarea {
   }
 }
 
+/*toggle*/
+@leftBarInW:70px;
+.lee-admin{
+  .lee-in{
+    background: #000;
+    .lee-leftBar{
+      width: @leftBarInW;
+      .lee-leftBar-bot{
+        .lee-leftBar-list{
+          ul{
+            li{
+              a{
+                &>span{
+                  display: none;
+                }
+              }
+            }
+            .libar{
+              left: 68px;
+            }
+          }
+        }
+      }
+    }
+    .lee-rightBar{
+      width: calc(100% - @leftBarInW);
+    }
+  }
+}
+
 /*lee-skin*/
 .lee-skin{
   width: 350px;

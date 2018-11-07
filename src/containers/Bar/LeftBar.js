@@ -23,30 +23,25 @@ export default class LeftBar extends Component {
         }
     }
 
-    componentDidMount(){
-        //设置active
-        const { pathname } = this.props.location;
-        this.state.links.filter((item, index)=>{
-            if(pathname == item.path){
-                this.setState({active:index})
-            }
-        });
-    }
-
     render() {
         const { pathname } = this.props.location;
-        const { links,active } = this.state;
+        let { links,active } = this.state;
+        links.filter((item, index)=>{
+            if(pathname == item.path){
+                active = index;
+            }
+        });
         return (
             <div className="lee-leftBar">
                 <div className="lee-leftBar-top">
-                    <div className="lee-leftBar-logo">LEE Admin</div>
+                    <div className="lee-leftBar-logo" style={this.props.toggle ? {paddingLeft:5}:null}>{this.props.toggle ? 'Admin' : 'LEE Admin'}</div>
                 </div>
                 <div className="lee-leftBar-bot">
                     <div className="lee-leftBar-list">
                         <ul>
                             {links.map((item, index)=>{
                                 return <li className={pathname == item.path ? "active animated jackInTheBox":null} key={index}>
-                                            <Link to={item.path} onClick={()=>this.setState({active:index})}><Icon type={item.icon} />{item.title}</Link>
+                                            <Link to={item.path} onClick={()=>this.setState({active:index})}><Icon type={item.icon} /><span>{item.title}</span></Link>
                                        </li>
                             })}
 

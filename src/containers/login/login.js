@@ -62,7 +62,7 @@ export default class Login extends Component {
         return (
             <div className="lee-login" style={{background: randomNum < 5 ? '#090437':'#0c2034'}}>
                  <div className="lee-login-bg" style={{backgroundImage: `url(${bg})`}}>
-                     <div className="lee-login-con" style={randomNum < 5 ? {left: '7%'} : {right: '7%'}}>
+                     <div className={`lee-login-con ${randomNum < 5 ? '' : 'lee-logo-g'}`} style={randomNum < 5 ? {left: '7%'} : {right: '7%'}}>
                          <div className="lee-login-con-l">
                              <img src={logoImg} alt="" style={{marginTop:randomNum < 5 ? 0:50}}/>
                           </div>

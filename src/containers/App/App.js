@@ -23,8 +23,7 @@ class App extends Component {
         this.state = {
             height:document.getElementById('root').offsetHeight,
 
-            mode: 'inline',
-            toggle: '',
+            toggle: true,
             avatarDefault: adminImg,
             search: false,   //搜索
             showSkin: false,  //皮肤
@@ -155,7 +154,7 @@ class App extends Component {
         let { currentUrl } = this.props.player;
 
         const {
-        	avatarDefault, search,
+        	avatarDefault, search,toggle,
             skinColor, skinNormal, skinSvg,
             showMusic,isPlay
         } = this.state;
@@ -176,10 +175,11 @@ class App extends Component {
 
 		return(
 			<div className="lee-admin" style={{position:'absolute'}}>
-				<div className={`thems ${skinColor}`}>
-                    <LeftBar />
+				<div className={`thems ${skinColor} ${toggle ? 'lee-in':''}`}>
+                    <LeftBar toggle={toggle}/>
 					<div className="lee-rightBar">
 						<div className="lee-rightBar-top">
+                            <div className="lee-rightBar-toogle" onClick={()=>{this.setState({toggle:!toggle})}}><Icon type={toggle ? 'menu-unfold':'menu-fold'} theme="outlined" /></div>
 							<div className="lee-rightBar-search">
 								<Search
 									style={{display:search ? null:'none'}}
@@ -218,13 +218,13 @@ class App extends Component {
                                     {userName}
                                 </div>
 								{userName == '' && avatar == '' ?
-                                    <div className="login-in" onClick={()=>this.props.history.push('/login')}>登录</div>
+                                    <div className="login-in"  onClick={()=>this.props.history.push('/login')}>登录</div>
 									:
                                     <div className="login-out" onClick={()=>this.props.history.push('/login')}>退出</div>
                                 }
 							</div>
 						</div>
-                        <RightBar />
+                        <RightBar/>
                         {/*animated infinite rubberBand jello*/}
 						<div className="lee-music-opera" onClick={this.player}>
 							<div className={`${showMusic ? 'lee-music-animate':'in'}`}>
