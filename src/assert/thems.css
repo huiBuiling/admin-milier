@@ -29,3 +29,14 @@
   }
 }
 /*start*/
+.login-opera {
+  padding-top: 10px;
+}
+.login-opera .login-in,
+.login-opera .login-out {
+  padding: 0 10px;
+}
+.login-opera .login-in .anticon,
+.login-opera .login-out .anticon {
+  margin-right: 5px;
+}

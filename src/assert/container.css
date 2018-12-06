@@ -29,6 +29,17 @@
   }
 }
 /*start*/
+.login-opera {
+  padding-top: 10px;
+}
+.login-opera .login-in,
+.login-opera .login-out {
+  padding: 0 10px;
+}
+.login-opera .login-in .anticon,
+.login-opera .login-out .anticon {
+  margin-right: 5px;
+}
 /*字体图标*/
 [class^=icon-] {
   font-family: "iconfont" !important;
@@ -407,11 +418,6 @@ textarea {
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
   color: #fff;
   font-size: 18px;
-}
-.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsPurple .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
 }
 .lee-admin .themsPurple .lee-rightBar .lee-rightBar-bot {
   width: 100%;
@@ -2416,11 +2422,6 @@ textarea {
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
   color: #fff;
   font-size: 18px;
-}
-.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsBlack .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
 }
 .lee-admin .themsBlack .lee-rightBar .lee-rightBar-bot {
   width: 100%;
@@ -4442,11 +4443,6 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
-.lee-admin .themsSVGL .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsSVGL .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
 .lee-admin .themsSVGL .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -6450,11 +6446,6 @@ textarea {
 .lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
   color: #fff;
   font-size: 18px;
-}
-.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
 }
 .lee-admin .themsSVGLF .lee-rightBar .lee-rightBar-bot {
   width: 100%;
@@ -8476,11 +8467,6 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
-.lee-admin .themsSVGLFH .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsSVGLFH .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
 .lee-admin .themsSVGLFH .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -10500,11 +10486,6 @@ textarea {
 .lee-admin .themsSVGLFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
   color: #fff;
   font-size: 18px;
-}
-.lee-admin .themsSVGLFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsSVGLFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
 }
 .lee-admin .themsSVGLFZ .lee-rightBar .lee-rightBar-bot {
   width: 100%;
@@ -12526,11 +12507,6 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
-.lee-admin .themsSVGF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsSVGF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
 .lee-admin .themsSVGF .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -14551,11 +14527,6 @@ textarea {
   color: #fff;
   font-size: 18px;
 }
-.lee-admin .themsSVGFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsSVGFZ .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
-}
 .lee-admin .themsSVGFZ .lee-rightBar .lee-rightBar-bot {
   width: 100%;
   height: calc(100% - 50px);
@@ -16575,11 +16546,6 @@ textarea {
 .lee-admin .themsSVGGF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r > div span a .anticon {
   color: #fff;
   font-size: 18px;
-}
-.lee-admin .themsSVGGF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-in,
-.lee-admin .themsSVGGF .lee-rightBar .lee-rightBar-top .lee-rightBar-top-r .login-out {
-  margin-left: 30px;
-  margin-right: 0;
 }
 .lee-admin .themsSVGGF .lee-rightBar .lee-rightBar-bot {
   width: 100%;

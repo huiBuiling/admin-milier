@@ -173,6 +173,15 @@ class App extends Component {
                 </Menu.SubMenu>
             </Menu>;
 
+        const logins = (
+            <Menu>
+                {userName == '' && avatar == '' ?
+                    <Menu.Item><div className="login-in"  onClick={()=>this.props.history.push('/login')}><Icon type="smile" />登录</div></Menu.Item>
+                    :
+                    <Menu.Item><div className="login-out" onClick={()=>this.props.history.push('/login')}><Icon type="poweroff" />退出</div></Menu.Item>
+                }
+            </Menu>
+        );
 		return(
 			<div className="lee-admin" style={{position:'absolute'}}>
 				<div className={`thems ${skinColor} ${toggle ? 'lee-in':''}`}>
@@ -212,16 +221,15 @@ class App extends Component {
                                 </div>
                                 <Divider type="vertical" />
                                 <div className="user">
-									<img src={avatar == '' ? avatarDefault : avatar} alt=""/>
+                                    <Dropdown overlay={logins} overlayClassName="login-opera">
+                                        <a className="ant-dropdown-link" href="#">
+                                            <img src={avatar == '' ? avatarDefault : avatar} alt=""/>
+                                        </a>
+                                    </Dropdown>
                                 </div>
                                 <div className="name">
                                     {userName}
                                 </div>
-								{userName == '' && avatar == '' ?
-                                    <div className="login-in"  onClick={()=>this.props.history.push('/login')}>登录</div>
-									:
-                                    <div className="login-out" onClick={()=>this.props.history.push('/login')}>退出</div>
-                                }
 							</div>
 						</div>
                         <RightBar/>
