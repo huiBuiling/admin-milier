@@ -1,3 +1,7 @@
 /.idea/
 /node_modules/
-/dist/
+/dist/css/
+/dist/js/
+/dist/images/
+/dist/font/
+/dist/index.html
