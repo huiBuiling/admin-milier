@@ -7,8 +7,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 const isLocal = WEBPACK_ENV === 'dev';
 
-const comPlugInCss = new ExtractTextPlugin('dist/css/comPlugInCss.css'); //插件css
-const styleCss = new ExtractTextPlugin('dist/css/style.css'); //插件css
+const comPlugInCss = new ExtractTextPlugin('css/comPlugInCss.css'); //插件css
+const styleCss = new ExtractTextPlugin('css/style.css'); //插件css
 
 module.exports = {
     context:path.resolve(__dirname, 'src'),
@@ -120,7 +120,7 @@ module.exports = {
         // contentBase: path.resolve(__dirname, 'dist'),
         // historyApiFallback: true
         historyApiFallback: {
-            index: 'dist/index.html'
+            index: 'src/index.html'
         }
     },
 };
