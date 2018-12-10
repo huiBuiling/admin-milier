@@ -7,6 +7,9 @@ antd + react 后台管理
 ###### 安装：yarn
 ###### 访问：http://localhost:5201/
 
+部分效果图：
+![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/1.png)
+
 ### topbar
 > 获取网易云音乐中设置的用户名和用户头像
 > 换肤（目前配色教丑）
@@ -116,6 +119,8 @@ antd + react 后台管理
                 播放列表对应歌曲所在列表，即播放列表
 
 ```
+音乐效果图：
+![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/2.png)
 
 > 拖曳
 - [x] github:https://github.com/bevacqua/dragula
