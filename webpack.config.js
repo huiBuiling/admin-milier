@@ -2,27 +2,28 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OpenBrowserPlugin  = require('open-browser-webpack-plugin');
 
 //判断开发 | 生产
 let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 const isLocal = WEBPACK_ENV === 'dev';
 
-const comPlugInCss = new ExtractTextPlugin('css/comPlugInCss.css'); //插件css
-const styleCss = new ExtractTextPlugin('css/style.css'); //插件css
+const comPlugInCss = new ExtractTextPlugin('static/css/comPlugInCss.css'); //插件css
+const styleCss = new ExtractTextPlugin('static/css/style.css'); //插件css
 
 module.exports = {
-    context:path.resolve(__dirname, 'src'),
-    devtool: isLocal ? 'source-map' : 'none',  //设置本地源代码
-    entry: './index.js',  //入口
+    context:path.resolve(__dirname, '.'),
+    devtool: isLocal ? 'cheap-module-source-map' : 'none',  //设置本地源代码
+    entry: './src/index.js',  //入口
     output: {   //输出
         path: path.join(__dirname, 'dist'),
         publicPath: isLocal ? '/dist/' : '/dist/',
-        filename: 'js/bundle.js',
+        filename: 'static/js/bundle.js',
     },
     module: {
         rules: [
             {
-                test: /\.js$/, //js文件处理
+                test: /\.(js|mjs|jsx)$/,//js文件处理
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
@@ -49,20 +50,23 @@ module.exports = {
             },
             /*{
                 test: /\.scss$/, //sass文件处理
-                use: ExtractTextPlugin.extract({
+                use: scss.extract({
                     fallback: "style-loader",
                     use: ['css-loader','sass-loader']
                 })
             },*/
             {
                 test: /\.(png|jpg|gif)$/,  //图片的配置
+                // test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 1024,
-                            name: 'images/[name].[ext]'
-                        }
+                            // limit: 1024,
+                            // name: 'images/[name].[ext]'
+                            limit: 10000,
+                            name: 'static/images/[name].[ext]',
+                        },
                     }
                 ]
             },
@@ -73,7 +77,7 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 1024,
-                            name: 'font/[name].[ext]'
+                            name: 'static/font/[name].[ext]'
                         }
                     }
                 ]
@@ -103,11 +107,13 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: 'public/index.html'
         }),
         // new ExtractTextPlugin('./[name].css'),  //独立css
         comPlugInCss,
         styleCss,
+
+        new OpenBrowserPlugin({ url: 'http://localhost:5201/home' }), //启动默认打开浏览器
 
         new webpack.DllReferencePlugin({
             context:__dirname,
@@ -118,9 +124,10 @@ module.exports = {
     devServer: {
         port:'5201',
         // contentBase: path.resolve(__dirname, 'dist'),
-        // historyApiFallback: true
+        // historyApiFallback: true,
         historyApiFallback: {
-            index: 'src/index.html'
-        }
+            index: 'public/index.html'
+        },
+        stats:{ all: false, warnings: true, errors: true }
     },
 };
