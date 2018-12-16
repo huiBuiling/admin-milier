@@ -315,7 +315,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsPurple .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #1f2438;
 }
@@ -2319,7 +2319,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsBlack .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #1f2438;
 }
@@ -4333,7 +4333,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsSVGL .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #6fa2cc;
   background: transparent;
@@ -6343,7 +6343,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsSVGLF .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #9ebad9;
 }
@@ -8357,7 +8357,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsSVGLFH .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #6fa2cc;
   background: transparent;
@@ -10377,7 +10377,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsSVGLFZ .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #fff;
   background: transparent;
@@ -12397,7 +12397,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsSVGF .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #fff;
   background: transparent;
@@ -14417,7 +14417,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsSVGFZ .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #6fa2cc;
   background: transparent;
@@ -16437,7 +16437,7 @@ textarea {
   padding-left: 25px;
 }
 .lee-admin .themsSVGGF .lee-leftBar .lee-leftBar-bot {
-  width: 150px;
+  width: 100%;
   height: calc(100% - 50px);
   background: #fff;
   background: transparent;
@@ -18338,9 +18338,6 @@ textarea {
   margin-right: 0;
 }
 /*toggle*/
-.lee-admin .lee-in {
-  background: #000;
-}
 .lee-admin .lee-in .lee-leftBar {
   width: 70px;
 }
@@ -18348,7 +18345,7 @@ textarea {
   display: none;
 }
 .lee-admin .lee-in .lee-leftBar .lee-leftBar-bot .lee-leftBar-list ul .libar {
-  left: 68px;
+  left: 67px;
 }
 .lee-admin .lee-in .lee-rightBar {
   width: calc(100% - 70px);
