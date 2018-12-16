@@ -117,8 +117,9 @@ module.exports = {
 
         new webpack.DllReferencePlugin({
             context:__dirname,
-            manifest: require('./dist/dll/manifest.json'),
+            manifest: require('./public/dll/manifest.json'),
             name: 'dll'
+
         }),
     ],
     devServer: {
@@ -128,6 +129,12 @@ module.exports = {
         historyApiFallback: {
             index: 'public/index.html'
         },
-        stats:{ all: false, warnings: true, errors: true }
+        stats:{
+            all: false,
+            warnings: true,
+            errors: true,
+            errorDetails: true,
+            timings: true,
+        }
     },
 };
