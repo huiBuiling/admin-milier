@@ -12,7 +12,7 @@ const styleCss = new ExtractTextPlugin('css/style.css'); //插件css
 
 module.exports = {
     context:path.resolve(__dirname, 'src'),
-    devtool: isLocal ? 'source-map' : 'none',  //设置本地源代码
+    devtool: isLocal ? 'cheap-module-source-map' : 'none',  //设置本地源代码
     entry: './index.js',  //入口
     output: {   //输出
         path: path.join(__dirname, 'dist'),
