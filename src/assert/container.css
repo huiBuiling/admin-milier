@@ -991,7 +991,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsPurple .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #5868d9;
   color: #fff;
 }
 .lee-admin .themsPurple .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
@@ -2654,7 +2654,7 @@ textarea {
   color: #000;
 }
 .lee-admin .themsBlack .lee-image .lee-image-item .lee-music {
-  color: #ddd;
+  color: rgba(42, 50, 89, 0.7);
 }
 .lee-admin .themsBlack .lee-image .lee-image-item .lee-music .lee-music-audio {
   width: 100%;
@@ -2836,7 +2836,7 @@ textarea {
   height: 80px;
 }
 .lee-admin .themsBlack .lee-music-opera2 .lee-music-opera2-bar .anticon {
-  color: #ddd;
+  color: rgba(42, 50, 89, 0.7);
   font-size: 25px;
   width: 50px;
   height: 50px;
@@ -2904,7 +2904,7 @@ textarea {
 .lee-admin .themsBlack .lee-clound .lee-clound-l p.active {
   background: #E6E7EA;
   color: #000;
-  border-left: 4px solid #ddd;
+  border-left: 4px solid rgba(42, 50, 89, 0.7);
 }
 .lee-admin .themsBlack .lee-clound .lee-clound-l p .anticon,
 .lee-admin .themsBlack .lee-clound .lee-clound-l p [class^=icon-] {
@@ -3025,7 +3025,7 @@ textarea {
   width: calc(100% - 60px);
   height: 60px;
   float: left;
-  color: #ddd;
+  color: rgba(42, 50, 89, 0.7);
   padding-left: 20px;
 }
 .lee-admin .themsBlack .lee-music-bar .lee-image-item .lee-music .lee-music-audio {
@@ -3040,7 +3040,7 @@ textarea {
   width: 35px;
   height: 35px;
   line-height: 37px;
-  background: #ddd;
+  background: rgba(42, 50, 89, 0.7);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -3284,7 +3284,7 @@ textarea {
 }
 .lee-admin .themsBlack .lee-leave .lee-leave-l ul li p {
   font-size: 12px;
-  color: #ddd;
+  color: rgba(42, 50, 89, 0.7);
 }
 .lee-admin .themsBlack .lee-leave .lee-leave-r {
   width: calc(100% - 250px);
@@ -3593,7 +3593,7 @@ textarea {
   height: 40px;
   line-height: 40px;
   padding: 0 20px;
-  background: #ddd;
+  background: rgba(42, 50, 89, 0.7);
   color: #fff;
   font-size: 14px;
 }
@@ -3620,14 +3620,14 @@ textarea {
   font-size: 14px;
 }
 .lee-admin .themsBlack .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-card-con-text .lee-hy-item-card-con-text-title {
-  background: #ddd;
-  background: -webkit-linear-gradient(left, rgba(221, 221, 221, 0.3), #dddddd);
+  background: rgba(42, 50, 89, 0.7);
+  background: -webkit-linear-gradient(left, rgba(42, 50, 89, 0.3), #2a3259);
   /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(right, rgba(221, 221, 221, 0.3), #dddddd);
+  background: -o-linear-gradient(right, rgba(42, 50, 89, 0.3), #2a3259);
   /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(right, rgba(221, 221, 221, 0.3), #dddddd);
+  background: -moz-linear-gradient(right, rgba(42, 50, 89, 0.3), #2a3259);
   /* Firefox 3.6 - 15 */
-  background: linear-gradient(to right, rgba(221, 221, 221, 0.3), #dddddd);
+  background: linear-gradient(to right, rgba(42, 50, 89, 0.3), #2a3259);
   /* 标准的语法 */
   color: #fff;
   padding: 20px;
@@ -5015,7 +5015,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsSVGL .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #5f89bd;
   color: #fff;
 }
 .lee-admin .themsSVGL .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
@@ -7019,7 +7019,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsSVGLF .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #d2d4e8;
   color: #fff;
 }
 .lee-admin .themsSVGLF .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
@@ -9039,7 +9039,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsSVGLFH .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #5f89bd;
   color: #fff;
 }
 .lee-admin .themsSVGLFH .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
@@ -11059,7 +11059,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsSVGLFZ .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #946fa7;
   color: #fff;
 }
 .lee-admin .themsSVGLFZ .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
@@ -13079,7 +13079,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsSVGF .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #cc94c7;
   color: #fff;
 }
 .lee-admin .themsSVGF .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
@@ -15099,7 +15099,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsSVGFZ .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #a689c4;
   color: #fff;
 }
 .lee-admin .themsSVGFZ .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
@@ -17119,7 +17119,7 @@ textarea {
   width: 25%;
 }
 .lee-admin .themsSVGGF .lee-player .lee-player-item .lee-player-item-music-t {
-  background: rgba(42, 50, 89, 0.7);
+  background: #fdd9d5;
   color: #fff;
 }
 .lee-admin .themsSVGGF .lee-player .lee-player-item .lee-player-item-music-t .lee-player-item-title {
