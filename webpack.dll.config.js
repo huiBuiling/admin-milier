@@ -23,7 +23,7 @@ const vendors = [
 module.exports = {
     // context:path.resolve(__dirname, 'src'),
     output: {
-        path:path.join(__dirname, 'dist/dll'),
+        path:path.join(__dirname, 'public/dll'),
         filename: 'dll.js',
         library: 'dll'
     },
@@ -33,7 +33,7 @@ module.exports = {
     plugins: [
         new webpack.DllPlugin({
             context:__dirname,
-            path: path.join(__dirname,'dist/dll/manifest.json'),
+            path: path.join(__dirname,'public/dll/manifest.json'),
             name: 'dll'
         })
     ],
