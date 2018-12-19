@@ -11,9 +11,9 @@ const comPlugInCss = new ExtractTextPlugin('css/comPlugInCss.css'); //插件css
 const styleCss = new ExtractTextPlugin('css/style.css'); //插件css
 
 module.exports = {
-    context:path.resolve(__dirname, 'src'),
+    context:path.resolve(__dirname, '.'),
     devtool: isLocal ? 'cheap-module-source-map' : 'none',  //设置本地源代码
-    entry: './index.js',  //入口
+    entry: './src/index.js',  //入口
     output: {   //输出
         path: path.join(__dirname, 'dist'),
         publicPath: isLocal ? '/dist/' : '/dist/',
@@ -96,7 +96,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './public/index.html'
         }),
         // new ExtractTextPlugin('./[name].css'),  //独立css
         comPlugInCss,
@@ -104,7 +104,7 @@ module.exports = {
 
         new webpack.DllReferencePlugin({
             context:__dirname,
-            manifest: require('./dist/dll/manifest.json'),
+            manifest: require('./public/dll/manifest.json'),
             name: 'dll'
         }),
     ],
@@ -113,7 +113,7 @@ module.exports = {
         // contentBase: path.resolve(__dirname, 'dist'),
         // historyApiFallback: true
         historyApiFallback: {
-            index: 'src/index.html'
+            index: 'public/index.html'
         }
     },
 };
