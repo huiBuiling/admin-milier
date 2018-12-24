@@ -18,7 +18,7 @@ export default class LeftBar extends Component {
                 { path:'/tenement', icon:'cluster', title:'物业'},
                 { path:'/cloundPlayer', icon:'customer-service', title:'音乐'},
                 { path:'/play', icon:'coffee', title:'玩'},
-                { path:'/zanding', icon:'paper-clip', title:'暂定'},
+                { path:'/demo1', icon:'paper-clip', title:'哩1'},
             ],
         }
     }
@@ -34,7 +34,7 @@ export default class LeftBar extends Component {
         return (
             <div className="lee-leftBar">
                 <div className="lee-leftBar-top">
-                    <div className="lee-leftBar-logo" style={this.props.toggle ? {paddingLeft:5}:null}>{this.props.toggle ? 'Admin' : 'LEE Admin'}</div>
+                    <div className="lee-leftBar-logo" style={this.props.toggle ? {paddingLeft:5}:null}>{this.props.toggle ? <span style={{paddingLeft:13,fontSize:30}}><Icon type="appstore" /></span> : 'LEE Admin'}</div>
                 </div>
                 <div className="lee-leftBar-bot">
                     <div className="lee-leftBar-list">
