@@ -27,21 +27,24 @@ export default class PlayerList extends Component {
         };
     }
 
-    // 喜欢音乐 （暂未实现）
+    // 喜欢音乐
     live = (collect,id)=>{
-        if(collect){   //移除live
-            axios.get(`http://localhost:4000/fm_trash?id=${id}`).then(res=>{
+        const { songList,currentIndex } = this.props;
+        axios.get(`http://localhost:4000/like?id=${id}&like=${!collect}`).then(res=>{
+            if(res.data.code === 301){
+                alert(res.data.msg);
+            }else{
                 if(res.status == 200){
-                    this.state.songList[id].collect = false;
+                    if(collect){
+                        //移除live
+                        songList[currentIndex].collect = false;
+                    }else{
+                        songList[currentIndex].collect = true;
+                    }
                 }
-            })
-        }else{  //设置live
-            axios.get(`http://localhost:4000/like?id=${id}`).then(res=>{
-                if(res.status == 200){
-                    this.state.songList[id].collect = true;
-                }
-            })
-        }
+            }
+
+        })
     }
 
     // 点击播放
@@ -101,7 +104,7 @@ export default class PlayerList extends Component {
                                 <span>
                                     <Icon
                                         className="lee-player-item-heart" type="heart" theme={item.collect ? 'filled' : null}
-                                        // onClick={()=>this.live(collect,item.id)}
+                                        onClick={()=>this.live(collect,item.id)}
                                     />
                                 </span>
                                 {/*歌名*/}
