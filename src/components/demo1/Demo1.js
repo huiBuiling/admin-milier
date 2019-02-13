@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 
+import TablesResize from '../TablesResize'
 /**
  * @author hui
  * @date 2018/12/18
@@ -17,6 +18,7 @@ export default class Demo1 extends Component {
               <div className="lee-rbb-all">
                     <div className="lee-demo1">
                         11111111111111
+                        <TablesResize />
                     </div>
               </div>
         );

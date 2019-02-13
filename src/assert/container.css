@@ -76,6 +76,18 @@
 }
 /* moudle style */
 /*start*/
+.react-resizable {
+  position: relative;
+}
+.react-resizable-handle {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  bottom: 0;
+  right: -5px;
+  cursor: col-resize;
+  z-index: 1000;
+}
 * {
   margin: 0;
   padding: 0;
