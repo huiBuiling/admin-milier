@@ -80,7 +80,7 @@ antd + react 后台管理
 
 
  4. PlayerList
-    喜欢及移除音乐 （暂未实现）
+    喜欢及移除音乐
 
  5. PlayerBar
     player.redux： { getCurrentItem }
