@@ -8,6 +8,7 @@ import introBg4 from '../../assert/images/intro/intro_bg4.jpg';
 import introBg5 from '../../assert/images/intro/intro_bg5.jpg';
 import introBg6 from '../../assert/images/intro/intro_bg6.jpg';
 import introBg7 from '../../assert/images/intro/intro_bg7.jpg';
+import IntroChart from './IntroChart';
 
 /**
  * 介绍
@@ -51,6 +52,7 @@ export default class Intro extends Component {
                                 </div>
                             </div>
                             <div className="lee-intro-con-r">
+                                <IntroChart />
                             </div>
                         </div>
 

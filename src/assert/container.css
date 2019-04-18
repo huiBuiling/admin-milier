@@ -1672,6 +1672,9 @@ textarea {
 .lee-admin .themsPurple .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsPurple .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsPurple .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -1697,10 +1700,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -1715,6 +1719,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsPurple .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -1749,8 +1756,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -1784,7 +1792,7 @@ textarea {
 .lee-admin .themsPurple .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -1800,14 +1808,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -1821,7 +1828,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -1832,7 +1840,6 @@ textarea {
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -1841,8 +1848,8 @@ textarea {
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -1946,8 +1953,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsPurple .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -3677,6 +3682,9 @@ textarea {
 .lee-admin .themsBlack .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsBlack .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsBlack .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -3702,10 +3710,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -3720,6 +3729,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsBlack .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -3754,8 +3766,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -3789,7 +3802,7 @@ textarea {
 .lee-admin .themsBlack .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -3805,14 +3818,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -3826,7 +3838,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -3837,7 +3850,6 @@ textarea {
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -3846,8 +3858,8 @@ textarea {
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -3951,8 +3963,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsBlack .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -5698,6 +5708,9 @@ textarea {
 .lee-admin .themsSVGL .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsSVGL .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsSVGL .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -5723,10 +5736,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -5741,6 +5755,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsSVGL .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -5775,8 +5792,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -5810,7 +5828,7 @@ textarea {
 .lee-admin .themsSVGL .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -5826,14 +5844,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -5847,7 +5864,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -5858,7 +5876,6 @@ textarea {
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -5867,8 +5884,8 @@ textarea {
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -5972,8 +5989,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsSVGL .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -7703,6 +7718,9 @@ textarea {
 .lee-admin .themsSVGLF .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsSVGLF .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsSVGLF .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -7728,10 +7746,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -7746,6 +7765,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsSVGLF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -7780,8 +7802,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -7815,7 +7838,7 @@ textarea {
 .lee-admin .themsSVGLF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -7831,14 +7854,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -7852,7 +7874,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -7863,7 +7886,6 @@ textarea {
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -7872,8 +7894,8 @@ textarea {
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -7977,8 +7999,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsSVGLF .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -9724,6 +9744,9 @@ textarea {
 .lee-admin .themsSVGLFH .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsSVGLFH .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsSVGLFH .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -9749,10 +9772,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -9767,6 +9791,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsSVGLFH .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -9801,8 +9828,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -9836,7 +9864,7 @@ textarea {
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -9852,14 +9880,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -9873,7 +9900,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -9884,7 +9912,6 @@ textarea {
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -9893,8 +9920,8 @@ textarea {
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -9998,8 +10025,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsSVGLFH .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -11745,6 +11770,9 @@ textarea {
 .lee-admin .themsSVGLFZ .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsSVGLFZ .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsSVGLFZ .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -11770,10 +11798,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -11788,6 +11817,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsSVGLFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -11822,8 +11854,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -11857,7 +11890,7 @@ textarea {
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -11873,14 +11906,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -11894,7 +11926,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -11905,7 +11938,6 @@ textarea {
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -11914,8 +11946,8 @@ textarea {
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -12019,8 +12051,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsSVGLFZ .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -13766,6 +13796,9 @@ textarea {
 .lee-admin .themsSVGF .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsSVGF .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsSVGF .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -13791,10 +13824,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -13809,6 +13843,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsSVGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -13843,8 +13880,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -13878,7 +13916,7 @@ textarea {
 .lee-admin .themsSVGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -13894,14 +13932,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -13915,7 +13952,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -13926,7 +13964,6 @@ textarea {
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -13935,8 +13972,8 @@ textarea {
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -14040,8 +14077,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsSVGF .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -15787,6 +15822,9 @@ textarea {
 .lee-admin .themsSVGFZ .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsSVGFZ .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsSVGFZ .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -15812,10 +15850,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -15830,6 +15869,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsSVGFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -15864,8 +15906,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -15899,7 +15942,7 @@ textarea {
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -15915,14 +15958,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -15936,7 +15978,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -15947,7 +15990,6 @@ textarea {
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -15956,8 +15998,8 @@ textarea {
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -16061,8 +16103,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsSVGFZ .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
@@ -17808,6 +17848,9 @@ textarea {
 .lee-admin .themsSVGGF .lee-hy .lee-hy-item .lee-hy-item-card .lee-hy-item-card-con .lee-hy-item-input .lee-hy-form .ant-form-item {
   margin-bottom: 10px;
 }
+.lee-admin .themsSVGGF .lee-intro {
+  max-width: 1200px;
+}
 .lee-admin .themsSVGGF .lee-intro .intro-c1 {
   background: #84D991;
 }
@@ -17833,10 +17876,11 @@ textarea {
   background: #D7F1F2;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-con {
-  height: 235px;
+  height: 290px;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-con .lee-intro-con-l {
   width: 70%;
+  height: 100%;
   position: relative;
   background: #fff;
   overflow: hidden;
@@ -17851,6 +17895,9 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   float: left;
+}
+.lee-admin .themsSVGGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t {
+  padding-top: 20px;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-t img {
   width: 100px;
@@ -17885,8 +17932,9 @@ textarea {
   margin-right: 8px;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b {
-  width: 100%;
-  margin-top: 20px;
+  width: calc(100% - 40px);
+  position: absolute;
+  bottom: 20px;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-b div {
   width: 20%;
@@ -17920,7 +17968,7 @@ textarea {
 .lee-admin .themsSVGGF .lee-intro .lee-intro-con .lee-intro-con-l .lee-intro-con-l-r {
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 30px;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-con .lee-intro-con-r {
   background: #fff;
@@ -17936,14 +17984,13 @@ textarea {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   width: 28%;
-  height: 235px;
+  height: 100%;
   float: right;
   color: #000;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-bot {
   position: relative;
   width: 100%;
-  height: 450px;
   margin: 25px 0;
   overflow: hidden;
 }
@@ -17957,7 +18004,8 @@ textarea {
   transform: scale3d(1, 1, 1);
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-bot .lee-intro-bot-img:hover figcaption::before {
-  left: -100px;
+  left: 200px;
+  top: 50px;
   -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
   transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
 }
@@ -17968,7 +18016,6 @@ textarea {
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-bot .lee-intro-bot-img img {
   width: 100%;
-  height: 104%;
   opacity: 0.95;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
@@ -17977,8 +18024,8 @@ textarea {
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-bot .lee-intro-bot-img figcaption::before {
   position: absolute;
-  right: -100%;
   top: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
@@ -18082,8 +18129,6 @@ textarea {
   opacity: 0;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover img {
-  width: 150%;
-  height: 100%;
   opacity: 0.6;
 }
 .lee-admin .themsSVGGF .lee-intro .lee-intro-bot .lee-intro-bot-img3 figure:hover figcaption {
