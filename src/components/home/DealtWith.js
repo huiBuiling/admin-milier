@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import DealtWithChat from './DealtWithChat';
+import PieChart from '../../common/pieChart/PieChart';
 
 /**
  * @author hui
@@ -15,9 +15,11 @@ export default class DealtWith extends Component {
 	render() {
 		return (
             <div className="lee-home-deal">
-                <h4><span>我的待办</span><a href="#">+ 更多</a></h4>
+                <h4><span>我的待办/已办</span><a href="#">+ 更多</a></h4>
                 <div>
-                    <DealtWithChat />
+                    <PieChart
+                        style={{height:300}}
+                    />
                 </div>
             </div>
 			)

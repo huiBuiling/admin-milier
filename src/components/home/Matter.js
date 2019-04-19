@@ -2,8 +2,10 @@ import React,{Component} from 'react';
 import {Icon} from 'antd';
 
 import LoadMoreList from './MatterList';
-import NavChat from '../../common/lineChart/LineChat';
+import LineChat from '../../common/lineChart/LineChat';
+import BarChart from '../../common/barChart/BarChart';
 
+// D:\toolUs\Microsoft VS Code\bin;D:\MongoDB\bin;D:\tools\cmder\cmder;C:\Users\Administrator\AppData\Roaming\npm
 /**
  * @author hui
  * @date 2019/4/18
@@ -13,21 +15,9 @@ export default class Matter extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			imgList:[
-				{name:'html',text:'Html'},
-                {name:'bootstrap',text:'BootStrap'},
-                {name:'js',text:'Javascript'},
-                {name:'jquery',text:'jQuery'},
-                {name:'angular',text:'Angular'},
-                {name:'react',text:'React'},
-                {name:'vue',text:'Vue'}
-			]
-		};
 	}
 
 	render() {
-		const imgList = this.state.imgList;
 		return (
                 <div className="lee-home-matter">
                     <h4><span>申请事项</span><a href="#">+ 更多</a></h4>
@@ -38,19 +28,28 @@ export default class Matter extends Component {
                                     <p>已结事项<Icon type="info-circle" /></p>
                                     <p>1,000 <span></span></p>
                                 </div>
-                                <NavChat
-                                    style={{height:50,width:400}}
+                                <LineChat
+                                    chatColor = {'137,75,222'}
+                                    style={{height:50,width:350}}
                                     xAxis={{show :false}}
                                     yAxis={{show :false}}
                                     grid={{
-                                        top: '2%',
+                                        top: '9%',
                                         bottom: '2%',
                                         left: '0',
                                         right: '2%'
                                     }}
 
-                                    xAxisData = {['','月入2万', '年终分红', '定期旅游', '周末双休','']}
-                                    seriesData = {[0,500, 400, 200, 400,0]}
+                                    xAxisData = {['绩效奖金','月入2万', '年终分红', '定期旅游', '周末双休','零食丰富','每周羽毛球','周末双休','零食丰富','每周羽毛球']}
+                                    seriesData = {[0,80, 40, 200, 40,123,200, 40,123,0]}
+                                    series = {
+                                        {
+                                            showSymbol:false,
+                                            areaStyle: {
+                                                color:'rgb(137,75,222)'  //线条下面积颜色
+                                            }
+                                        }
+                                    }
                                 />
                             </div>
 
@@ -59,19 +58,20 @@ export default class Matter extends Component {
                                     <p>待确认事项<Icon type="info-circle" /></p>
                                     <p>23 <span></span></p>
                                 </div>
-                                <NavChat
-                                    style={{height:50,width:400}}
+                                <BarChart
+                                    style={{height:50,width:350}}
                                     xAxis={{show :false}}
                                     yAxis={{show :false}}
                                     grid={{
-                                        top: '2%',
+                                        top: '9%',
                                         bottom: '2%',
                                         left: '0',
                                         right: '2%'
                                     }}
 
-                                    xAxisData = {['','月入2万', '年终分红', '定期旅游', '周末双休','']}
-                                    seriesData = {[0,500, 400, 200, 400,0]}
+                                    xAxisData = {['node','webchat', 'vue', 'vuex', 'elementUi','mongo', 'vue', 'vuex', 'elementUi','mongo','jade']}
+                                    seriesData = {[0,500, 400, 200, 400,100, 400, 200, 400,100,0]}
+                                    series = {{showSymbol:false}}
                                 />
                             </div>
                         </div>

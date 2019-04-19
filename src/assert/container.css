@@ -2226,7 +2226,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsPurple .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -2262,6 +2262,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsPurple .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsPurple .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsPurple .lee-home .lee-home-consum {
   width: 100%;
@@ -2300,7 +2310,7 @@ textarea {
 }
 .lee-admin .themsPurple .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsPurple .lee-home .lee-home-deal > div {
@@ -2319,6 +2329,7 @@ textarea {
 }
 .lee-admin .themsPurple .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsPurple .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -2331,6 +2342,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsPurple .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsPurple .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -2339,6 +2351,13 @@ textarea {
 }
 .lee-admin .themsPurple .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsPurple .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsPurple .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsBlack {
   /*lee-leftBar-bot li active*/
@@ -4349,7 +4368,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsBlack .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -4385,6 +4404,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsBlack .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsBlack .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsBlack .lee-home .lee-home-consum {
   width: 100%;
@@ -4423,7 +4452,7 @@ textarea {
 }
 .lee-admin .themsBlack .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsBlack .lee-home .lee-home-deal > div {
@@ -4442,6 +4471,7 @@ textarea {
 }
 .lee-admin .themsBlack .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsBlack .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -4454,6 +4484,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsBlack .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsBlack .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -4462,6 +4493,13 @@ textarea {
 }
 .lee-admin .themsBlack .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsBlack .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsBlack .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsSVGL {
   /*lee-leftBar-bot li active*/
@@ -6488,7 +6526,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsSVGL .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -6524,6 +6562,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsSVGL .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsSVGL .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsSVGL .lee-home .lee-home-consum {
   width: 100%;
@@ -6562,7 +6610,7 @@ textarea {
 }
 .lee-admin .themsSVGL .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsSVGL .lee-home .lee-home-deal > div {
@@ -6581,6 +6629,7 @@ textarea {
 }
 .lee-admin .themsSVGL .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsSVGL .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -6593,6 +6642,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsSVGL .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsSVGL .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -6601,6 +6651,13 @@ textarea {
 }
 .lee-admin .themsSVGL .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsSVGL .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsSVGL .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsSVGLF {
   /*lee-leftBar-bot li active*/
@@ -8611,7 +8668,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -8647,6 +8704,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsSVGLF .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsSVGLF .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-consum {
   width: 100%;
@@ -8685,7 +8752,7 @@ textarea {
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-deal > div {
@@ -8704,6 +8771,7 @@ textarea {
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -8716,6 +8784,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -8724,6 +8793,13 @@ textarea {
 }
 .lee-admin .themsSVGLF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsSVGLF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsSVGLF .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsSVGLFH {
   /*lee-leftBar-bot li active*/
@@ -10750,7 +10826,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -10786,6 +10862,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsSVGLFH .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsSVGLFH .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-consum {
   width: 100%;
@@ -10824,7 +10910,7 @@ textarea {
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-deal > div {
@@ -10843,6 +10929,7 @@ textarea {
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -10855,6 +10942,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -10863,6 +10951,13 @@ textarea {
 }
 .lee-admin .themsSVGLFH .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsSVGLFH .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsSVGLFH .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsSVGLFZ {
   /*lee-leftBar-bot li active*/
@@ -12889,7 +12984,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -12925,6 +13020,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsSVGLFZ .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsSVGLFZ .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-consum {
   width: 100%;
@@ -12963,7 +13068,7 @@ textarea {
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-deal > div {
@@ -12982,6 +13087,7 @@ textarea {
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -12994,6 +13100,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -13002,6 +13109,13 @@ textarea {
 }
 .lee-admin .themsSVGLFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsSVGLFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsSVGLFZ .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsSVGF {
   /*lee-leftBar-bot li active*/
@@ -15028,7 +15142,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsSVGF .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -15064,6 +15178,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsSVGF .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsSVGF .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsSVGF .lee-home .lee-home-consum {
   width: 100%;
@@ -15102,7 +15226,7 @@ textarea {
 }
 .lee-admin .themsSVGF .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsSVGF .lee-home .lee-home-deal > div {
@@ -15121,6 +15245,7 @@ textarea {
 }
 .lee-admin .themsSVGF .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsSVGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -15133,6 +15258,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsSVGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsSVGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -15141,6 +15267,13 @@ textarea {
 }
 .lee-admin .themsSVGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsSVGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsSVGF .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsSVGFZ {
   /*lee-leftBar-bot li active*/
@@ -17167,7 +17300,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -17203,6 +17336,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsSVGFZ .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsSVGFZ .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-consum {
   width: 100%;
@@ -17241,7 +17384,7 @@ textarea {
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-deal > div {
@@ -17260,6 +17403,7 @@ textarea {
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -17272,6 +17416,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -17280,6 +17425,13 @@ textarea {
 }
 .lee-admin .themsSVGFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsSVGFZ .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsSVGFZ .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 .lee-admin .themsSVGGF {
   /*lee-leftBar-bot li active*/
@@ -19306,7 +19458,7 @@ textarea {
   overflow: hidden;
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-b .lee-home-card {
-  width: calc(100% - 46% - 30px);
+  width: calc(60% - 15px);
   float: left;
   margin-right: 15px;
 }
@@ -19342,6 +19494,16 @@ textarea {
   display: inline-block;
   vertical-align: -10px;
   margin-right: 15px;
+}
+.lee-admin .themsSVGGF .lee-home .lee-home-msg {
+  width: 100%;
+  height: 350px;
+  overflow-x: hidden;
+}
+.lee-admin .themsSVGGF .lee-home .lee-home-msg > div {
+  overflow-x: hidden;
+  width: 100%;
+  height: 300px;
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-consum {
   width: 100%;
@@ -19380,7 +19542,7 @@ textarea {
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-deal {
   width: 100%;
-  height: 100%;
+  height: 350px;
   overflow: hidden;
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-deal > div {
@@ -19399,6 +19561,7 @@ textarea {
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-matter > div .lee-home-matter-t {
   width: 100%;
+  height: 120px;
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i {
   width: 50%;
@@ -19411,6 +19574,7 @@ textarea {
   margin-bottom: 10px;
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p {
+  font-size: 17px;
   margin-bottom: 0;
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:last-child {
@@ -19419,6 +19583,13 @@ textarea {
 }
 .lee-admin .themsSVGGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p:first-child {
   color: #616161;
+}
+.lee-admin .themsSVGGF .lee-home .lee-home-matter > div .lee-home-matter-t .lee-home-matter-t-i .lee-home-matter-t-i-t p i {
+  margin-left: 10px;
+  color: #aaa;
+}
+.lee-admin .themsSVGGF .lee-home .lee-home-matter > div .ant-list .ant-list-item-meta-title {
+  border-bottom: none;
 }
 /*toggle*/
 .lee-admin .lee-in .lee-leftBar {

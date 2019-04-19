@@ -51,14 +51,14 @@ export default class Home extends Component {
 						</div>
                     </div>
                     <div className="lee-home-b">
-                        <div className="lee-home-card" style={{width:'23%'}}>
-                            {/*待办*/}
+                        <div className="lee-home-card" style={{width:'40%'}}>
+                            {/*待办/已办*/}
                             <DealtWith />
                         </div>
-                        <div className="lee-home-card" style={{width:'23%'}}>
-                            {/*已办*/}
+                        {/*<div className="lee-home-card" style={{width:'23%'}}>
+                            已办
                             <Processed />
-                        </div>
+                        </div>*/}
                         <div className="lee-home-card">
                             {/*我的消息*/}
                             <MyMsg />
