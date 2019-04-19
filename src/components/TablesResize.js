@@ -90,12 +90,16 @@ export default class TablesResize extends Component {
         }));
 
         return (
-            <Table
-                bordered
-                components={this.components}
-                columns={columns}
-                dataSource={this.data}
-            />
+            <div style={{width:'100%'}}>
+                <Table
+                    size='small'
+                    bordered
+                    components={this.components}
+                    columns={columns}
+                    dataSource={this.data}
+                />
+            </div>
+
         );
     }
 }

@@ -1921,7 +1921,95 @@
 
   /*demo1*/
   .lee-demo1{
+    .lee-demo1-l{
+      float: left;
+    }
+    .lee-demo1-r{
+      float: right;
+    }
+    .lee-demo1-card{
+      .lee-cards;
+      padding: 0;
+      h4{
+        line-height: 40px;
+        padding: 0 10px;
+        border-bottom: 1px solid @borderColor;
+        margin-bottom: 0;
+        span{
+          color: @topBar;
+          font-size: @fontSize;
+        }
+        .span-r{
+          color:#CECECE;
+          float: right;
+          font-size: @fontSize8;
+          .anticon-calendar{
+            font-size: @fontSize8;
+            cursor: pointer;
+          }
+          .ant-calendar-picker{
+            .ant-calendar-range-picker-input,.ant-calendar-range-picker-separator{
+              display: none;
+            }
+            .ant-input{
+              border: none;
+            }
+          }
+        }
+      }
+      .lee-demo1-card-con{
+        width: calc(100% - 30px);
+        margin: 20px auto;
+        .ant-tag {
+          margin-bottom: 8px;
+        }
+        .lee-demo1-card-con-pro{
+          ul{
+            li{
+              width: 33.333%;
+              height: 165px;
+              //height: 120px;
+              border-top:1px solid @borderColor;
+              border-right: 1px solid @borderColor;
+              color:#CECECE;
+              float: left;
+              background: @color;
+              color:@fontColor2;
+              padding: 15px;
+              &:nth-child(3n){
+                border-right:none;
+              }
+              &:hover,&:first-child{
+                position: relative;
+                z-index: 1;
+                box-shadow: 0 2px 8px rgba(0,0,0,.15);
+              }
+              div{
+                color: @fontColor4;
+                margin-bottom: 8px;
+                img{
+                  width: 40px;
+                  height: 40px;
+                  .border-radius(50%);
+                  margin-right: 15px;
+                }
+              }
 
+              p{
+                font-size: @fontSize;
+                margin-bottom: 0;
+                &:last-child{
+                  color: @fontColor3;
+                }
+                span{
+                  float: right;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
 
