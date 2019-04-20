@@ -7,9 +7,6 @@ antd + react 后台管理
 ###### 安装：yarn
 ###### 访问：http://localhost:5201/
 
-部分效果图：
-![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/1.png)
-
 ### topbar
 > 获取网易云音乐中设置的用户名和用户头像
 > 换肤（目前配色教丑）
@@ -19,6 +16,7 @@ antd + react 后台管理
 
 ### leftbar
 - 首页
+![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/1.png)
 - 介绍
 - 图表
 
@@ -39,7 +37,9 @@ antd + react 后台管理
 
 - 地图
 - 会议
+![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/2.png)
 - 物业
+![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/3.png)
 - 仿网易云音乐
 
 ### 仿网易云音乐（redux版）
@@ -128,7 +128,7 @@ antd + react 后台管理
     
     
 音乐效果图：
-    ![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/2.png)
+    ![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/4.png)
 
 - 拖曳
     - [x] github:https://github.com/bevacqua/dragula
