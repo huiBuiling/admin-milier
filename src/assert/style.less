@@ -1957,6 +1957,15 @@
           }
         }
       }
+      .pro-type{
+        span{
+          margin-right: 10px;
+          cursor: pointer;
+          &.active{
+            color: @themsColor;
+          }
+        }
+      }
       .lee-demo1-card-con{
         width: calc(100% - 30px);
         margin: 20px auto;
@@ -1969,7 +1978,7 @@
               width: 33.333%;
               height: 165px;
               //height: 120px;
-              border-top:1px solid @borderColor;
+              border-bottom:1px solid @borderColor;
               border-right: 1px solid @borderColor;
               color:#CECECE;
               float: left;

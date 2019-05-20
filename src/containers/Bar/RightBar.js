@@ -12,7 +12,7 @@ import Conference from '../../components/conference/Conference';
 import Tenement from '../../components/tenement/Tenement';
 import CloundPlayer from '../../components/cloundMusic/CloundPlayerList';
 import Play from "../../components/play/play";
-import Demo1 from "../../components/demo1/Demo1";
+import Pro from "../../components/pro/pro";
 
 export default class RightBar extends Component {
     constructor(props){
@@ -20,7 +20,7 @@ export default class RightBar extends Component {
         this.state = {
             route:[
                 {exact:true, path:'/login', component:Login},
-                {path:'/home', component:Home},
+                {path:'/home', component:Home, exact:true},
                 {path:'/home:image', component:HomeImage},
                 {path:'/intro', component:Intro},
                 {path:'/echat', component:Echat},
@@ -30,7 +30,7 @@ export default class RightBar extends Component {
                 {path:'/tenement', component:Tenement},
                 {path:'/cloundPlayer', component:CloundPlayer},
                 {path:'/play', component:Play},
-                {path:'/demo1', component:Demo1},
+                {path:'/pro', component:Pro},
             ]
         }
     }
