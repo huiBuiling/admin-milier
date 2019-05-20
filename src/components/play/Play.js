@@ -9,11 +9,6 @@ export default class Home extends Component {
 		};
 	}
 
-    componentDidMount(){
-
-    }
-
-
 	render() {
 		return (
 			<div className="lee-rbb-all" ref="all" style={{padding:0}}>

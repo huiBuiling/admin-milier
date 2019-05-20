@@ -11,7 +11,7 @@ export default class Robot extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-		    val:'预备！！！',
+		    // val:'预备！！！',
             robot1:{},
             robot2:{},
             robot3:{},
@@ -84,72 +84,64 @@ export default class Robot extends Component {
         })
     }
 
-    //svg jump
-    jump = (el)=>{
+    play = (el)=>{
+	    let self = this;
         let {svg, header, body, eyeBigL, eyeSmallL, eyeBigR,eyeSmallR, tuiL, tuiR} = el;
-        if(i == -1){
-            this.goText('预备！！！');
-            this.loading(".box2");
 
-            svg.animate(0, 20, function () {
-                header.attr({fill: "#bada55"});
-                body.attr({fill: "#bada55"});
-            });
-            i++;
-        }else if(i == 0){
-            this.goText('刘海飘');
+        // 动作一
+        // this.goText('预备！！！');
+        this.loading(".box2");
+
+        let i = 0;
+
+        svg.animate(0, 20, function () {
+            header.attr({fill: "#bada55"});
+            body.attr({fill: "#bada55"});
+        });
+
+        // 动作二
+        setTimeout(() => {
+            // this.goText('刘海飘');
             this.loading(".box3");
 
             svg.animate(0, 20, function () {
                 header.attr({fill: p.pattern(0, 0, 10, 100)});
                 body.attr({cx: 200});
-                tuiL.attr({x1: 160,x2:140});
-                tuiR.attr({x1: 240,x2:270});
+                tuiL.attr({x1: 160, x2: 140});
+                tuiR.attr({x1: 240, x2: 270});
             });
-            i++;
-        }else if(i == 1){
-            this.goText('左眼右眼跳');
+        }, 1000)
+
+        // 动作三
+        setTimeout(() => {
+            // this.goText('左眼右眼跳');
             this.loading(".box4");
             this.eyeAnim(svg, eyeBigL, eyeSmallL, 150, "#fff");
             this.eyeAnim(svg, eyeBigR, eyeSmallR, 250, "#fff");
-
             svg.animate(0, 20, function () {
                 header.attr({fill: '#fff'});
-                body.attr({cx: 230,fill: '#f38630'});
-                tuiL.attr({x1: 230,x2:140});
-                tuiR.attr({x1: 270,x2:260});
+                body.attr({cx: 230, fill: '#f38630'});
+                tuiL.attr({x1: 230, x2: 140});
+                tuiR.attr({x1: 270, x2: 260});
             });
-            i++;
-        }else if(i == 2){
-            this.goText('下一个动作，go');
+        }, 2000)
+
+        // 动作四
+        setTimeout(() => {
             this.loading(".box5");
-            this.eyeAnim(svg, eyeSmallL, eyeBigL, 150, "#000");
-            this.eyeAnim(svg, eyeSmallR, eyeBigR, 250, "#000");
-
             svg.animate(0, 20, function () {
+                self.eyeAnim(svg, eyeSmallL, eyeBigL, 150, "#000");
                 header.attr({fill: '#fff'});
-                body.attr({cx: 200,fill: p.pattern(0, 0, 5, 20)});
-                tuiL.attr({x1: 160,x2:140});
-                tuiR.attr({x1: 240,x2:270});
+                body.attr({cx: 200, fill: "#bada55"});
+                tuiL.attr({x1: 160, x2: 140});
+                tuiR.attr({x1: 240, x2: 270});
             });
-            i++;
-        }else if(i == 3){
-            this.goText('body，go');
-            this.loading(".box6");
-            this.eyeAnim(svg, eyeBigL, eyeSmallL, 150, "#fff");
-            this.eyeAnim(svg, eyeBigR, eyeSmallR, 250, "#fff");
+        }, 3000);
+    }
 
-            svg.animate(0, 20, function () {
-                header.attr({fill: '#fff'});
-                body.attr({cx: 230,fill: '#989898'});
-                tuiL.attr({x1: 230,x2:140});
-                tuiR.attr({x1: 270,x2:260});
-            });
-            i = -1;
-        }
-        if(i == -1){
-            this.loading(".box",1);
-        }
+    //svg jump
+    jump = (el)=>{
+        this.play(el);
 	}
 
     //双眼动画
@@ -211,7 +203,7 @@ export default class Robot extends Component {
                     </div>
                     <div style={{display:'block'}} className="robot">
                         <div className="robot-btn"><span onClick={this.nowJump}>JUMP</span></div>
-                        <div className="robot-opera">{this.state.val}</div>
+                        {/*<div className="robot-opera">{this.state.val}</div>*/}
                         <svg className="robot-svg" id='robot' style={{width:500,height:900}} ></svg>
                         <svg className="robot-svg" id='robot2' style={{width:500,height:900}} ></svg>
                         <svg className="robot-svg" id='robot3' style={{width:500,height:900}} ></svg>
