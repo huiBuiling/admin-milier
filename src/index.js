@@ -10,8 +10,8 @@ import reducer from './reducer/reducers'
 
 import 'antd/dist/antd.min.css';
 import 'animate.css';
-import './assert/container.less';
-import './assert/style.less';
+import './assert/init.less';
+import './assert/theme_module.less';
 
 const store = createStore(reducer,compose(
     applyMiddleware(thunk),

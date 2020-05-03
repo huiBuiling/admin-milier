@@ -1,101 +1,8 @@
-//left bg: top | bot
-@logo:rgb(42,50,89);
-@leftBar:rgb(31,36,56);
+@import url('./variable.less');
+@import url('./theme.less');
+@import url('./theme_layout.less');
 
-//left li: font | li active : bg | font
-@liFont:#fff;
-@liActiveBg:#fff;
-@liActiveBorder:#fff;
-
-//right: top | top font | top left border
-@topBar:rgb(88,104,217);
-@topFont:#fff;
-
-//right botBg | thems | global font color
-@rightBg:rgb(232,239,242);
-@thems:rgb(88,104,217);
-@thems2:rgb(70,212,186);
-
-@bgColor:#fafafa;
-@thems:rgb(88,104,217);
-@thems2:rgb(70,212,186);
-
-@color:#fff;
-@fontColor:@color;
-@fontColor2:#616161;
-@fontColor3:#aaa;
-@fontColor4:#000;
-@fontColor5:#707070;
-
-@fontSize:14px;
-@fontSize2:12px;
-@fontSize6:16px;
-@fontSize8:18px;
-@fontSize20:20px;
-
-@borderColor:#E9E9E9;
-@borderColor2:#D9D9D9;
-
-/*字体图标*/
-[class^=icon-] {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-//圆角
-.border-radius(@radius:2px){
-  border-radius: @radius;
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  -ms-border-radius: @radius;
-  -o-border-radius: @radius;
-}
-
-//动画
-.transform(@reg:-50%){
-  transform: translateX(@reg);
-  -webkit-transform: translateX(@reg);
-  -moz-transform: translateX(@reg);
-  -ms-transform: translateX(@reg);
-  -o-transform: translateX(@reg);
-}
-
-//动画
-.transition(@top:top,@time:0.3s,@type:ease-in-out){
-  transition: @top @time @type;
-  -webkit-transition: @top @time @type;
-  -moz-transition: @top @time @type;
-  -ms-transition: @top @time @type;
-  -o-transition: @top @time @type;
-}
-
-//省略
-.text-overflow{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.fl{float: left;}
-.fr{float: right;}
-
-/* common moudle style */
-.lee-cards{
-  background: @color;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(26,26,26,.1);
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  padding: 15px;
-  font-size: @fontSize;
-  .border-radius(4px);
-}
-
-/* moudle style */
-/*start*/
+/* theme moudle style */
 .leeThem(
   //left bg: top | bot
   @logo:@logo,@leftBar:@leftBar,
@@ -2022,18 +1929,4 @@
   }
 
 
-}
-.react-resizable {
-  position: relative;
-
-}
-
-.react-resizable-handle {
-  position: absolute;
-  width: 10px;
-  height: 100%;
-  bottom: 0;
-  right: -5px;
-  cursor: col-resize;
-  z-index: 1000;
 }
