@@ -63,7 +63,6 @@ export default class BarChart extends Component {
                 },
                 // formatter: '{b} : {c}',
                 formatter: function( data ) {
-                    console.log(data[0])
                     let html = '';
                     html += '<style>p{margin:0;}em{background:' + data[0].color + '}';
                     html += 'em{width: 10px;height: 10px;display: inline-block;vertical-align: -5px;margin-right: 8px;border-radius: 50%;}</style>';

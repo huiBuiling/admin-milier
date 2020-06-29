@@ -2,6 +2,8 @@
  * 音乐
  */
 import axios from 'axios';
+import { getUrlFix } from '../common/util';
+import { message } from 'antd';
 
 const SONG_LIST = 'SONG_LIST';
 const SEARCH = 'SEARCH';
@@ -61,34 +63,38 @@ export function songsList(songList,liveList,oldSongList,playlistId,total,playNum
 
 export function getSongsList(flag,id) {
 	return (dispatch,getState)=>{
-        axios.get(`http://localhost:4000/playlist/detail?id=${id}`).then(res=>{
+        axios.get(`${getUrlFix}/playlist/detail?id=${id}`).then(res=>{
             if(res.status == 200) {
-                let songList = [];
-                let liveList = flag == 1 ? [] : getState().player.liveList;
-				res.data.playlist.tracks.map(item => {
-					let current = {};
-					current.id = item.id;
-					current.url = item.al.picUrl;  //照片
-					current.title = item.name;  //音乐名
-					current.singer = item.ar;  //歌手
-					current.album = item.al.name;   //专辑
-					if (flag == 1) {
-						current.collect = true;
-						liveList.push(item.id);
-					}
-					if (flag == 2) {
-						liveList.filter(itemL => {
-							if (itemL == item.id) {
-								current.collect = true;
-							}
-						});
-					}
-					songList.push(current);
-				});
+				if(res.data.code == 200) {
+					let songList = [];
+					let liveList = flag == 1 ? [] : getState().player.liveList;
+					res.data.playlist.tracks.map(item => {
+						let current = {};
+						current.id = item.id;
+						current.url = item.al.picUrl;  //照片
+						current.title = item.name;  //音乐名
+						current.singer = item.ar;  //歌手
+						current.album = item.al.name;   //专辑
+						if (flag == 1) {
+							current.collect = true;
+							liveList.push(item.id);
+						}
+						if (flag == 2) {
+							liveList.filter(itemL => {
+								if (itemL == item.id) {
+									current.collect = true;
+								}
+							});
+						}
+						songList.push(current);
+					});
 
-                let oldSongList = flag == 1 ? songList : getState().player.oldSongList;
+					let oldSongList = flag == 1 ? songList : getState().player.oldSongList;
 
-                dispatch(songsList(songList,liveList,oldSongList,id,res.data.playlist.trackCount));
+					dispatch(songsList(songList,liveList,oldSongList,id,res.data.playlist.trackCount));
+				} else {
+					message.warning(res.data.msg)
+				}
             }
         })
     }

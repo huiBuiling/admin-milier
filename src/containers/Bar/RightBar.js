@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, Redirect, Switch } from 'react-router-dom'
 
 import Login from '../../containers/login/login'
 import Home from "../../components/home/Home";
@@ -23,14 +23,14 @@ export default class RightBar extends Component {
                 {path:'/home', component:Home, exact:true},
                 {path:'/home:image', component:HomeImage},
                 {path:'/intro', component:Intro},
+                {path:'/pro', component:Pro},
+                {path:'/tenement', component:Tenement},
+                {path:'/conference', component:Conference},
+                {path:'/play', component:Play},
                 {path:'/echat', component:Echat},
                 {path:'/leave', component:Leave},
                 {path:'/map', component:Map},
-                {path:'/conference', component:Conference},
-                {path:'/tenement', component:Tenement},
                 {path:'/cloundPlayer', component:CloundPlayer},
-                {path:'/play', component:Play},
-                {path:'/pro', component:Pro},
             ]
         }
     }
@@ -39,11 +39,14 @@ export default class RightBar extends Component {
         return (
             <div className="lee-rightBar-bot">
                 <div className="lee-rightBar-bot-bot" >
-                    {
-                        this.state.route.map(item=>{
-                            return <Route key={item.path} exact={item.exact ? true:false} path={item.path} component={item.component}/>
-                        })
-                    }
+                    <Switch>
+                        {
+                            this.state.route.map(item=>{
+                                return <Route key={item.path} exact={item.exact ? true:false} path={item.path} component={item.component}/>
+                            })
+                        }
+                        <Redirect from="/*" to="/home" />
+                    </Switch>
                 </div>
             </div>
         );

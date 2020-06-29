@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon,Input,Badge,Menu, Dropdown,Divider } from 'antd';
+import { Icon,Input,Badge,Menu, Dropdown,Divider, message } from 'antd';
 import Trianglify from 'Trianglify';   //svg背景
 import { Link,withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -10,12 +10,13 @@ import adminImg from '../../assert/images/admin.jpg';
 
 import axios from 'axios';
 import { getSongsList,getCurrentItem } from "../../reducer/player.redux";
-import {getLoginData} from "../../reducer/login.redux";
+import { setLoginData } from "../../reducer/login.redux";
+import { getUrlFix, setItem } from '../../common/util';
 
 @withRouter
 	@connect(
 		state => state,
-		{ getSongsList,getCurrentItem,getLoginData }
+		{ getSongsList, getCurrentItem, setLoginData }
 	)
 class App extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class App extends Component {
         this.state = {
             height:document.getElementById('root').offsetHeight,
 
-            toggle: true,
+            toggle: false,
             avatarDefault: adminImg,
             search: false,   //搜索
             showSkin: false,  //皮肤
@@ -33,8 +34,8 @@ class App extends Component {
             ],
             skinSvg: [
                 {color: 'themsSVGL', name: '蓝色'},
-                {color: 'themsSVGLF', name: '蓝粉色'},
-                {color: 'themsSVGLFH', name: '蓝粉色H'},
+                // {color: 'themsSVGLF', name: '蓝粉色'},
+                {color: 'themsSVGLFH', name: '蓝粉色'},
                 {color: 'themsSVGLFZ', name: '蓝粉紫色'},
                 {color: 'themsSVGF', name: '粉色'},
                 {color: 'themsSVGFZ', name: '粉紫色'},
@@ -43,8 +44,8 @@ class App extends Component {
 
 			skinSvgColorList:{
                 '蓝色':["#f7fbff", "#deebf7", "#c6dbef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#08519c", "#08306b"],
+                // '蓝粉色':["#fff7fb", "#ece7f2", "#d0d1e6", "#a6bddb", "#74a9cf", "#3690c0", "#0570b0", "#045a8d", "#023858"],
                 '蓝粉色':["#fff7fb", "#ece7f2", "#d0d1e6", "#a6bddb", "#74a9cf", "#3690c0", "#0570b0", "#045a8d", "#023858"],
-                '蓝粉色H':["#fff7fb", "#ece7f2", "#d0d1e6", "#a6bddb", "#74a9cf", "#3690c0", "#0570b0", "#045a8d", "#023858"],
                 '蓝粉紫色':["#f7fcfd", "#e0ecf4", "#bfd3e6", "#9ebcda", "#8c96c6", "#8c6bb1", "#88419d", "#810f7c", "#4d004b"],
 
                 '粉色':["#f7f4f9", "#e7e1ef", "#d4b9da", "#c994c7", "#df65b0", "#e7298a", "#ce1256", "#980043", "#67001f"],
@@ -62,8 +63,6 @@ class App extends Component {
     }
 
     componentDidMount() {
-        // this.props.getLoginData('13760845853','liuhuihui');
-
         if(this.state.skinColor != 'themsBlack') {
             const canvas = Trianglify({
                 width: 2920,
@@ -81,12 +80,17 @@ class App extends Component {
     getCurrenturl = (currentIndex) => {
         const {currentId} = this.props.player;
         if (currentId != null && currentId !== undefined) {
-            axios.get(`http://localhost:4000/music/url?id=${currentId}`).then(res => {
+            axios.get(`${getUrlFix}/music/url?id=${currentId}`).then(res => {
                 if (res.status == 200) {
-                    const currentUrl = res.data.data[0].url;
-                    const item = {currentId, currentIndex, currentUrl};
-                    this.props.getCurrentItem(item);
-                    console.log(currentId + " :: " + currentUrl);
+                    if(res.code == 200) {
+                        const currentUrl = res.data.data[0].url;
+                        const item = {currentId, currentIndex, currentUrl};
+                        this.props.getCurrentItem(item);
+                        // console.log(currentId + " :: " + currentUrl);
+                    } else {
+                        message.warning(res.data.msg);
+                    }
+                    
                 }
             });
         } else {
@@ -102,7 +106,7 @@ class App extends Component {
             // if(userName !== ''){
                 //已登录
                 //获取歌单列表
-                axios.get('http://localhost:4000/user/playlist?uid=262606203').then(res=>{
+                axios.get(`${getUrlFix}/user/playlist?uid=262606203`).then(res=>{
                     //获取第一个歌单列表歌曲
                     this.props.getSongsList(1, res.data.playlist[0].id);
 
@@ -148,6 +152,12 @@ class App extends Component {
         document.getElementById('root').appendChild(canvas.canvas())
 	}
 
+    signOut = () => {
+        setItem('userData', {});
+        this.props.setLoginData('', '')
+        this.props.history.push('/login');
+    }
+
 	render() {
         const Search = Input.Search;
         const { userName, avatar } = this.props.login;
@@ -178,7 +188,7 @@ class App extends Component {
                 {userName == '' && avatar == '' ?
                     <Menu.Item><div className="login-in"  onClick={()=>this.props.history.push('/login')}><Icon type="smile" />登录</div></Menu.Item>
                     :
-                    <Menu.Item><div className="login-out" onClick={()=>this.props.history.push('/login')}><Icon type="poweroff" />退出</div></Menu.Item>
+                    <Menu.Item><div className="login-out" onClick={this.signOut}><Icon type="poweroff" />退出</div></Menu.Item>
                 }
             </Menu>
         );
@@ -234,20 +244,18 @@ class App extends Component {
 						</div>
                         <RightBar/>
                         {/*animated infinite rubberBand jello*/}
-						<div className="lee-music-opera" onClick={this.player}>
+						{/* <div className="lee-music-opera" onClick={this.player}>
 							<div className={`${showMusic ? 'lee-music-animate':'in'}`}>
 								<Icon
 									type="customer-service" theme="outlined"
 									className={`animated ${showMusic ? 'bounce uninfinite':'infinite pulse'}`}
-                                    /*border: '2px solid #e4cbad'*/
 									style={showMusic ? {borderRadius: '50%',padding:10}:null}
 								/>
 							</div>
-						</div>
+						</div> */}
 
-						<div className="lee-music-opera2" style={{display:showMusic ? 'block':'none'}}>
+						{/* <div className="lee-music-opera2" style={{display:showMusic ? 'block':'none'}}>
 							<audio
-								// controls   //显示原始样式
 								src={currentUrl}
 								ref='audio'
 								preload="true"
@@ -257,11 +265,9 @@ class App extends Component {
 									<Icon
 										type="caret-left"
 										theme="outlined"
-										// className={currentIndex == 0 ? 'prev-no' : null}
                                         className="animated bounceInLeft delay-2s"
 										onClick={this.prev}
 									/>
-									{/*播放|暂停*/}
 									{isPlay ?
 										<Icon type="pause-circle" theme="outlined" className="animated jello delay-1s" onClick={this.pause}/>
 										:
@@ -270,12 +276,11 @@ class App extends Component {
 									<Icon
 										type="caret-right"
 										theme="outlined"
-										// className={currentIndex == (oldSongList.length - 1) ? 'next-no' : null}
                                         className="animated bounceInRight"
 										onClick={this.next}
 									/>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>

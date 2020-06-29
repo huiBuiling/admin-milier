@@ -11,14 +11,14 @@ export default class LeftBar extends Component {
             links:[
                 { path:'/home', icon:'home', title:'首页'},
                 { path:'/intro', icon:'pushpin', title:'介绍'},
+                { path:'/pro', icon:'paper-clip', title:'项目'},
+                { path:'/tenement', icon:'cluster', title:'物业'},
+                { path:'/conference', icon:'team', title:'会议'},
+                { path:'/play', icon:'coffee', title:'玩'},
                 { path:'/echat', icon:'dot-chart', title:'图表'},
                 { path:'/leave', icon:'pushpin', title:'记事'},
                 { path:'/map', icon:'global', title:'地图'},
-                { path:'/conference', icon:'team', title:'会议'},
-                { path:'/tenement', icon:'cluster', title:'物业'},
                 { path:'/cloundPlayer', icon:'customer-service', title:'音乐'},
-                { path:'/play', icon:'coffee', title:'玩'},
-                { path:'/pro', icon:'paper-clip', title:'哩1'},
             ],
         }
     }

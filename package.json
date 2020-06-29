@@ -7,9 +7,12 @@
   "author": "liuhuihui <244701374@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn webpack-dev-server",
-    "dist": "yarn webpack -p",
-    "dev:dll": "yarn webpack --config webpack.dll.config.js"
+    "start": "yarn webpack-dev-server",
+    "dev": "set NODE_ENV=development&& yarn webpack --config webpack.config.js",
+    "dev:dll": "yarn webpack --config webpack.dll.config.js",
+    "build": "set NODE_ENV=production&& yarn webpack --progress --hide-modules --config webpack.config.js",
+    "build2": "set NODE_ENV=production&& yarn run build:dll && yarn webpack --progress --hide-modules --config webpack.config.js",
+    "build:dll": "set NODE_ENV=production&& yarn webpack --config webpack.dll.config.js"
   },
   "devDependencies": {
     "animate.css": "^3.7.0",
@@ -34,6 +37,7 @@
     "file-loader": "^2.0.0",
     "gsap": "^2.0.2",
     "html-webpack-plugin": "2.30.1",
+    "image-webpack-loader": "^6.0.0",
     "imports-loader": "^0.8.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
@@ -57,5 +61,5 @@
     "react-resizable": "^1.7.5",
     "react-router-dom": "^4.3.1"
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:3000"
 }

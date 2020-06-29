@@ -1,6 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
+//判断开发 | 生产
+const nodeEnv  = process.env.NODE_ENV || 'development';
+const isDev = nodeEnv  === 'development';
+console.log(nodeEnv + '---' + isDev)
+
 const vendors = [
     'react',
     'react-dom',
@@ -24,7 +29,7 @@ const vendors = [
 module.exports = {
     // context:path.resolve(__dirname, 'src'),
     output: {
-        path:path.join(__dirname, 'public/dll'),
+        path:path.join(__dirname, isDev ? 'public/dll' : 'dist/dll'),
         filename: 'dll.js',
         library: 'dll'
     },
@@ -34,7 +39,7 @@ module.exports = {
     plugins: [
         new webpack.DllPlugin({
             context:__dirname,
-            path: path.join(__dirname,'public/dll/manifest.json'),
+            path: path.join(__dirname, isDev ? 'public/dll/manifest.json' : 'dist/dll/manifest.json'),
             name: 'dll'
         })
     ],

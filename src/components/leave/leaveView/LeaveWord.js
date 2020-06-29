@@ -32,7 +32,7 @@ class LeaveWord extends Component {
 	//添加任务，传递给Header组件的方法
 	addLeave = (leaveItem)=>{
 		this.state.leaveList.push(leaveItem);
-		console.log(this.db)
+		// console.log(this.db)
         // this.db.set("leaveList",this.state.leaveList);
 		this.allChecked();
 	}

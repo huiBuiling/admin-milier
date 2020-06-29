@@ -7,6 +7,13 @@ antd + react 后台管理
 ###### 安装：yarn
 ###### 访问：http://localhost:5201/
 
+ - 非常感谢提供的音乐接口（仅供学习使用，如有侵权请联系）
+ - https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=neteasecloudmusicapi
+
+###### 体验音乐功能需
+    - 下载：git clone https://github.com/Binaryify/NeteaseCloudMusicApi.git
+    - 运行: node app.js
+
 ### topbar
 > 获取网易云音乐中设置的用户名和用户头像
 > 换肤(默认夜间配色， 支持svg配色哦)

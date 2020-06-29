@@ -3,6 +3,7 @@ import { Icon,Progress,Slider } from 'antd';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { getCurrentItem } from '../../reducer/player.redux';
+import { getUrlFix } from '../../common/util';
 
 /**
  * 底部音乐
@@ -34,10 +35,10 @@ export default class PlayerBar extends Component {
 
     //获取歌曲MP3地址
     getCurrenturl = (currentId,currentIndex)=>{
-        axios.get(`http://localhost:4000/song/url?id=${currentId}`).then(res=>{
+        axios.get(`${getUrlFix}/song/url?id=${currentId}`).then(res=>{
             if(res.status == 200){
                 const currentUrl = res.data.data[0].url;
-                console.log(currentId + ":" + currentUrl);
+                // console.log(currentId + ":" + currentUrl);
                 const item = {currentId,currentIndex,currentUrl};
                 this.props.getCurrentItem(item);
                 this.play();
@@ -96,7 +97,7 @@ export default class PlayerBar extends Component {
         const allTime = this.time(1,audio,false);  //获取总时长
         const currentTime = this.time(2,audio,false);  //获取播放进度
         audio.volume = (this.state.volume / 100);
-        console.log(audio.volume);
+        // console.log(audio.volume);
         this.setState({
             isPlay:true,
             allTime, currentTime
@@ -231,7 +232,7 @@ export default class PlayerBar extends Component {
                         max={100}
                         min={0}
                         onChange={(val)=>{
-                            console.log(val);
+                            // console.log(val);
                             this.setState({volume:val});
                             this.setVolume(val);
                         }}

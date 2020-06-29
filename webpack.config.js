@@ -4,20 +4,70 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 //判断开发 | 生产
-let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
-const isLocal = WEBPACK_ENV === 'dev';
+const nodeEnv  = process.env.NODE_ENV || 'development';
+const isDev = nodeEnv  === 'development';
+const dir = isDev ? 'build' : 'dist';
+ console.log(process.env.NODE_ENV + '---' + isDev)
 
-const comPlugInCss = new ExtractTextPlugin('css/comPlugInCss.css'); //插件css
-const styleCss = new ExtractTextPlugin('css/style.css'); //插件css
+//插件css
+const comPlugInCss = new ExtractTextPlugin({
+    filename:'css/comPlugInCss.css',
+    allChunks:true
+});
+const styleCss = new ExtractTextPlugin({
+    filename:'css/app.css',
+    allChunks:true
+});
+
+// 压缩打包的文件
+const appPlugin = [
+    new HtmlWebpackPlugin({
+        base: {
+            href: isDev ? 'public/dll/dll.js' : './dll/dll.js',
+        },
+        filename: path.resolve(dir, "index.html"),
+        template: 'public/index.html',
+        inject: true,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+        },
+        chunksSortMode: "dependency"
+    }),
+    // new ExtractTextPlugin('./[name].css'),  // 独立css
+    comPlugInCss,
+    styleCss,
+    new webpack.DllReferencePlugin({
+        context:__dirname,
+        manifest: isDev ? require('./public/dll/manifest.json') : require('./dist/dll/manifest.json') ,
+        name: 'dll',
+        inject: true,
+    }),
+];
+if(!isDev) {
+    appPlugin.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    )
+}
 
 module.exports = {
-    context:path.resolve(__dirname, '.'),
-    devtool: isLocal ? 'cheap-module-source-map' : 'none',  //设置本地源代码
+    context: path.resolve(__dirname, '.'),
+    devtool: isDev ? 'cheap-module-source-map' : 'none',  //设置本地源代码
     entry: './src/index.js',  //入口
-    output: {   //输出
-        path: path.join(__dirname, 'dist'),
-        publicPath: isLocal ? '/dist/' : '/dist/',
-        filename: 'js/bundle.js',
+    output: isDev ? {
+        path: path.join(__dirname, dir),
+        publicPath: "/",
+        filename: 'js/[name].js',
+    }:{
+        path: path.join(__dirname, dir),
+        filename: "js/[name].[chunkhash:5].js",
+        publicPath: "./",
+        chunkFilename: "js/chunk/[id].[chunkhash:5].js"
     },
     module: {
         rules: [
@@ -54,8 +104,14 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 1024,
-                            name: 'images/[name].[ext]'
+                            name: 'images/[name].[hash:7].[ext]'
                         }
+                    },
+                    {
+                      loader: 'image-webpack-loader',// 压缩图片
+                      options: {
+                        bypassOnDebug: true,
+                      }
                     }
                 ]
             },
@@ -94,26 +150,17 @@ module.exports = {
             snapsvg: 'snapsvg/dist/snap.svg.js',
         },
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/index.html'
-        }),
-        // new ExtractTextPlugin('./[name].css'),  //独立css
-        comPlugInCss,
-        styleCss,
-
-        new webpack.DllReferencePlugin({
-            context:__dirname,
-            manifest: require('./public/dll/manifest.json'),
-            name: 'dll'
-        }),
-    ],
+    plugins: appPlugin,
     devServer: {
         port:'5201',
         // contentBase: path.resolve(__dirname, 'dist'),
-        // historyApiFallback: true
-        historyApiFallback: {
-            index: 'public/index.html'
+        // historyApiFallback: {
+        //     index: 'public/index.html'
+        // }
+        historyApiFallback:true,
+        stats: {
+            modules: false,
+            chunks: false
         }
     },
 };

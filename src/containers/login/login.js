@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon,Input,Button,Modal } from 'antd';
+import { Icon,Input,Button,Modal, message } from 'antd';
 import { connect } from 'react-redux';
 import { getLoginData } from '../../reducer/login.redux'
 
@@ -8,6 +8,7 @@ import login3 from '../../assert/images/login/login3.png';
 
 import logo2 from '../../assert/images/logo/logo2.png'
 import logo3 from '../../assert/images/logo/logo3.png'
+import { setItem } from '../../common/util';
 
 const confirm = Modal.confirm;
 
@@ -19,23 +20,26 @@ export default class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            accounts:'',
-            passpword:'',
-            randomNum:0
+            accounts: '',
+            passpword: '',
+            randomNum: Math.random() * 10
         }
     }
 
-    componentDidMount(){
-        const randomNum = Math.random() * 10;
-        // console.log(randomNum)
-        this.setState({randomNum});
+    componentDidMount() {
+        setItem('userData', {})
     }
 
     //登录
     login = ()=>{
         const { accounts,passpword } = this.state;
-        this.props.getLoginData(accounts,passpword);
-        this.props.history.push('/home')
+        if(accounts && passpword) {
+            this.props.getLoginData(accounts,passpword);
+            // this.props.history.push('/home')
+        } else {
+            message.warning('账号或密码错误');
+        }
+        
     }
 
     moment = ()=>{
@@ -69,6 +73,7 @@ export default class Login extends Component {
                          <div className="lee-login-con-r">
                              <h3>米粒儿</h3>
                              <h4>MILIER</h4>
+                             <p style={{textAlign: 'center'}}>请使用网易云音乐账号登录哟！</p>
                              <Input
                                  placeholder="Enter your username"
                                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}

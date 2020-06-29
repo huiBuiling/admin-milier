@@ -4,6 +4,7 @@ import PlayerBar from './PlayerBar'
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getOldSongList, getCurrentItem } from '../../reducer/player.redux'
+import { getUrlFix } from '../../common/util';
 
 /**
  * PlayerList
@@ -30,9 +31,9 @@ export default class PlayerList extends Component {
     // 喜欢音乐
     live = (collect,id)=>{
         const { songList,currentIndex } = this.props;
-        axios.get(`http://localhost:4000/like?id=${id}&like=${!collect}`).then(res=>{
+        axios.get(`${getUrlFix}/like?id=${id}&like=${!collect}`).then(res=>{
             if(res.data.code === 301){
-                alert(res.data.msg);
+                message.warning(res.data.msg);
             }else{
                 if(res.status == 200){
                     if(collect){
@@ -57,7 +58,7 @@ export default class PlayerList extends Component {
 
     //获取歌曲MP3地址
     getCurrenturl = (currentId,currentIndex)=>{
-        axios.get(`http://localhost:4000/song/url?id=${currentId}`).then(res=>{
+        axios.get(`${getUrlFix}/song/url?id=${currentId}`).then(res=>{
             if(res.status == 200){
                 const currentUrl = res.data.data[0].url;
                 const item = {currentId,currentIndex,currentUrl};

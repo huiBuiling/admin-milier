@@ -1,16 +1,16 @@
 import React,{Component} from 'react'
-import { Icon,Select } from 'antd';
+import { Icon, Select, message } from 'antd';
 import PlayerList from './PlayerList'
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { getSongsList,getSearchList,getOldCurrentItem } from "../../reducer/player.redux";
-
+import { getUrlFix } from '../../common/util';
 /**
  * PlayerList
  * 音乐列表
  */
 @connect(
-    state=>state.player,
+    state=>state,
     { getSongsList,getSearchList,getOldCurrentItem }
 )
 export default class CloundPlayerList extends Component {
@@ -30,8 +30,24 @@ export default class CloundPlayerList extends Component {
 	}
 
     componentDidMount(){
-        //获取歌单列表
-        axios.get('http://localhost:4000/user/playlist?uid=262606203').then(res=>{
+        this.isLogin();
+    }
+
+
+    // 判断是否登录
+    isLogin = () => {
+        const { userName } = this.props.login;
+        if(userName) {
+            this.getInitSongList();
+        } else {
+            message.warning('此功能需要使用网易云音乐账号登录');
+            this.props.history.push('/login');
+        }
+    }
+
+    // 获取歌单列表
+    getInitSongList = () => {
+        axios.get(`${getUrlFix}/user/playlist?uid=262606203`).then(res=>{
             this.setState({
                 playlist:res.data.playlist,
                 liveId:res.data.playlist[0].id
@@ -68,7 +84,7 @@ export default class CloundPlayerList extends Component {
 
     //搜索歌曲
     onSearch=(val)=>{
-        axios.get(`http://localhost:4000/search?keywords=${val}`).then(res=>{
+        axios.get(`${getUrlFix}/search?keywords=${val}`).then(res=>{
             if(res.data.code == 200){
                 this.setState({
                     searchList:res.data.result.songs
@@ -88,7 +104,7 @@ export default class CloundPlayerList extends Component {
 
 	render(){
         const Option = Select.Option;
-        const { songList, total, playlistId } = this.props;
+        const { songList, total, playlistId } = this.props.player;
 		const {
 		    playlist, searchList,
             liveId,
