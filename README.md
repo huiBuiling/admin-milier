@@ -40,7 +40,7 @@ antd + react 后台管理
 - 地图
 
 - 会议
-![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/2.png)
+![image](https://user-images.githubusercontent.com/20200628/98076231-dca3e680-1ea8-11eb-964f-f3cd76c19479.png)
 
 - 物业
 ![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/3.png)
