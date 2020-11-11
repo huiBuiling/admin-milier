@@ -23,7 +23,7 @@ antd + react 后台管理
 
 ### leftbar
 - 首页
-![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/1.png)
+![image](https://user-images.githubusercontent.com/20200628/98806668-7ee93e80-2454-11eb-9c05-1016208c214d.png)
 - 介绍
 - 图表：气泡图，饼状图，雷达图（线性图，柱状图已做封装，见首页），水球图
     - 水球图：yarn add echarts-liquidfill
@@ -43,10 +43,10 @@ antd + react 后台管理
 ![image](https://user-images.githubusercontent.com/20200628/98076231-dca3e680-1ea8-11eb-964f-f3cd76c19479.png)
 
 - 物业
-![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/3.png)
+![image](https://user-images.githubusercontent.com/20200628/98807061-1353a100-2455-11eb-95ec-68391c9652f5.png)
 
 - 仿网易云音乐   
-![image](https://github.com/huiBuiling/admin-milier/blob/master/result_img/4.png)
+![image](https://user-images.githubusercontent.com/20200628/98807132-2bc3bb80-2455-11eb-8d30-319104b3faca.png)
 
 - 拖曳
     - [x] github:https://github.com/bevacqua/dragula
