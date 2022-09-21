@@ -58,7 +58,7 @@
     "echarts-liquidfill": "^2.0.4",
     "pngquant-bin": "^8.0.1",
     "react": "16.2.0",
-    "react-dom": "16.2.0",
+    "react-dom": "16.2.1",
     "react-resizable": "^1.7.5",
     "react-router-dom": "^4.3.1"
   },
