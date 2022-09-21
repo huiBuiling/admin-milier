@@ -15,9 +15,6 @@
     "build:dll": "set NODE_ENV=production&& yarn webpack --config webpack.dll.config.js"
   },
   "devDependencies": {
-    "animate.css": "^3.7.0",
-    "antd": "^3.9.3",
-    "axios": "^0.18.0",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -41,6 +38,7 @@
     "imports-loader": "^0.8.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "open-browser-webpack-plugin": "^0.0.5",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "redux": "^4.0.0",
@@ -53,9 +51,12 @@
     "webpack-dev-server": "2.9.7"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
+    "antd": "^3.9.3",
+    "axios": "^0.18.0",
     "dragula": "^3.7.2",
     "echarts-liquidfill": "^2.0.4",
-    "open-browser-webpack-plugin": "^0.0.5",
+    "pngquant-bin": "^8.0.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-resizable": "^1.7.5",

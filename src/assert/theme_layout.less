@@ -33,6 +33,11 @@
       border-right: 2px solid @leftBar;
     }
 
+    .lee-leftBar-bot-BG when (@leftBar = @topBar){
+      background: transparent;
+      border-right: 2px solid @leftBar;
+    }
+
     /*lee-rightBar-bot BG*/
     .lee-rightBar-bot-BG(@rightBg){
       background: @rightBg;
@@ -70,8 +75,8 @@
                 width: 100%;
                 height: 100%;
                 padding-left: @leftBarL;
-                font-size: 15px;
-                font-weight: bold;
+                font-size: 17px;
+                // font-weight: bold;
                 color: @liFont;
                 .anticon {
                   margin-right: 9px;
@@ -79,8 +84,8 @@
                 }
               }
               &.active {
+                .liCurrentColor();
                 background: @liActiveBg;
-                .liCurrentColor;
               }
             }
             .libar{
